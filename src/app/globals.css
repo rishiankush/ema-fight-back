@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #111111;
+  --ink-soft: #1a1a1a;
+  --cream: #ffffff;
+  --paper: #ffffff;
+  --muted: #5a5a5a;
+  --line: #e8e8e8;
+  --red: #e0262a;
+  --red-dark: #b71c20;
+  --gold: #f2c231;
+  --orange: #e38a1f;
+  --steel: #6b6b6b;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-cream: var(--cream);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-red: var(--red);
+  --color-red-dark: var(--red-dark);
+  --color-gold: var(--gold);
+  --color-orange: var(--orange);
+  --color-steel: var(--steel);
+  --font-sans: var(--font-poppins);
+  --font-display: var(--font-poppins);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #fff;
+  color: #383838;
+  font-family:
+    var(--font-poppins),
+    var(--font-devanagari),
+    var(--font-gurmukhi),
+    var(--font-bengali),
+    var(--font-tamil),
+    var(--font-telugu),
+    var(--font-gujarati),
+    var(--font-kannada),
+    var(--font-malayalam),
+    sans-serif;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family:
+    var(--font-poppins),
+    var(--font-devanagari),
+    var(--font-gurmukhi),
+    var(--font-bengali),
+    var(--font-tamil),
+    var(--font-telugu),
+    var(--font-gujarati),
+    var(--font-kannada),
+    var(--font-malayalam),
+    sans-serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 80;
+  background: var(--gold);
+  color: var(--ink);
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.hero-photo {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 48%, rgba(120, 8, 12, 0.72) 100%),
+    url("/assets/hero/brush.png") center / cover no-repeat;
+}
+
+.heading-accent {
+  border-left: 5px solid var(--red);
+  padding-left: 1rem;
+}
+
+.stripe {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--red) 100%);
+}
