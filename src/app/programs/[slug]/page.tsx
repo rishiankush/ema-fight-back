@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProgramDetail } from "@/components/programs/ProgramDetail";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { programImages } from "@/content/media";
 import { getProgram, programs } from "@/content/programs";
+import { getProgramPage } from "@/content/programPages";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -17,9 +19,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const program = getProgram(slug);
   if (!program) return {};
+  const page = getProgramPage(slug);
   return {
-    title: program.title,
-    description: program.summary,
+    title: page?.title ?? program.title,
+    description: page?.tagline ?? program.summary,
   };
 }
 
@@ -27,17 +30,32 @@ export default async function ProgramPage({ params }: Props) {
   const { slug } = await params;
   const program = getProgram(slug);
   if (!program) notFound();
+  const page = getProgramPage(slug);
 
   return (
     <>
       <PageHero
         eyebrow={program.audience}
-        title={program.title}
-        description={program.summary}
+        title={page?.title ?? program.title}
+        description={page?.tagline ?? program.summary}
         primary={{ href: "/book?chat=1", label: "Book consultancy" }}
         secondary={{ href: "/programs", label: "All programs" }}
         image={programImages[slug] ?? "/assets/hero/combat-bg.jpg"}
       />
+      {page ? <ProgramDetail page={page} /> : <SimpleProgramBody program={program} slug={slug} />}
+    </>
+  );
+}
+
+function SimpleProgramBody({
+  program,
+  slug,
+}: {
+  program: NonNullable<ReturnType<typeof getProgram>>;
+  slug: string;
+}) {
+  return (
+    <>
       <Section title="Who it's for" intro={program.who}>
         <div className="grid gap-8 lg:grid-cols-2">
           <div>

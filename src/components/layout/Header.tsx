@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
@@ -22,6 +22,11 @@ export function Header() {
   const { t } = useT();
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+
+  useEffect(() => {
+    setOpen(false);
+    setExpanded(null);
+  }, [pathname]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white text-ink shadow-sm">
@@ -105,7 +110,10 @@ export function Header() {
                           key={child.href}
                           href={child.href}
                           className="block px-6 py-2 text-sm text-muted"
-                          onClick={() => setOpen(false)}
+                          onClick={() => {
+                            setOpen(false);
+                            setExpanded(null);
+                          }}
                         >
                           {t(child.labelKey)}
                         </Link>
@@ -138,7 +146,13 @@ function DesktopItem({
   pathname: string;
   t: (key: string) => string;
 }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const children = "children" in item ? item.children : undefined;
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
   if (!children) {
     return (
       <Link
@@ -151,7 +165,11 @@ function DesktopItem({
   }
 
   return (
-    <div className="group relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setMenuOpen(true)}
+      onMouseLeave={() => setMenuOpen(false)}
+    >
       <Link
         href={item.href}
         className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-semibold hover:text-red ${isActive(pathname, item.href) ? "text-red" : ""}`}
@@ -161,12 +179,17 @@ function DesktopItem({
           ▾
         </span>
       </Link>
-      <div className="invisible absolute left-0 top-full z-20 min-w-56 border border-line bg-white py-2 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+      <div
+        className={`absolute left-0 top-full z-20 min-w-56 border border-line bg-white py-2 shadow-xl transition ${
+          menuOpen ? "visible opacity-100" : "invisible pointer-events-none opacity-0"
+        }`}
+      >
         {children.map((child) => (
           <Link
             key={`${child.href}-${child.labelKey}`}
             href={child.href}
             className="block px-4 py-2 text-sm text-ink hover:bg-zinc-50 hover:text-red"
+            onClick={() => setMenuOpen(false)}
           >
             {t(child.labelKey)}
           </Link>

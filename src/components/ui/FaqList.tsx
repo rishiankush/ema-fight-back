@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { faqs } from "@/content/faqs";
 
-export function FaqList({ items = faqs }: { items?: readonly { q: string; a: string }[] }) {
+export function FaqList({
+  items = faqs,
+  plainTitles = false,
+}: {
+  items?: readonly { q: string; a: string }[];
+  plainTitles?: boolean;
+}) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -18,7 +24,9 @@ export function FaqList({ items = faqs }: { items?: readonly { q: string; a: str
               aria-expanded={isOpen}
               onClick={() => setOpen(isOpen ? null : index)}
             >
-              <span className="font-display text-lg uppercase sm:text-xl">{item.q}</span>
+              <span className={`font-display text-lg sm:text-xl ${plainTitles ? "" : "uppercase"}`}>
+                {item.q}
+              </span>
               <span className="text-orange" aria-hidden="true">
                 {isOpen ? "−" : "+"}
               </span>
