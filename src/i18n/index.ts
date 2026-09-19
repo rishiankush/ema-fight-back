@@ -25,15 +25,19 @@ export const dictionaries: Record<Locale, Messages> = {
   ml,
 };
 
-export function getMessage(messages: Messages, key: string): string {
+function lookup(messages: Messages, key: string): string | undefined {
   const parts = key.split(".");
   let current: unknown = messages;
   for (const part of parts) {
     if (current && typeof current === "object" && part in current) {
       current = (current as Record<string, unknown>)[part];
     } else {
-      return key;
+      return undefined;
     }
   }
-  return typeof current === "string" ? current : key;
+  return typeof current === "string" ? current : undefined;
+}
+
+export function getMessage(messages: Messages, key: string): string {
+  return lookup(messages, key) ?? lookup(en, key) ?? key;
 }

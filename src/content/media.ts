@@ -28,29 +28,29 @@ export const gallery = [
 export const instructors = [
   {
     name: "Master B. S. Handa",
-    role: "Founder / Chief Instructor",
+    roleKey: "home.instructorFounderRole",
     image: "/assets/instructors/bs-handa.png",
-    bio: "International Asian player. Teaching People Safety across schools, corporates, and communities since 1984.",
+    bioKey: "home.instructorFounderBio",
   },
   {
     name: "Ekjot Kaur",
-    role: "Instructor",
+    roleKey: "home.instructorRole",
     image: "/assets/instructors/ekjot-kaur.png",
-    bio: "Women’s safety, kids programs, and practical Fullpower skills.",
+    bioKey: "home.instructorEkjotBio",
   },
   {
     name: "Harjot Singh",
-    role: "Instructor",
+    roleKey: "home.instructorRole",
     image: "/assets/instructors/harjot-singh.png",
-    bio: "Youth, adult, and campus workshops with a focus on real-world practice.",
+    bioKey: "home.instructorHarjotBio",
   },
 ] as const;
 
 export const audienceIcons = [
-  { href: "/programs/schools", label: "School", image: "/assets/icons/school.png" },
-  { href: "/programs#corporate", label: "Workplace", image: "/assets/icons/workplace.png" },
-  { href: "/book?chat=1", label: "Family", image: "/assets/icons/family.png" },
-  { href: "/programs#workshops", label: "Community", image: "/assets/icons/community.png" },
-  { href: "/programs#workshops", label: "Club", image: "/assets/icons/club.png" },
-  { href: "/partners", label: "Sponsor", image: "/assets/icons/sponsor.png" },
+  { href: "/programs/schools", labelKey: "home.audienceSchool", image: "/assets/icons/school.png" },
+  { href: "/programs#corporate", labelKey: "home.audienceWorkplace", image: "/assets/icons/workplace.png" },
+  { href: "/book?chat=1", labelKey: "home.audienceFamily", image: "/assets/icons/family.png" },
+  { href: "/programs#workshops", labelKey: "home.audienceCommunity", image: "/assets/icons/community.png" },
+  { href: "/programs#workshops", labelKey: "home.audienceClub", image: "/assets/icons/club.png" },
+  { href: "/partners", labelKey: "home.audienceSponsor", image: "/assets/icons/sponsor.png" },
 ] as const;

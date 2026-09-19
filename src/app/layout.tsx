@@ -143,6 +143,11 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="flex min-h-full flex-col bg-white font-sans text-ink">
         <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var k=${JSON.stringify("ema-locale")};var s=localStorage.getItem(k);if(!s)return;var parts=document.cookie.split('; ');var cur='';for(var i=0;i<parts.length;i++){if(parts[i].indexOf(k+'=')===0){cur=parts[i].slice(k.length+1);break;}}if(cur===s)return;document.cookie=k+'='+s+';path=/;max-age=31536000;samesite=lax'+(location.protocol==='https:'?';secure':'');}catch(e){}})();`,
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />

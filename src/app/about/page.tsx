@@ -5,6 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { instructors } from "@/content/media";
 import { about, site } from "@/content/site";
+import { T } from "@/i18n/LanguageProvider";
 
 export const metadata: Metadata = {
   title: "About",
@@ -73,7 +74,9 @@ export default function AboutPage() {
                 />
               </div>
               <h3 className="mt-3 font-display text-xl font-bold uppercase">{person.name}</h3>
-              <p className="text-sm font-semibold text-gold">{person.role}</p>
+              <p className="text-sm font-semibold text-gold">
+                <T k={person.roleKey} />
+              </p>
             </article>
           ))}
         </div>

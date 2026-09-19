@@ -1,16 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useEffect,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore, type ReactNode } from "react";
 import { dictionaries, getMessage } from "@/i18n";
-import { defaultLocale, locales, type Locale, LOCALE_COOKIE } from "@/i18n/config";
+import { defaultLocale, LOCALE_COOKIE, type Locale } from "@/i18n/config";
+import { isLocale, readStoredLocale, subscribeLocale, writeStoredLocale } from "@/i18n/localeStore";
 
 type LanguageContextValue = {
   locale: Locale;
@@ -20,10 +13,6 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-function isLocale(value: string | undefined): value is Locale {
-  return Boolean(value && locales.includes(value as Locale));
-}
-
 export function LanguageProvider({
   children,
   initialLocale,
@@ -31,19 +20,20 @@ export function LanguageProvider({
   children: ReactNode;
   initialLocale?: Locale;
 }) {
-  const [locale, setLocaleState] = useState<Locale>(
-    isLocale(initialLocale) ? initialLocale : defaultLocale,
+  const fallback = initialLocale ?? defaultLocale;
+  const locale = useSyncExternalStore(
+    subscribeLocale,
+    () => readStoredLocale(fallback),
+    () => fallback,
   );
 
-  useEffect(() => {
-    document.documentElement.lang = locale;
-  }, [locale]);
-
   const setLocale = useCallback((next: Locale) => {
-    setLocaleState(next);
-    window.localStorage.setItem(LOCALE_COOKIE, next);
-    document.cookie = `${LOCALE_COOKIE}=${next};path=/;max-age=31536000;samesite=lax`;
-    document.documentElement.lang = next;
+    writeStoredLocale(next);
+  }, []);
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem(LOCALE_COOKIE);
+    if (isLocale(stored)) writeStoredLocale(stored);
   }, []);
 
   const value = useMemo<LanguageContextValue>(

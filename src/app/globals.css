@@ -101,3 +101,7 @@ h3,
 .stripe {
   background: linear-gradient(90deg, var(--gold) 0%, var(--red) 100%);
 }
+
+.list-disc {
+  list-style-type: disc;
+}

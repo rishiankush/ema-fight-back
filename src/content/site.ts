@@ -70,37 +70,19 @@ export const audiences = [
 ] as const;
 
 export const benefits = [
-  {
-    title: "Awareness first",
-    body: "Learn to notice early warning signs and avoid danger before it happens.",
-  },
-  {
-    title: "Boundaries that hold",
-    body: "Voice, body language, and verbal skills that stop problems from escalating.",
-  },
-  {
-    title: "Real-world skills",
-    body: "Simple, age-appropriate physical skills — not sport martial arts jargon.",
-  },
-  {
-    title: "Confidence without fear",
-    body: "Training that builds calm competence, never panic or aggression.",
-  },
-  {
-    title: "For every age",
-    body: "Kids, teens, women, adults, seniors, and special groups — each with its own curriculum.",
-  },
-  {
-    title: "Institutions ready",
-    body: "Schools, medical colleges, corporates, and communities get structured programs, not one-off demos.",
-  },
+  { titleKey: "home.benefit1Title", bodyKey: "home.benefit1Body" },
+  { titleKey: "home.benefit2Title", bodyKey: "home.benefit2Body" },
+  { titleKey: "home.benefit3Title", bodyKey: "home.benefit3Body" },
+  { titleKey: "home.benefit4Title", bodyKey: "home.benefit4Body" },
+  { titleKey: "home.benefit5Title", bodyKey: "home.benefit5Body" },
+  { titleKey: "home.benefit6Title", bodyKey: "home.benefit6Body" },
 ] as const;
 
 export const stats = [
-  { value: "1984", label: "Safety system since" },
-  { value: "All ages", label: "Kids to seniors" },
-  { value: "1-to-1", label: "Personal consultancy" },
-  { value: "Chandigarh", label: "Based, teaching nationwide" },
+  { value: "1984", labelKey: "home.statSince" },
+  { value: "All ages", labelKey: "home.statAges" },
+  { value: "1-to-1", labelKey: "home.statConsult" },
+  { value: "Chandigarh", labelKey: "home.statBase" },
 ] as const;
 
 export const about = {
@@ -230,8 +212,6 @@ export const sitemapGroups = [
       { href: "/resources", labelKey: "sitemap.library", detailKey: "sitemap.libraryDetail" },
       { href: "/store", labelKey: "sitemap.store", detailKey: "sitemap.storeDetail" },
       { href: "/partners", labelKey: "sitemap.partners", detailKey: "sitemap.partnersDetail" },
-      { href: "/privacy", labelKey: "sitemap.privacy", detailKey: "sitemap.privacyDetail" },
-      { href: "/terms", labelKey: "sitemap.terms", detailKey: "sitemap.termsDetail" },
     ],
   },
 ] as const;

@@ -6,7 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { FaqList } from "@/components/ui/FaqList";
 import { audienceIcons, gallery, instructors, programImages } from "@/content/media";
 import { benefits, stats } from "@/content/site";
-import { programs } from "@/content/programs";
+import { programs, programListingKeys } from "@/content/programs";
 import { testimonials } from "@/content/testimonials";
 import { T } from "@/i18n/LanguageProvider";
 
@@ -19,12 +19,14 @@ export default function HomePage() {
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
           {audienceIcons.map((item) => (
             <Link
-              key={item.label}
+              key={item.labelKey}
               href={item.href}
               className="flex flex-col items-center gap-2 text-center hover:text-red"
             >
               <Image src={item.image} alt="" width={72} height={72} className="h-14 w-14 object-contain" />
-              <span className="text-xs font-bold uppercase tracking-wide">{item.label}</span>
+              <span className="text-xs font-bold uppercase tracking-wide">
+                <T k={item.labelKey} />
+              </span>
             </Link>
           ))}
         </div>
@@ -37,9 +39,13 @@ export default function HomePage() {
       >
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit) => (
-            <article key={benefit.title} className="border border-line bg-white p-6 shadow-sm">
-              <h3 className="font-display text-xl font-bold uppercase">{benefit.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-muted">{benefit.body}</p>
+            <article key={benefit.titleKey} className="border border-line bg-white p-6 shadow-sm">
+              <h3 className="font-display text-xl font-bold uppercase">
+                <T k={benefit.titleKey} />
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-muted">
+                <T k={benefit.bodyKey} />
+              </p>
             </article>
           ))}
         </div>
@@ -52,8 +58,10 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/70" />
         <dl className="relative mx-auto grid max-w-6xl grid-cols-2 gap-6 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div key={stat.label}>
-              <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{stat.label}</dt>
+            <div key={stat.labelKey}>
+              <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
+                <T k={stat.labelKey} />
+              </dt>
               <dd className="mt-2 font-display text-3xl font-extrabold uppercase">{stat.value}</dd>
             </div>
           ))}
@@ -86,9 +94,11 @@ export default function HomePage() {
                   {program.audience}
                 </p>
                 <h3 className="mt-2 font-display text-2xl font-bold uppercase group-hover:text-red">
-                  {program.title}
+                  <T k={programListingKeys[program.slug].title} />
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-muted">{program.summary}</p>
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  <T k={programListingKeys[program.slug].summary} />
+                </p>
                 <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.16em] text-ink">
                   <T k="home.viewProgram" />
                 </span>
@@ -112,8 +122,12 @@ export default function HomePage() {
                 />
               </div>
               <h3 className="mt-4 font-display text-xl font-bold uppercase">{person.name}</h3>
-              <p className="text-sm font-semibold text-gold">{person.role}</p>
-              <p className="mt-2 text-sm leading-6 text-white/70">{person.bio}</p>
+              <p className="text-sm font-semibold text-gold">
+                <T k={person.roleKey} />
+              </p>
+              <p className="mt-2 text-sm leading-6 text-white/70">
+                <T k={person.bioKey} />
+              </p>
             </article>
           ))}
         </div>

@@ -72,16 +72,14 @@ export function HomeHero() {
                 <h3 className="border-b border-gold/70 pb-2 text-xs font-bold uppercase tracking-[0.18em] text-gold">
                   {t(group.titleKey)}
                 </h3>
-                <ul className="mt-3 space-y-2">
+                <ul className="mt-3 grid gap-2">
                   {group.links.map((link) => (
                     <li key={`${group.titleKey}-${link.href}-${link.labelKey}`}>
-                      <Link href={link.href} className="group block leading-tight">
-                        <span className="text-sm font-semibold text-white group-hover:text-gold">
-                          {t(link.labelKey)}
-                        </span>
-                        <span className="mt-0.5 block text-[11px] text-white/65">
-                          {t(link.detailKey)}
-                        </span>
+                      <Link
+                        href={link.href}
+                        className="block border border-white/30 px-3 py-2 text-sm font-semibold text-white underline decoration-white/50 underline-offset-4 hover:border-gold hover:bg-white/10 hover:text-gold hover:decoration-gold"
+                      >
+                        {t(link.labelKey)}
                       </Link>
                     </li>
                   ))}

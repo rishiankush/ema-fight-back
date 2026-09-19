@@ -3,15 +3,16 @@ import { CtaBanner } from "@/components/ui/CtaBanner";
 import { FaqList } from "@/components/ui/FaqList";
 import { Section } from "@/components/ui/Section";
 import type { ProgramPageContent } from "@/content/programPages";
+import { T } from "@/i18n/LanguageProvider";
 
 function BulletList({ items, light = false }: { items: string[]; light?: boolean }) {
   if (items.length === 0) return null;
   return (
-    <ul className={`mt-4 space-y-2 ${light ? "text-white/80" : "text-muted"}`}>
+    <ul
+      className={`mt-4 list-outside list-disc space-y-2 pl-6 ${light ? "text-white/85 marker:text-gold" : "text-muted marker:text-red"}`}
+    >
       {items.map((item) => (
-        <li key={item} className="border-l-2 border-gold pl-3">
-          {item}
-        </li>
+        <li key={item}>{item}</li>
       ))}
     </ul>
   );
@@ -19,13 +20,13 @@ function BulletList({ items, light = false }: { items: string[]; light?: boolean
 
 export function ProgramDetail({ page }: { page: ProgramPageContent }) {
   const toc = [
-    { href: "#overview", label: "Overview" },
+    { href: "#overview", label: "Overview", labelKey: "program.overview" as const },
     { href: "#why", label: page.why.title },
     { href: "#learn", label: page.learn.title },
     ...page.extraSections.map((section) => ({ href: `#${section.id}`, label: section.title })),
     { href: "#format", label: page.format.title },
     { href: "#outcomes", label: page.outcomes.title },
-    { href: "#faqs", label: "FAQs" },
+    { href: "#faqs", label: "FAQs", labelKey: "program.faqs" as const },
     { href: "#book", label: page.book.title },
   ];
 
@@ -40,15 +41,15 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
             <a
               key={item.href}
               href={item.href}
-              className="shrink-0 px-2 py-1 text-muted hover:text-red"
+              className="shrink-0 border-b border-transparent px-2 py-1 text-muted hover:border-red hover:text-red"
             >
-              {item.label}
+              {"labelKey" in item && item.labelKey ? <T k={item.labelKey} /> : item.label}
             </a>
           ))}
         </nav>
       </div>
 
-      <Section id="overview" title="Overview">
+      <Section id="overview" title={<T k="program.overview" />}>
         <div className="max-w-3xl space-y-4 text-base leading-7 text-muted sm:text-lg">
           {page.overview.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
@@ -63,9 +64,9 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
       </Section>
 
       <Section id="learn" title={page.learn.title}>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-2">
           {page.learn.groups.map((group) => (
-            <article key={group.title} className="border border-line bg-white p-5">
+            <article key={group.title}>
               <h3 className="font-display text-xl font-bold uppercase">{group.title}</h3>
               {group.intro ? <p className="mt-2 text-sm text-muted">{group.intro}</p> : null}
               <BulletList items={group.items} />
@@ -93,12 +94,16 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
         <p className="text-lg text-cream">{page.format.intro}</p>
         <BulletList items={page.format.options} light />
         <dl className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="border border-white/15 bg-ink-soft p-4">
-            <dt className="text-xs uppercase tracking-[0.16em] text-gold">Duration</dt>
+          <div>
+            <dt className="text-xs uppercase tracking-[0.16em] text-gold">
+              <T k="program.duration" />
+            </dt>
             <dd className="mt-2">{page.format.duration}</dd>
           </div>
-          <div className="border border-white/15 bg-ink-soft p-4">
-            <dt className="text-xs uppercase tracking-[0.16em] text-gold">Group size</dt>
+          <div>
+            <dt className="text-xs uppercase tracking-[0.16em] text-gold">
+              <T k="program.groupSize" />
+            </dt>
             <dd className="mt-2">{page.format.groupSize}</dd>
           </div>
         </dl>
@@ -111,28 +116,22 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
         ) : null}
       </Section>
 
-      <Section id="faqs" title="FAQs">
+      <Section id="faqs" title={<T k="program.faqs" />}>
         <FaqList items={page.faqs} plainTitles />
       </Section>
 
       <Section id="book" title={page.book.title} intro={page.book.intro}>
-        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {page.book.venues.map((venue) => (
-            <li key={venue} className="border border-line bg-white px-4 py-5 font-display text-xl uppercase">
-              {venue}
-            </li>
-          ))}
-        </ul>
+        <BulletList items={page.book.venues} />
         <p className="mt-8">
           <Link href="/book?chat=1" className="text-sm font-semibold uppercase tracking-[0.14em] text-red">
-            Request a workshop →
+            <T k="program.requestWorkshop" />
           </Link>
         </p>
       </Section>
 
       <CtaBanner
-        title="Capture the need. Then we talk."
-        body="Start the safety chat. We will not ask you to complete a long questionnaire before speaking with EMA."
+        titleKey="home.ctaTitle"
+        bodyKey="home.ctaBody"
         primary={{ chat: true, labelKey: "home.ctaPrimary" }}
         secondary={{ href: "/contact", labelKey: "nav.contact" }}
       />

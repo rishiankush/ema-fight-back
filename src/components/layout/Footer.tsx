@@ -17,16 +17,19 @@ export function Footer() {
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Logo compact />
-          <p className="mt-4 text-sm leading-6 text-white/65">{site.description}</p>
-          <p className="mt-4 text-sm font-semibold text-gold">{site.philosophy}</p>
+          <p className="mt-4 text-sm leading-6 text-white/65">{t("common.description")}</p>
+          <p className="mt-4 text-sm font-semibold text-gold">{t("common.philosophy")}</p>
         </div>
         {sitemapGroups.map((group) => (
           <div key={group.titleKey}>
             <h2 className="font-display text-lg font-bold uppercase">{t(group.titleKey)}</h2>
-            <ul className="mt-4 space-y-2 text-sm text-white/65">
+            <ul className="mt-4 grid gap-2 text-sm">
               {group.links.map((link) => (
                 <li key={`${group.titleKey}-${link.href}-${link.labelKey}`}>
-                  <Link className="hover:text-gold" href={link.href}>
+                  <Link
+                    className="block border border-white/20 px-3 py-2 text-white/80 underline decoration-white/40 underline-offset-4 hover:border-gold hover:text-gold hover:decoration-gold"
+                    href={link.href}
+                  >
                     {t(link.labelKey)}
                   </Link>
                 </li>

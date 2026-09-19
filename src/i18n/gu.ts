@@ -98,6 +98,18 @@ export const gu: typeof en = {
     whyTitle: "સુરક્ષા એ કૌશલ્ય છે — ચાલો તેને સાથે બનાવીએ",
     whyIntro:
       "EMA Fight Back પહેલા લોક સુરક્ષા છે. શું જોવું, શું કહેવું અને શું કરવું — સામેના વ્યક્તિની ભાષામાં અમે શીખવીએ છીએ.",
+    benefit1Title: "પહેલા જાગૃતિ",
+    benefit1Body: "ખતરા પહેલાં ચેતવણીના સંકેત ઓળખવા શીખો.",
+    benefit2Title: "સીમાઓ જે ટકે",
+    benefit2Body: "અવાજ, હાવભાવ અને વાત — જે સમસ્યા વધે તે પહેલાં રોકે.",
+    benefit3Title: "વાસ્તવિક કૌશલ્યો",
+    benefit3Body: "ઉંમર મુજબ સરળ શારીરિક કૌશલ્ય — રમત માર્શલ આર્ટની ભાષા નહીં.",
+    benefit4Title: "ભય વગર આત્મવિશ્વાસ",
+    benefit4Body: "શાંત ક્ષમતા વધારતી તાલીમ — ગભરાટ કે આક્રમકતા નહીં.",
+    benefit5Title: "દરેક ઉંમર માટે",
+    benefit5Body: "બાળકો, કિશોરો, મહિલાઓ, પુખ્ત, વરિષ્ઠ અને વિશેષ જૂથો — દરેકનો પોતાનો અભ્યાસક્રમ.",
+    benefit6Title: "સંસ્થાઓ માટે તૈયાર",
+    benefit6Body: "શાળાઓ, મેડિકલ કોલેજ, કંપનીઓ અને સમુદાય — એક પ્રોગ્રામ, એક ડેમો નહીં.",
     programs: "પ્રોગ્રામ",
     programsTitle: "દરેક ઉંમર અને જરૂરિયાત માટે તાલીમ",
     programsIntro:
@@ -118,6 +130,57 @@ export const gu: typeof en = {
       "સુરક્ષા ચેટ ખોલો. અમે તમારી જરૂર સમજીને યોગ્ય ઓનલાઇન, ઑફલાઇન, વર્કશોપ, પરિવાર, સમુદાય અથવા સંસ્થા પ્રોગ્રામ સૂચવીશું.",
     ctaPrimary: "ચેટ શરૂ કરો",
     ctaSecondary: "સંપર્ક",
+    audienceSchool: "School",
+    audienceWorkplace: "Workplace",
+    audienceFamily: "Family",
+    audienceCommunity: "Community",
+    audienceClub: "Club",
+    audienceSponsor: "Sponsor",
+    statSince: "Safety system since",
+    statAges: "Kids to seniors",
+    statConsult: "Personal consultancy",
+    statBase: "Based, teaching nationwide",
+    instructorFounderRole: "Founder / Chief Instructor",
+    instructorFounderBio:
+      "International Asian player. Teaching People Safety across schools, corporates, and communities since 1984.",
+    instructorRole: "Instructor",
+    instructorEkjotBio: "Women’s safety, kids programs, and practical Fullpower skills.",
+    instructorHarjotBio: "Youth, adult, and campus workshops with a focus on real-world practice.",
+  },
+  listing: {
+    kidsTitle: "Kids Program (3–8 Years)",
+    kidsSummary: "Building Safety, Confidence & Good Habits from the Very Beginning",
+    juniorsTitle: "Juniors Program (9–12 Years)",
+    juniorsSummary: "Confidence, Awareness & Smart Safety Skills for Growing Kids",
+    teensTitle: "Teens Program (13–18 Years)",
+    teensSummary: "Strong Minds. Strong Boundaries. Strong Safety.",
+    adultsTitle: "Adults",
+    adultsSummary:
+      "Practical awareness, verbal de-escalation, and Fullpower self-defense for everyday adult life — home, commute, travel, and work.",
+    womenTitle: "Women’s Self-Defense",
+    womenSummary:
+      "EMA Fight Back women’s workshops: awareness, avoidance, voice, and practical skills — including everyday objects — built for real situations, not sport.",
+    seniorsTitle: "Senior Citizens",
+    seniorsSummary:
+      "Respectful, adapted safety training: confidence, voice, simple releases, and community awareness — never copied from a youth class.",
+    specialTitle: "Special Needs / Challengers",
+    specialSummary:
+      "A modified People Safety curriculum delivered with patience, respect, and caregiver partnership. We adapt — we do not force a standard class.",
+    schoolsTitle: "Schools & Institutions",
+    schoolsSummary:
+      "Structured People Safety for campuses: students, staff, faculty, and — for healthcare institutions — the full ecosystem including security and housekeeping.",
+    instructorTitle: "Instructor Training",
+    instructorSummary:
+      "Prepare to teach People Safety, bullying prevention, emotional safety, and Fullpower skills. Short consultancy first. Training, assessment, and certification are separate steps.",
+  },
+  program: {
+    overview: "Overview",
+    duration: "Duration",
+    groupSize: "Group size",
+    faqs: "FAQs",
+    requestWorkshop: "Request a workshop →",
+    bookConsultancy: "Book consultancy",
+    allPrograms: "All programs",
   },
   programsPage: {
     eyebrow: "પ્રોગ્રામ અને વર્કશોપ",
@@ -245,5 +308,8 @@ export const gu: typeof en = {
     privacy: "ગોપનીયતા",
     terms: "નિયમો",
     copyright: "સુરક્ષા પ્રણાલી વર્ષ",
+    description:
+      "Practical safety skills for real life — for individuals, families, schools, colleges, healthcare institutions, workplaces and communities.",
+    philosophy: "Safety is a Skill — Let's Build It Together.",
   },
 };

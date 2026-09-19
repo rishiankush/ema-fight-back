@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { programImages } from "@/content/media";
-import { programs } from "@/content/programs";
+import { programs, programListingKeys } from "@/content/programs";
 import { events, workshopTypes } from "@/content/site";
 import { T } from "@/i18n/LanguageProvider";
 
@@ -45,8 +45,12 @@ export default function ProgramsIndexPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red">
                   {program.audience}
                 </p>
-                <h2 className="mt-2 font-display text-3xl font-bold uppercase">{program.title}</h2>
-                <p className="mt-3 text-muted">{program.summary}</p>
+                <h2 className="mt-2 font-display text-3xl font-bold uppercase">
+                  <T k={programListingKeys[program.slug].title} />
+                </h2>
+                <p className="mt-3 text-muted">
+                  <T k={programListingKeys[program.slug].summary} />
+                </p>
               </div>
             </Link>
           ))}

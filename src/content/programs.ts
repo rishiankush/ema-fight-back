@@ -214,3 +214,15 @@ export const programs: Program[] = [
 export function getProgram(slug: string) {
   return programs.find((program) => program.slug === slug);
 }
+
+export const programListingKeys: Record<string, { title: string; summary: string }> = {
+  kids: { title: "listing.kidsTitle", summary: "listing.kidsSummary" },
+  juniors: { title: "listing.juniorsTitle", summary: "listing.juniorsSummary" },
+  teens: { title: "listing.teensTitle", summary: "listing.teensSummary" },
+  adults: { title: "listing.adultsTitle", summary: "listing.adultsSummary" },
+  women: { title: "listing.womenTitle", summary: "listing.womenSummary" },
+  seniors: { title: "listing.seniorsTitle", summary: "listing.seniorsSummary" },
+  "special-needs": { title: "listing.specialTitle", summary: "listing.specialSummary" },
+  schools: { title: "listing.schoolsTitle", summary: "listing.schoolsSummary" },
+  "instructor-training": { title: "listing.instructorTitle", summary: "listing.instructorSummary" },
+};

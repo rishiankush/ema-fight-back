@@ -96,6 +96,19 @@ export const en = {
     whyTitle: "Safety is a skill — let's build it together",
     whyIntro:
       "EMA Fight Back is People Safety first. We teach what to notice, what to say, and what to do — in language that matches the person in front of us.",
+    benefit1Title: "Awareness first",
+    benefit1Body: "Learn to notice early warning signs and avoid danger before it happens.",
+    benefit2Title: "Boundaries that hold",
+    benefit2Body: "Voice, body language, and verbal skills that stop problems from escalating.",
+    benefit3Title: "Real-world skills",
+    benefit3Body: "Simple, age-appropriate physical skills — not sport martial arts jargon.",
+    benefit4Title: "Confidence without fear",
+    benefit4Body: "Training that builds calm competence, never panic or aggression.",
+    benefit5Title: "For every age",
+    benefit5Body: "Kids, teens, women, adults, seniors, and special groups — each with its own curriculum.",
+    benefit6Title: "Institutions ready",
+    benefit6Body:
+      "Schools, medical colleges, corporates, and communities get structured programs, not one-off demos.",
     programs: "Programs",
     programsTitle: "Training for every age and need",
     programsIntro:
@@ -116,6 +129,57 @@ export const en = {
       "Open the safety chat. We will understand your requirement and recommend the right online, offline, workshop, family, community, or institutional program.",
     ctaPrimary: "Start the chat",
     ctaSecondary: "Contact",
+    audienceSchool: "School",
+    audienceWorkplace: "Workplace",
+    audienceFamily: "Family",
+    audienceCommunity: "Community",
+    audienceClub: "Club",
+    audienceSponsor: "Sponsor",
+    statSince: "Safety system since",
+    statAges: "Kids to seniors",
+    statConsult: "Personal consultancy",
+    statBase: "Based, teaching nationwide",
+    instructorFounderRole: "Founder / Chief Instructor",
+    instructorFounderBio:
+      "International Asian player. Teaching People Safety across schools, corporates, and communities since 1984.",
+    instructorRole: "Instructor",
+    instructorEkjotBio: "Women’s safety, kids programs, and practical Fullpower skills.",
+    instructorHarjotBio: "Youth, adult, and campus workshops with a focus on real-world practice.",
+  },
+  listing: {
+    kidsTitle: "Kids Program (3–8 Years)",
+    kidsSummary: "Building Safety, Confidence & Good Habits from the Very Beginning",
+    juniorsTitle: "Juniors Program (9–12 Years)",
+    juniorsSummary: "Confidence, Awareness & Smart Safety Skills for Growing Kids",
+    teensTitle: "Teens Program (13–18 Years)",
+    teensSummary: "Strong Minds. Strong Boundaries. Strong Safety.",
+    adultsTitle: "Adults",
+    adultsSummary:
+      "Practical awareness, verbal de-escalation, and Fullpower self-defense for everyday adult life — home, commute, travel, and work.",
+    womenTitle: "Women’s Self-Defense",
+    womenSummary:
+      "EMA Fight Back women’s workshops: awareness, avoidance, voice, and practical skills — including everyday objects — built for real situations, not sport.",
+    seniorsTitle: "Senior Citizens",
+    seniorsSummary:
+      "Respectful, adapted safety training: confidence, voice, simple releases, and community awareness — never copied from a youth class.",
+    specialTitle: "Special Needs / Challengers",
+    specialSummary:
+      "A modified People Safety curriculum delivered with patience, respect, and caregiver partnership. We adapt — we do not force a standard class.",
+    schoolsTitle: "Schools & Institutions",
+    schoolsSummary:
+      "Structured People Safety for campuses: students, staff, faculty, and — for healthcare institutions — the full ecosystem including security and housekeeping.",
+    instructorTitle: "Instructor Training",
+    instructorSummary:
+      "Prepare to teach People Safety, bullying prevention, emotional safety, and Fullpower skills. Short consultancy first. Training, assessment, and certification are separate steps.",
+  },
+  program: {
+    overview: "Overview",
+    duration: "Duration",
+    groupSize: "Group size",
+    faqs: "FAQs",
+    requestWorkshop: "Request a workshop →",
+    bookConsultancy: "Book consultancy",
+    allPrograms: "All programs",
   },
   programsPage: {
     eyebrow: "Programs & workshops",
@@ -243,5 +307,8 @@ export const en = {
     privacy: "Privacy",
     terms: "Terms",
     copyright: "Safety system since",
+    description:
+      "Practical safety skills for real life — for individuals, families, schools, colleges, healthcare institutions, workplaces and communities.",
+    philosophy: "Safety is a Skill — Let's Build It Together.",
   },
 };
