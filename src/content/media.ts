@@ -46,11 +46,3 @@ export const instructors = [
   },
 ] as const;
 
-export const audienceIcons = [
-  { href: "/programs/schools", labelKey: "home.audienceSchool", image: "/assets/icons/school.png" },
-  { href: "/programs#corporate", labelKey: "home.audienceWorkplace", image: "/assets/icons/workplace.png" },
-  { href: "/book?chat=1", labelKey: "home.audienceFamily", image: "/assets/icons/family.png" },
-  { href: "/programs#workshops", labelKey: "home.audienceCommunity", image: "/assets/icons/community.png" },
-  { href: "/programs#workshops", labelKey: "home.audienceClub", image: "/assets/icons/club.png" },
-  { href: "/partners", labelKey: "home.audienceSponsor", image: "/assets/icons/sponsor.png" },
-] as const;

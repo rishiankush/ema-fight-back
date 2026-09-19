@@ -4,7 +4,7 @@ import { HomeHero } from "@/components/home/HomeHero";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { Section } from "@/components/ui/Section";
 import { FaqList } from "@/components/ui/FaqList";
-import { audienceIcons, gallery, instructors, programImages } from "@/content/media";
+import { gallery, instructors, programImages } from "@/content/media";
 import { benefits, stats } from "@/content/site";
 import { programs, programListingKeys } from "@/content/programs";
 import { testimonials } from "@/content/testimonials";
@@ -14,23 +14,6 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
-
-      <section className="border-b border-line bg-white px-4 py-8 sm:px-6">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
-          {audienceIcons.map((item) => (
-            <Link
-              key={item.labelKey}
-              href={item.href}
-              className="flex flex-col items-center gap-2 text-center hover:text-red"
-            >
-              <Image src={item.image} alt="" width={72} height={72} className="h-14 w-14 object-contain" />
-              <span className="text-xs font-bold uppercase tracking-wide">
-                <T k={item.labelKey} />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </section>
 
       <Section
         eyebrow={<T k="home.why" />}
