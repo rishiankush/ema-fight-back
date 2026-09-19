@@ -3,6 +3,7 @@
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { TestimonialCard } from "@/components/ui/TestimonialCard";
 import { useCopy } from "@/i18n/copy";
 
 export function TestimonialsView() {
@@ -16,15 +17,22 @@ export function TestimonialsView() {
         description={testimonials.description}
         image="/assets/gallery/fb.jpg"
       />
-      {testimonials.groups.map((group) => (
-        <Section key={group.title} title={group.title}>
-          <div className="grid gap-4 md:grid-cols-2">
-            {group.items.map((item) => (
-              <blockquote key={`${item.headline}-${item.name}`} className="border border-line bg-paper p-6">
-                <p className="font-display text-xl uppercase">{item.headline}</p>
-                <p className="mt-3 text-lg leading-8">“{item.quote}”</p>
-                <footer className="mt-4 text-sm font-semibold text-muted">— {item.name}</footer>
-              </blockquote>
+      {testimonials.groups.map((group, groupIndex) => (
+        <Section
+          key={group.title}
+          title={group.title}
+          dark={groupIndex % 2 === 1}
+          className={groupIndex % 2 === 0 ? "bg-[#f6f6f6]" : undefined}
+        >
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {group.items.map((item, index) => (
+              <TestimonialCard
+                key={`${item.headline}-${item.name}`}
+                headline={item.headline}
+                quote={item.quote}
+                name={item.name}
+                index={index}
+              />
             ))}
           </div>
         </Section>
