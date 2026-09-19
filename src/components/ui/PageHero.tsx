@@ -1,12 +1,13 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 
 type PageHeroProps = {
-  eyebrow?: string;
-  title: string;
-  description: string;
-  primary?: { href: string; label: string };
-  secondary?: { href: string; label: string };
+  eyebrow?: ReactNode;
+  title: ReactNode;
+  description: ReactNode;
+  primary?: { href: string; label: ReactNode };
+  secondary?: { href: string; label: ReactNode };
   image?: string;
 };
 
@@ -25,20 +26,23 @@ export function PageHero({
         alt=""
         fill
         priority
-        className="object-cover"
+        className="object-cover object-[80%_center]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-black/70" />
+      <div
+        className="absolute inset-0 bg-black/80 sm:bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.84)_40%,rgba(0,0,0,0.42)_72%,rgba(0,0,0,0.22)_100%)]"
+        aria-hidden
+      />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         {eyebrow ? (
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="max-w-4xl font-display text-4xl font-extrabold uppercase leading-none sm:text-5xl lg:text-6xl">
+        <h1 className="max-w-3xl font-display text-4xl font-extrabold uppercase leading-[0.95] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl lg:text-6xl">
           {title}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">
+        <p className="mt-5 max-w-2xl text-base leading-7 text-white sm:text-lg">
           {description}
         </p>
         {(primary || secondary) && (

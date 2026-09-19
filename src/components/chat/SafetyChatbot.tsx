@@ -200,7 +200,7 @@ export function SafetyChatbot({ initiallyOpen = false }: { initiallyOpen?: boole
             ) : null}
             {status === "confirm" ? (
               <div className="border border-line bg-white p-3 text-sm">
-                <ul className="space-y-1">
+                <ul className="bullet-list mt-0">
                   {summary.map((item) => (
                     <li key={item.label}>
                       <span className="text-muted">{item.label}: </span>

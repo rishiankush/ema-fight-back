@@ -37,9 +37,9 @@ export const nav = {
         { href: "/programs/seniors", labelKey: "nav.seniors" },
         { href: "/programs/special-needs", labelKey: "nav.special" },
         { href: "/programs/schools", labelKey: "nav.schools" },
-        { href: "/programs#corporate", labelKey: "nav.corporate" },
+        { href: "/programs/corporate", labelKey: "nav.corporate" },
         { href: "/programs/instructor-training", labelKey: "nav.instructor" },
-        { href: "/book?chat=1", labelKey: "nav.family" },
+        { href: "/programs/family", labelKey: "nav.family" },
       ],
     },
     {
@@ -50,6 +50,7 @@ export const nav = {
         { href: "/faqs", labelKey: "nav.faqs" },
         { href: "/store", labelKey: "nav.store" },
         { href: "/partners", labelKey: "nav.partners" },
+        { href: "/donate", labelKey: "nav.donate" },
       ],
     },
     { href: "/testimonials", labelKey: "nav.testimonials" },
@@ -65,7 +66,7 @@ export const audiences = [
   { href: "/programs/adults", label: "Adult", detail: "Everyday self-defense" },
   { href: "/programs/schools", label: "School", detail: "Campus safety programs" },
   { href: "/programs/schools", label: "College", detail: "Medical & university" },
-  { href: "/programs#corporate", label: "Corporate", detail: "Workplace workshops" },
+  { href: "/programs/corporate", label: "Corporate", detail: "Workplace workshops" },
   { href: "/programs#workshops", label: "Community", detail: "Societies & groups" },
 ] as const;
 
@@ -145,18 +146,10 @@ export const resources = [
 ] as const;
 
 export const storeItems = [
-  {
-    title: "People Safety workshop kit",
-    body: "Printed guides and session materials for families and small groups. Enquire for availability.",
-  },
-  {
-    title: "EMA training merchandise",
-    body: "Apparel and gear for students and instructors. Limited batches — request via WhatsApp.",
-  },
-  {
-    title: "Nunchaku & specialty equipment",
-    body: "Available as a product line. People Safety remains the brand; equipment is optional, not the identity.",
-  },
+  { title: "ebooks", body: "Enquire for current availability." },
+  { title: "teaching kits", body: "Enquire for current availability." },
+  { title: "comics", body: "Enquire for current availability." },
+  { title: "manuals", body: "Enquire for current availability." },
 ] as const;
 
 export const partners = [
@@ -201,7 +194,8 @@ export const sitemapGroups = [
       { href: "/programs/seniors", labelKey: "sitemap.seniors", detailKey: "sitemap.seniorsDetail" },
       { href: "/programs/special-needs", labelKey: "sitemap.special", detailKey: "sitemap.specialDetail" },
       { href: "/programs/schools", labelKey: "sitemap.schools", detailKey: "sitemap.schoolsDetail" },
-      { href: "/programs#corporate", labelKey: "sitemap.corporate", detailKey: "sitemap.corporateDetail" },
+      { href: "/programs/corporate", labelKey: "sitemap.corporate", detailKey: "sitemap.corporateDetail" },
+      { href: "/programs/family", labelKey: "sitemap.family", detailKey: "sitemap.familyDetail" },
       { href: "/programs/instructor-training", labelKey: "sitemap.instructor", detailKey: "sitemap.instructorDetail" },
       { href: "/book", labelKey: "sitemap.book", detailKey: "sitemap.bookDetail" },
     ],
@@ -212,6 +206,7 @@ export const sitemapGroups = [
       { href: "/resources", labelKey: "sitemap.library", detailKey: "sitemap.libraryDetail" },
       { href: "/store", labelKey: "sitemap.store", detailKey: "sitemap.storeDetail" },
       { href: "/partners", labelKey: "sitemap.partners", detailKey: "sitemap.partnersDetail" },
+      { href: "/donate", labelKey: "nav.donate", detailKey: "sitemap.partnersDetail" },
     ],
   },
 ] as const;
@@ -219,61 +214,61 @@ export const sitemapGroups = [
 export const workshopTypes = [
   {
     id: "schools",
-    title: "Schools",
-    body: "Anti-bullying, student safety, and staff language that matches the age in the room.",
+    titleKey: "programsPage.workshopSchoolsTitle",
+    bodyKey: "programsPage.workshopSchoolsBody",
     href: "/programs/schools",
   },
   {
     id: "colleges",
-    title: "Colleges & medical colleges",
-    body: "Students, clinicians, faculty, admin, housekeeping, and security — a campus program, not a single demo.",
-    href: "/book?chat=1",
+    titleKey: "programsPage.workshopCollegesTitle",
+    bodyKey: "programsPage.workshopCollegesBody",
+    href: "/programs/schools",
   },
   {
     id: "corporate",
-    title: "Corporate",
-    body: "Workplace and women’s safety workshops that fit HR calendars and CSR goals.",
-    href: "/book?chat=1",
+    titleKey: "programsPage.workshopCorporateTitle",
+    bodyKey: "programsPage.workshopCorporateBody",
+    href: "/programs/corporate",
   },
   {
     id: "women",
-    title: "Women’s groups",
-    body: "Fight Back sessions for offices, RWAs, colleges, and community organisations.",
+    titleKey: "programsPage.workshopWomenTitle",
+    bodyKey: "programsPage.workshopWomenBody",
     href: "/programs/women",
   },
   {
     id: "community",
-    title: "Societies & community",
-    body: "Family, senior, and mixed-group workshops hosted where people already gather.",
+    titleKey: "programsPage.workshopCommunityTitle",
+    bodyKey: "programsPage.workshopCommunityBody",
     href: "/book?chat=1",
   },
   {
     id: "instructor",
-    title: "Instructor training",
-    body: "Consultancy first. Certification only after training and assessment.",
+    titleKey: "programsPage.workshopInstructorTitle",
+    bodyKey: "programsPage.workshopInstructorBody",
     href: "/programs/instructor-training",
   },
 ] as const;
 
 export const events = [
   {
-    date: "Ongoing",
-    title: "₹99 Personal Safety Consultancy",
-    detail: "Online 1-to-1. We understand your need, then recommend the right program.",
+    dateKey: "programsPage.eventOngoing",
+    titleKey: "programsPage.eventConsultTitle",
+    detailKey: "programsPage.eventConsultDetail",
   },
   {
-    date: "On request",
-    title: "School & campus safety week",
-    detail: "Awareness demos, student batches, staff sessions, and a closing feedback loop.",
+    dateKey: "programsPage.eventOnRequest",
+    titleKey: "programsPage.eventSchoolTitle",
+    detailKey: "programsPage.eventSchoolDetail",
   },
   {
-    date: "On request",
-    title: "Women’s Fight Back workshop",
-    detail: "Half-day or full-day practical sessions for groups, offices, and communities.",
+    dateKey: "programsPage.eventOnRequest",
+    titleKey: "programsPage.eventWomenTitle",
+    detailKey: "programsPage.eventWomenDetail",
   },
   {
-    date: "On request",
-    title: "Instructor consultancy",
-    detail: "Short form, then a personal interview. Training, assessment, and certification follow only if suitable.",
+    dateKey: "programsPage.eventOnRequest",
+    titleKey: "programsPage.eventInstructorTitle",
+    detailKey: "programsPage.eventInstructorDetail",
   },
 ] as const;

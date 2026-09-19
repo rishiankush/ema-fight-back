@@ -8,6 +8,8 @@ export const programImages: Record<string, string> = {
   "special-needs": "/assets/gallery/schools.jpeg",
   schools: "/assets/hero/schools.jpg",
   "instructor-training": "/assets/programs/class-1.jpg",
+  corporate: "/assets/hero/schools.jpg",
+  family: "/assets/hero/family-safety.png",
 };
 
 export const gallery = [
@@ -27,19 +29,19 @@ export const gallery = [
 
 export const instructors = [
   {
-    name: "Master B. S. Handa",
+    name: "Grand Master B. S. Handa",
     roleKey: "home.instructorFounderRole",
     image: "/assets/instructors/bs-handa.png",
     bioKey: "home.instructorFounderBio",
   },
   {
-    name: "Ekjot Kaur",
+    name: "Master Ekjot Kaur (Nancy)",
     roleKey: "home.instructorRole",
     image: "/assets/instructors/ekjot-kaur.png",
     bioKey: "home.instructorEkjotBio",
   },
   {
-    name: "Harjot Singh",
+    name: "Harjot Singh Handa",
     roleKey: "home.instructorRole",
     image: "/assets/instructors/harjot-singh.png",
     bioKey: "home.instructorHarjotBio",

@@ -1,24 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { BulletList } from "@/components/ui/BulletList";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { FaqList } from "@/components/ui/FaqList";
 import { Section } from "@/components/ui/Section";
-import type { ProgramPageContent } from "@/content/programPages";
 import { T } from "@/i18n/LanguageProvider";
+import { useCopy } from "@/i18n/copy";
 
-function BulletList({ items, light = false }: { items: string[]; light?: boolean }) {
-  if (items.length === 0) return null;
-  return (
-    <ul
-      className={`mt-4 list-outside list-disc space-y-2 pl-6 ${light ? "text-white/85 marker:text-gold" : "text-muted marker:text-red"}`}
-    >
-      {items.map((item) => (
-        <li key={item}>{item}</li>
-      ))}
-    </ul>
-  );
-}
+export function ProgramDetail({ slug }: { slug: string }) {
+  const page = useCopy().programs.find((item) => item.slug === slug);
+  if (!page) return null;
 
-export function ProgramDetail({ page }: { page: ProgramPageContent }) {
   const toc = [
     { href: "#overview", label: "Overview", labelKey: "program.overview" as const },
     { href: "#why", label: page.why.title },
@@ -34,9 +27,12 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
     <>
       <div className="border-b border-line bg-white">
         <nav
-          aria-label="On this page"
+          aria-labelledby="program-toc-label"
           className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3 text-sm sm:px-6"
         >
+          <span id="program-toc-label" className="sr-only">
+            <T k="program.onThisPage" />
+          </span>
           {toc.map((item) => (
             <a
               key={item.href}
@@ -93,20 +89,26 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
       <Section id="format" title={page.format.title} dark>
         <p className="text-lg text-cream">{page.format.intro}</p>
         <BulletList items={page.format.options} light />
-        <dl className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div>
-            <dt className="text-xs uppercase tracking-[0.16em] text-gold">
-              <T k="program.duration" />
-            </dt>
-            <dd className="mt-2">{page.format.duration}</dd>
-          </div>
-          <div>
-            <dt className="text-xs uppercase tracking-[0.16em] text-gold">
-              <T k="program.groupSize" />
-            </dt>
-            <dd className="mt-2">{page.format.groupSize}</dd>
-          </div>
-        </dl>
+        {page.format.duration || page.format.groupSize ? (
+          <dl className="mt-8 grid gap-4 sm:grid-cols-2">
+            {page.format.duration ? (
+              <div>
+                <dt className="text-xs uppercase tracking-[0.16em] text-gold">
+                  <T k="program.duration" />
+                </dt>
+                <dd className="mt-2">{page.format.duration}</dd>
+              </div>
+            ) : null}
+            {page.format.groupSize ? (
+              <div>
+                <dt className="text-xs uppercase tracking-[0.16em] text-gold">
+                  <T k="program.groupSize" />
+                </dt>
+                <dd className="mt-2">{page.format.groupSize}</dd>
+              </div>
+            ) : null}
+          </dl>
+        ) : null}
       </Section>
 
       <Section id="outcomes" title={page.outcomes.title} intro={page.outcomes.intro}>
@@ -120,10 +122,11 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
         <FaqList items={page.faqs} plainTitles />
       </Section>
 
-      <Section id="book" title={page.book.title} intro={page.book.intro}>
+      <Section id="book" title={page.book.title}>
+        <p className="text-base text-muted">{page.book.intro}</p>
         <BulletList items={page.book.venues} />
-        <p className="mt-8">
-          <Link href="/book?chat=1" className="text-sm font-semibold uppercase tracking-[0.14em] text-red">
+        <p className="mt-6">
+          <Link href="/book" className="text-red underline">
             <T k="program.requestWorkshop" />
           </Link>
         </p>
@@ -132,7 +135,7 @@ export function ProgramDetail({ page }: { page: ProgramPageContent }) {
       <CtaBanner
         titleKey="home.ctaTitle"
         bodyKey="home.ctaBody"
-        primary={{ chat: true, labelKey: "home.ctaPrimary" }}
+        primary={{ href: "/book", labelKey: "home.ctaPrimary" }}
         secondary={{ href: "/contact", labelKey: "nav.contact" }}
       />
     </>

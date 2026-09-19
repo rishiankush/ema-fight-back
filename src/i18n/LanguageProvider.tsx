@@ -36,6 +36,10 @@ export function LanguageProvider({
     if (isLocale(stored)) writeStoredLocale(stored);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   const value = useMemo<LanguageContextValue>(
     () => ({
       locale,

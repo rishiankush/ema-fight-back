@@ -1,20 +1,36 @@
 "use client";
 
 import { useState } from "react";
-import { faqs } from "@/content/faqs";
+import { useCopy } from "@/i18n/copy";
+
+function uniqueFaqs(pages: readonly { faqs: readonly { q: string; a: string }[] }[]) {
+  const seen = new Set<string>();
+  const items: { q: string; a: string }[] = [];
+  for (const page of pages) {
+    for (const item of page.faqs) {
+      const key = item.q.trim().toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      items.push(item);
+    }
+  }
+  return items;
+}
 
 export function FaqList({
-  items = faqs,
+  items,
   plainTitles = false,
 }: {
   items?: readonly { q: string; a: string }[];
   plainTitles?: boolean;
 }) {
+  const copy = useCopy();
+  const resolved = items ?? uniqueFaqs(copy.programs);
   const [open, setOpen] = useState<number | null>(0);
 
   return (
     <div className="divide-y divide-line border-y border-line">
-      {items.map((item, index) => {
+      {resolved.map((item, index) => {
         const isOpen = open === index;
         return (
           <div key={item.q}>

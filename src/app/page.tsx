@@ -1,162 +1,163 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HomeHero } from "@/components/home/HomeHero";
+import { homeProgramCards } from "@/content/homePage";
+import { programImages } from "@/content/media";
+import { BulletList } from "@/components/ui/BulletList";
+import { Button } from "@/components/ui/Button";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { Section } from "@/components/ui/Section";
-import { FaqList } from "@/components/ui/FaqList";
-import { gallery, instructors, programImages } from "@/content/media";
-import { benefits, stats } from "@/content/site";
-import { programs, programListingKeys } from "@/content/programs";
-import { testimonials } from "@/content/testimonials";
 import { T } from "@/i18n/LanguageProvider";
+
+const whyItems = [
+  "home.whyItem1",
+  "home.whyItem2",
+  "home.whyItem3",
+  "home.whyItem4",
+  "home.whyItem5",
+  "home.whyItem6",
+] as const;
+
+const differentItems = [
+  "home.differentItem1",
+  "home.differentItem2",
+  "home.differentItem3",
+  "home.differentItem4",
+  "home.differentItem5",
+  "home.differentItem6",
+  "home.differentItem7",
+] as const;
+
+const teachItems = [
+  "home.teachItem1",
+  "home.teachItem2",
+  "home.teachItem3",
+  "home.teachItem4",
+  "home.teachItem5",
+] as const;
+
+const trustItems = [
+  "home.trustItem1",
+  "home.trustItem2",
+  "home.trustItem3",
+  "home.trustItem4",
+  "home.trustItem5",
+] as const;
+
+const learnItems = [
+  "home.learnItem1",
+  "home.learnItem2",
+  "home.learnItem3",
+  "home.learnItem4",
+  "home.learnItem5",
+  "home.learnItem6",
+  "home.learnItem7",
+  "home.learnItem8",
+] as const;
+
+const partnerItems = [
+  "home.partnerItem1",
+  "home.partnerItem2",
+  "home.partnerItem3",
+  "home.partnerItem4",
+  "home.partnerItem5",
+  "home.partnerItem6",
+  "home.partnerItem7",
+  "home.partnerItem8",
+] as const;
 
 export default function HomePage() {
   return (
     <>
       <HomeHero />
 
-      <Section
-        eyebrow={<T k="home.why" />}
-        title={<T k="home.whyTitle" />}
-        intro={<T k="home.whyIntro" />}
-      >
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => (
-            <article key={benefit.titleKey} className="border border-line bg-white p-6 shadow-sm">
-              <h3 className="font-display text-xl font-bold uppercase">
-                <T k={benefit.titleKey} />
-              </h3>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                <T k={benefit.bodyKey} />
-              </p>
-            </article>
-          ))}
-        </div>
+      <Section title={<T k="home.whyTitle" />} intro={<T k="home.whySubtitle" />}>
+        <p className="max-w-3xl leading-7 text-muted">
+          <T k="home.whyIntro" />
+        </p>
+        <p className="mt-6 font-semibold">
+          <T k="home.whyWeTeach" />
+        </p>
+        <BulletList items={whyItems.map((key) => <T key={key} k={key} />)} />
+        <p className="mt-6 max-w-3xl leading-7 text-muted">
+          <T k="home.whyClose" />
+        </p>
       </Section>
 
-      <section
-        className="relative overflow-hidden bg-ink px-4 py-12 text-white sm:px-6"
-        style={{ backgroundImage: "url(/assets/ui/counter-bg.png)", backgroundSize: "cover" }}
-      >
-        <div className="absolute inset-0 bg-black/70" />
-        <dl className="relative mx-auto grid max-w-6xl grid-cols-2 gap-6 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.labelKey}>
-              <dt className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
-                <T k={stat.labelKey} />
-              </dt>
-              <dd className="mt-2 font-display text-3xl font-extrabold uppercase">{stat.value}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      <Section
-        eyebrow={<T k="home.programs" />}
-        title={<T k="home.programsTitle" />}
-        intro={<T k="home.programsIntro" />}
-      >
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {programs.map((program) => (
+      <Section title={<T k="home.programsTitle" />} intro={<T k="home.programsIntro" />}>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {homeProgramCards.map((card) => (
             <Link
-              key={program.slug}
-              href={`/programs/${program.slug}`}
-              className="group overflow-hidden border border-line bg-white shadow-sm transition hover:border-red"
+              key={card.href}
+              href={card.href}
+              className="group overflow-hidden border border-line bg-white hover:border-red"
             >
-              <div className="relative h-44">
+              <div className="relative aspect-[4/3] bg-[#f3f3f3]">
                 <Image
-                  src={programImages[program.slug] ?? "/assets/programs/class-1.jpg"}
-                  alt={program.title}
+                  src={programImages[card.slug] ?? "/assets/programs/class-1.jpg"}
+                  alt=""
                   fill
-                  className="object-cover transition duration-300 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
               </div>
-              <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-red">
-                  {program.audience}
-                </p>
-                <h3 className="mt-2 font-display text-2xl font-bold uppercase group-hover:text-red">
-                  <T k={programListingKeys[program.slug].title} />
+              <div className="p-6">
+                <h3 className="font-display text-2xl font-bold uppercase">
+                  <T k={card.titleKey} />
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-muted">
-                  <T k={programListingKeys[program.slug].summary} />
+                <p className="mt-3 text-muted">
+                  <T k={card.summaryKey} />
                 </p>
-                <span className="mt-4 inline-block text-xs font-bold uppercase tracking-[0.16em] text-ink">
+                <span className="mt-4 inline-block text-sm font-semibold uppercase tracking-[0.14em] text-red">
                   <T k="home.viewProgram" />
                 </span>
               </div>
             </Link>
           ))}
         </div>
-      </Section>
-
-      <Section dark eyebrow={<T k="home.instructors" />} title={<T k="home.instructorsTitle" />}>
-        <div className="grid gap-8 sm:grid-cols-3">
-          {instructors.map((person) => (
-            <article key={person.name} className="text-center">
-              <div className="relative mx-auto h-64 w-52">
-                <Image
-                  src={person.image}
-                  alt={person.name}
-                  fill
-                  className="object-contain object-bottom"
-                  sizes="208px"
-                />
-              </div>
-              <h3 className="mt-4 font-display text-xl font-bold uppercase">{person.name}</h3>
-              <p className="text-sm font-semibold text-gold">
-                <T k={person.roleKey} />
-              </p>
-              <p className="mt-2 text-sm leading-6 text-white/70">
-                <T k={person.bioKey} />
-              </p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      <Section eyebrow={<T k="home.gallery" />} title={<T k="home.galleryTitle" />}>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          {gallery.map((src) => (
-            <div key={src} className="relative aspect-[4/3] overflow-hidden">
-              <Image src={src} alt="EMA Fight Back training" fill className="object-cover" sizes="25vw" />
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section dark eyebrow={<T k="home.trust" />} title={<T k="home.trustTitle" />}>
-        <div className="grid gap-4 lg:grid-cols-3">
-          {testimonials.slice(0, 3).map((item) => (
-            <blockquote key={item.name} className="border border-white/10 p-6">
-              <p className="leading-7 text-white">“{item.quote}”</p>
-              <footer className="mt-4 text-sm text-gold">
-                {item.name}
-                <span className="block text-white/55">{item.role}</span>
-              </footer>
-            </blockquote>
-          ))}
-        </div>
-        <p className="mt-6">
-          <Link href="/testimonials" className="text-sm font-semibold uppercase tracking-[0.16em] text-gold">
-            <T k="home.allTestimonials" />
-          </Link>
+        <p className="mt-10">
+          <Button href="/programs" variant="primary">
+            <T k="home.exploreAllPrograms" />
+          </Button>
         </p>
       </Section>
 
-      <Section
-        eyebrow={<T k="home.questions" />}
-        title={<T k="home.questionsTitle" />}
-        intro={<T k="home.questionsIntro" />}
-      >
-        <FaqList />
+      <Section title={<T k="home.differentTitle" />} intro={<T k="home.differentSubtitle" />}>
+        <BulletList items={differentItems.map((key) => <T key={key} k={key} />)} />
+        <p className="mt-6 max-w-3xl leading-7 text-muted">
+          <T k="home.differentClose" />
+        </p>
+      </Section>
+
+      <Section dark title={<T k="home.teachTitle" />} intro={<T k="home.teachIntro" />}>
+        <BulletList light items={teachItems.map((key) => <T key={key} k={key} />)} />
+        <p className="mt-6 max-w-3xl leading-7 text-steel">
+          <T k="home.teachClose" />
+        </p>
+      </Section>
+
+      <Section title={<T k="home.trustTitle" />} intro={<T k="home.trustIntro" />}>
+        <BulletList items={trustItems.map((key) => <T key={key} k={key} />)} />
+        <p className="mt-6 max-w-3xl leading-7 text-muted">
+          <T k="home.trustClose" />
+        </p>
+      </Section>
+
+      <Section dark title={<T k="home.learnTitle" />} intro={<T k="home.learnIntro" />}>
+        <BulletList light items={learnItems.map((key) => <T key={key} k={key} />)} />
+      </Section>
+
+      <Section title={<T k="home.partnerTitle" />} intro={<T k="home.partnerIntro" />}>
+        <BulletList items={partnerItems.map((key) => <T key={key} k={key} />)} />
+        <p className="mt-6 max-w-3xl leading-7 text-muted">
+          <T k="home.partnerClose" />
+        </p>
       </Section>
 
       <CtaBanner
         titleKey="home.ctaTitle"
         bodyKey="home.ctaBody"
-        primary={{ chat: true, labelKey: "home.ctaPrimary" }}
+        primary={{ href: "/book", labelKey: "home.ctaPrimary" }}
         secondary={{ href: "/contact", labelKey: "home.ctaSecondary" }}
       />
     </>

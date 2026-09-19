@@ -102,6 +102,31 @@ h3,
   background: linear-gradient(90deg, var(--gold) 0%, var(--red) 100%);
 }
 
-.list-disc {
+ul.bullet-list,
+ul.list-disc {
   list-style-type: disc;
+  list-style-position: outside;
+  margin-top: 1rem;
+  max-width: 48rem;
+  padding-left: 1.5rem;
+  color: var(--muted);
+}
+
+.bullet-list > li {
+  margin-top: 0.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.bullet-list > li:first-child {
+  margin-top: 0;
+}
+
+ul.bullet-list.bullet-list-light {
+  color: rgba(255, 255, 255, 0.9);
 }

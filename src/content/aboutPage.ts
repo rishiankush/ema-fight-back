@@ -1,0 +1,81 @@
+export const aboutPage = {
+  intro: [
+    "EMA Fight Back is a Social Empowerment Program that teaches Children, Teens, Adults, Seniors, and People with Special Needs how to stay safe in daily life. Founded in 1984 in Chandigarh, the program has trained thousands of individuals across India and around the world.",
+    "Our mission is simple: To empower people with practical skills to protect their emotional and physical safety — with confidence and respect.",
+  ],
+  vision:
+    "A world where every person — regardless of age, gender, background, or ability — has the skills and confidence to stay safe, prevent harm, and lead a powerful life.",
+  mission: [
+    "To teach lifelong safety skills",
+    "To reduce bullying, abuse, and violence",
+    "To build confidence, courage, and communication",
+    "To promote respect, empathy, and responsibility",
+    "To empower families, schools, workplaces, and communities",
+  ],
+  goals: [
+    "Protect children and vulnerable groups from abuse and exploitation",
+    "Strengthen families through communication and boundary skills",
+    "Empower schools and institutions with safety training",
+    "Teach professionals how to support safety and advocacy",
+    "Build a network of safe communities across India",
+  ],
+  values: [
+    {
+      title: "Safety First",
+      body: "Emotional and physical safety is the foundation of all learning.",
+    },
+    { title: "Respect for All", body: "Every person deserves dignity." },
+    { title: "Empowerment", body: "Skills that are simple, clear, and practical." },
+    { title: "Integrity", body: "Honest and transparent teaching." },
+    { title: "Inclusion", body: "Programs for all ages, genders, and abilities." },
+    { title: "Compassion", body: "Teaching with kindness and understanding." },
+  ],
+  unique: [
+    "50+ years of experience",
+    "Globally aligned People Safety framework",
+    "Training for all age groups",
+    "Specialized programs for schools, families, corporates, and special needs",
+    "Realistic role-plays and practice",
+    "A warm, encouraging, non-fear-based approach",
+  ],
+  teach: [
+    "Role-plays",
+    "Rehearsals",
+    "Scenario-based training",
+    "Coaching in small steps",
+    "Adapted skills for special needs",
+    "Positive, encouraging communication",
+    "Full-force self-defence with padded instructors (optional)",
+  ],
+  teachClose: "Our objective is to build confidence, not fear.",
+  commitment: [
+    "We are dedicated to helping every participant build the confidence and courage to act when it matters most — whether it’s speaking up, setting boundaries, getting help, or using physical skills if absolutely necessary.",
+    "Safety is not just knowledge — it’s a skill we practice.",
+  ],
+  globalIntro: "Our method draws from internationally recognized safety systems and combines:",
+  global: [
+    "Emotionally safe teaching",
+    "Boundary-setting & advocacy",
+    "Realistic role-plays",
+    "Situational awareness",
+    "Physical safety skills for emergencies",
+  ],
+  globalClose:
+    "This balanced approach ensures that participants learn what to do before, during, and after a conflict.",
+  partnerIntro: "We work with:",
+  partners: [
+    "Schools",
+    "Corporates",
+    "Community centres",
+    "NGOs",
+    "Government departments",
+    "Foundations and sponsors",
+  ],
+  partnerAlso: "We also offer long-term collaborations for:",
+  collaborations: [
+    "Safety curriculum development",
+    "Instructor training",
+    "Awareness campaigns",
+    "Community outreach initiatives",
+  ],
+};

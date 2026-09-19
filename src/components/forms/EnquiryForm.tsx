@@ -3,13 +3,17 @@
 import { useState, type FormEvent } from "react";
 import { createEnquiry } from "@/app/actions/enquiry";
 import type { EnquiryKind } from "@/lib/enquiries";
+import { useCopy } from "@/i18n/copy";
+import { useT } from "@/i18n/LanguageProvider";
+
+type FieldOption = { value: string; labelKey: string };
 
 type Field = {
   name: string;
-  label: string;
+  labelKey: string;
   type?: "text" | "email" | "tel" | "textarea" | "select";
   required?: boolean;
-  options?: string[];
+  options?: FieldOption[];
 };
 
 type EnquiryFormProps = {
@@ -36,6 +40,8 @@ export function EnquiryForm({
   successBody,
   fields,
 }: EnquiryFormProps) {
+  const { t } = useT();
+  const forms = useCopy().forms;
   const [status, setStatus] = useState<"idle" | "success">("idle");
   const [error, setError] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
@@ -60,14 +66,8 @@ export function EnquiryForm({
 
   if (status === "success") {
     return (
-      <div
-        id={id}
-        className="border border-gold bg-paper p-6 sm:p-8"
-        role="status"
-      >
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">
-          Received
-        </p>
+      <div id={id} className="border border-gold bg-paper p-6 sm:p-8" role="status">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-orange">{forms.received}</p>
         <h3 className="mt-2 font-display text-2xl uppercase">{successTitle}</h3>
         <p className="mt-3 leading-7 text-muted">{successBody}</p>
       </div>
@@ -75,39 +75,24 @@ export function EnquiryForm({
   }
 
   return (
-    <form
-      id={id}
-      onSubmit={onSubmit}
-      className="border border-line bg-paper p-6 sm:p-8"
-      noValidate
-    >
+    <form id={id} onSubmit={onSubmit} className="border border-line bg-paper p-6 sm:p-8" noValidate>
       <h3 className="font-display text-2xl uppercase">{title}</h3>
       <p className="mt-2 text-sm leading-6 text-muted">{intro}</p>
       <div className="mt-6 grid gap-4">
         {fields.map((field) => (
           <label key={field.name} className="block text-sm font-medium">
-            {field.label}
+            {t(field.labelKey)}
             {field.required ? <span className="text-red"> *</span> : null}
             {field.type === "textarea" ? (
-              <textarea
-                name={field.name}
-                required={field.required}
-                rows={4}
-                className={inputClass}
-              />
+              <textarea name={field.name} required={field.required} rows={4} className={inputClass} />
             ) : field.type === "select" ? (
-              <select
-                name={field.name}
-                required={field.required}
-                defaultValue=""
-                className={inputClass}
-              >
+              <select name={field.name} required={field.required} defaultValue="" className={inputClass}>
                 <option value="" disabled>
-                  Select
+                  {forms.select}
                 </option>
                 {field.options?.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
+                  <option key={option.value} value={option.value}>
+                    {t(option.labelKey)}
                   </option>
                 ))}
               </select>
@@ -128,184 +113,205 @@ export function EnquiryForm({
         disabled={pending}
         className="mt-6 inline-flex w-full items-center justify-center rounded-sm bg-red px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white hover:bg-red-dark disabled:opacity-60 sm:w-auto"
       >
-        {pending ? "Sending…" : submitLabel}
+        {pending ? forms.sending : submitLabel}
       </button>
     </form>
   );
 }
 
 export const individualFields: Field[] = [
-  { name: "name", label: "Your name", required: true },
-  { name: "phone", label: "Mobile / WhatsApp number", type: "tel", required: true },
+  { name: "name", labelKey: "chat.fields.name", required: true },
+  { name: "phone", labelKey: "chat.fields.phone", type: "tel", required: true },
   {
     name: "ageGroup",
-    label: "Age group",
-    type: "select",
-    required: true,
-    options: ["Child (3–8)", "Junior (9–12)", "Teen (13–18)", "Adult", "Senior Citizen"],
-  },
-  {
-    name: "forWhom",
-    label: "Who is the training for?",
+    labelKey: "chat.fields.ageGroup",
     type: "select",
     required: true,
     options: [
-      "Myself",
-      "My Child",
-      "My Teenager",
-      "Woman / Women",
-      "Senior Citizen",
-      "Family",
-      "Small Group",
-      "Other",
+      { value: "Child (3–8)", labelKey: "chat.options.child" },
+      { value: "Junior (9–12)", labelKey: "chat.options.junior" },
+      { value: "Teen (13–18)", labelKey: "chat.options.teen" },
+      { value: "Adult", labelKey: "chat.options.adult" },
+      { value: "Senior Citizen", labelKey: "chat.options.senior" },
+    ],
+  },
+  {
+    name: "forWhom",
+    labelKey: "chat.fields.forWhom",
+    type: "select",
+    required: true,
+    options: [
+      { value: "Myself", labelKey: "chat.options.myself" },
+      { value: "My Child", labelKey: "chat.options.myChild" },
+      { value: "My Teenager", labelKey: "chat.options.myTeen" },
+      { value: "Woman / Women", labelKey: "chat.options.women" },
+      { value: "Senior Citizen", labelKey: "chat.options.senior" },
+      { value: "Family", labelKey: "chat.options.family" },
+      { value: "Small Group", labelKey: "chat.options.smallGroup" },
+      { value: "Other", labelKey: "chat.options.other" },
     ],
   },
   {
     name: "lookingFor",
-    label: "What are you looking for?",
+    labelKey: "chat.fields.lookingFor",
     type: "select",
     required: true,
     options: [
-      "Self-Defense",
-      "Personal Safety",
-      "Child Safety",
-      "Women's Safety",
-      "Family Safety",
-      "Confidence Building",
-      "Awareness & Prevention",
-      "Fitness + Self-Defense",
-      "Not Sure — Need Guidance",
+      { value: "Self-Defense", labelKey: "chat.options.selfDefense" },
+      { value: "Personal Safety", labelKey: "chat.options.personalSafety" },
+      { value: "Child Safety", labelKey: "chat.options.childSafety" },
+      { value: "Women's Safety", labelKey: "chat.options.womenSafety" },
+      { value: "Family Safety", labelKey: "chat.options.familySafety" },
+      { value: "Confidence Building", labelKey: "chat.options.confidence" },
+      { value: "Awareness & Prevention", labelKey: "chat.options.awareness" },
+      { value: "Fitness + Self-Defense", labelKey: "chat.options.fitness" },
+      { value: "Not Sure — Need Guidance", labelKey: "chat.options.notSure" },
     ],
   },
   {
     name: "format",
-    label: "Preferred format",
+    labelKey: "chat.fields.format",
     type: "select",
     options: [
-      "Offline Classes",
-      "Online Training",
-      "Weekend Workshop",
-      "Private / Small Group",
-      "Not Sure",
+      { value: "Offline Classes", labelKey: "chat.options.offline" },
+      { value: "Online Training", labelKey: "chat.options.online" },
+      { value: "Weekend Workshop", labelKey: "chat.options.weekend" },
+      { value: "Private / Small Group", labelKey: "chat.options.privateGroup" },
+      { value: "Not Sure", labelKey: "chat.options.notSure" },
     ],
   },
-  { name: "city", label: "City / area", required: true },
+  { name: "city", labelKey: "chat.fields.city", required: true },
 ];
 
 export const organizationFields: Field[] = [
-  { name: "name", label: "Your name", required: true },
-  { name: "phone", label: "Mobile / WhatsApp number", type: "tel", required: true },
-  { name: "email", label: "Email", type: "email" },
-  { name: "organization", label: "Your organization", required: true },
+  { name: "name", labelKey: "chat.fields.name", required: true },
+  { name: "phone", labelKey: "chat.fields.phone", type: "tel", required: true },
+  { name: "email", labelKey: "chat.fields.email", type: "email" },
+  { name: "organization", labelKey: "chat.fields.organization", required: true },
   {
     name: "role",
-    label: "Your role",
+    labelKey: "chat.fields.role",
     type: "select",
     required: true,
     options: [
-      "School Management",
-      "Principal / Head",
-      "Teacher / Coordinator",
-      "Corporate HR",
-      "Corporate Admin / Management",
-      "Other",
+      { value: "School Management", labelKey: "chat.options.schoolMgmt" },
+      { value: "Principal / Head", labelKey: "chat.options.principal" },
+      { value: "Teacher / Coordinator", labelKey: "chat.options.teacher" },
+      { value: "Corporate HR", labelKey: "chat.options.hr" },
+      { value: "Corporate Admin / Management", labelKey: "chat.options.admin" },
+      { value: "Other", labelKey: "chat.options.other" },
     ],
   },
   {
     name: "orgType",
-    label: "Organization type",
+    labelKey: "chat.fields.orgType",
     type: "select",
     required: true,
     options: [
-      "School",
-      "College / University",
-      "Medical College / Healthcare Institution",
-      "Corporate / Workplace",
-      "Society / Community",
-      "Other",
+      { value: "School", labelKey: "chat.options.school" },
+      { value: "College / University", labelKey: "chat.options.college" },
+      { value: "Medical College / Healthcare Institution", labelKey: "chat.options.medical" },
+      { value: "Corporate / Workplace", labelKey: "chat.options.corporate" },
+      { value: "Society / Community", labelKey: "chat.options.society" },
+      { value: "Other", labelKey: "chat.options.other" },
     ],
   },
   {
     name: "lookingFor",
-    label: "What are you looking for?",
+    labelKey: "chat.fields.orgLookingFor",
     type: "select",
     required: true,
     options: [
-      "Self-Defense Training",
-      "Staff Safety Training",
-      "Student Safety Program",
-      "Women's Safety",
-      "Workplace Safety",
-      "Awareness / Prevention Program",
-      "One-Day Workshop",
-      "Regular Training Program",
-      "Not Sure — Need Guidance",
+      { value: "Self-Defense Training", labelKey: "chat.options.selfDefense" },
+      { value: "Staff Safety Training", labelKey: "chat.options.staffSafety" },
+      { value: "Student Safety Program", labelKey: "chat.options.studentSafety" },
+      { value: "Women's Safety", labelKey: "chat.options.womenSafety" },
+      { value: "Workplace Safety", labelKey: "chat.options.workplaceSafety" },
+      { value: "Awareness / Prevention Program", labelKey: "chat.options.awareness" },
+      { value: "One-Day Workshop", labelKey: "chat.options.oneDay" },
+      { value: "Regular Training Program", labelKey: "chat.options.regular" },
+      { value: "Not Sure — Need Guidance", labelKey: "chat.options.notSure" },
     ],
   },
   {
     name: "participants",
-    label: "Approximate number of participants",
+    labelKey: "chat.fields.participants",
     type: "select",
-    options: ["1–20", "20–50", "50–100", "100–300", "300+"],
+    options: [
+      { value: "1–20", labelKey: "chat.options.p20" },
+      { value: "20–50", labelKey: "chat.options.p50" },
+      { value: "50–100", labelKey: "chat.options.p100" },
+      { value: "100–300", labelKey: "chat.options.p300" },
+      { value: "300+", labelKey: "chat.options.p300plus" },
+    ],
   },
-  { name: "city", label: "City / location", required: true },
+  { name: "city", labelKey: "chat.fields.city", required: true },
 ];
 
 export const instructorFields: Field[] = [
-  { name: "name", label: "Full name", required: true },
-  { name: "phone", label: "Mobile / WhatsApp number", type: "tel", required: true },
-  { name: "email", label: "Email", type: "email" },
+  { name: "name", labelKey: "chat.fields.fullName", required: true },
+  { name: "phone", labelKey: "chat.fields.phone", type: "tel", required: true },
+  { name: "email", labelKey: "chat.fields.email", type: "email" },
   {
     name: "ageGroup",
-    label: "Age group",
-    type: "select",
-    required: true,
-    options: ["Under 18", "18–25", "26–40", "41–60", "60+"],
-  },
-  {
-    name: "background",
-    label: "Your background",
+    labelKey: "chat.fields.instructorAge",
     type: "select",
     required: true,
     options: [
-      "Martial Arts",
-      "Teacher / School Staff",
-      "Sports / Fitness",
-      "HR / Corporate",
-      "Social Work / Community",
-      "Parent",
-      "Other",
+      { value: "Under 18", labelKey: "chat.options.u18" },
+      { value: "18–25", labelKey: "chat.options.a18" },
+      { value: "26–40", labelKey: "chat.options.a26" },
+      { value: "41–60", labelKey: "chat.options.a41" },
+      { value: "60+", labelKey: "chat.options.a60" },
+    ],
+  },
+  {
+    name: "background",
+    labelKey: "chat.fields.background",
+    type: "select",
+    required: true,
+    options: [
+      { value: "Martial Arts", labelKey: "chat.options.martial" },
+      { value: "Teacher / School Staff", labelKey: "chat.options.schoolStaff" },
+      { value: "Sports / Fitness", labelKey: "chat.options.sports" },
+      { value: "HR / Corporate", labelKey: "chat.options.hr" },
+      { value: "Social Work / Community", labelKey: "chat.options.social" },
+      { value: "Parent", labelKey: "chat.options.parent" },
+      { value: "Other", labelKey: "chat.options.other" },
     ],
   },
   {
     name: "interest",
-    label: "What interests you about becoming an EMA instructor?",
+    labelKey: "chat.fields.interest",
     type: "select",
     required: true,
     options: [
-      "Teaching Safety & Self-Defense",
-      "Working with Children / Teens",
-      "Women's Safety",
-      "School / Corporate Programs",
-      "Building a Career / Income",
-      "Community Service",
-      "Expanding My Existing Training",
-      "Not Sure — I Need Guidance",
+      { value: "Teaching Safety & Self-Defense", labelKey: "chat.options.teachSafety" },
+      { value: "Working with Children / Teens", labelKey: "chat.options.workKids" },
+      { value: "Women's Safety", labelKey: "chat.options.womenSafety" },
+      { value: "School / Corporate Programs", labelKey: "chat.options.schoolCorp" },
+      { value: "Building a Career / Income", labelKey: "chat.options.career" },
+      { value: "Community Service", labelKey: "chat.options.community" },
+      { value: "Expanding My Existing Training", labelKey: "chat.options.expand" },
+      { value: "Not Sure — I Need Guidance", labelKey: "chat.options.notSure" },
     ],
   },
-  { name: "city", label: "City / area", required: true },
+  { name: "city", labelKey: "chat.fields.city", required: true },
   {
     name: "experience",
-    label: "Do you have teaching, training or martial arts experience?",
+    labelKey: "chat.fields.experience",
     type: "select",
-    options: ["Yes", "No"],
+    options: [
+      { value: "Yes", labelKey: "chat.options.yes" },
+      { value: "No", labelKey: "chat.options.no" },
+    ],
   },
-  { name: "experienceNote", label: "If yes, briefly mention (optional)", type: "textarea" },
+  { name: "experienceNote", labelKey: "chat.fields.experienceNote", type: "textarea" },
 ];
 
 export const contactFields: Field[] = [
-  { name: "name", label: "Full name", required: true },
-  { name: "phone", label: "Phone", type: "tel", required: true },
-  { name: "email", label: "Email", type: "email" },
-  { name: "message", label: "Message", type: "textarea", required: true },
+  { name: "name", labelKey: "chat.fields.fullName", required: true },
+  { name: "phone", labelKey: "chat.fields.phoneShort", type: "tel", required: true },
+  { name: "email", labelKey: "chat.fields.emailShort", type: "email" },
+  { name: "message", labelKey: "chat.fields.message", type: "textarea", required: true },
 ];

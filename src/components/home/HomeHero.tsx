@@ -1,94 +1,49 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { phoneHref, site, sitemapGroups, whatsappHref } from "@/content/site";
-import { useT } from "@/i18n/LanguageProvider";
-import { openSafetyChat } from "@/lib/chat";
+import { T } from "@/i18n/LanguageProvider";
 
 export function HomeHero() {
-  const { t } = useT();
-
   return (
-    <section className="relative overflow-hidden text-white">
+    <header className="relative overflow-hidden text-white">
       <Image
-        src="/assets/hero/brush.png"
+        src="/assets/hero/family-safety.png"
         alt=""
         fill
         priority
-        className="object-cover object-[center_30%]"
+        className="object-cover object-[82%_center]"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-black/25 via-black/55 to-[#7a0c12]/80" />
-      <div className="absolute inset-0 bg-black/20" />
-
-      <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8 lg:pt-20">
-        <div className="ml-auto max-w-xl text-right">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold">
-            {t("hero.name")}
-          </p>
-          <p className="mt-2 text-xs font-medium uppercase tracking-[0.2em] text-white/80">
-            {t("hero.tagline")}
-          </p>
-          <h1 className="mt-4 font-display text-4xl font-extrabold uppercase leading-[0.95] sm:text-6xl">
-            {t("hero.title")}
+      <div
+        className="absolute inset-0 bg-black/80 sm:bg-[linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.86)_38%,rgba(0,0,0,0.45)_68%,rgba(0,0,0,0.22)_100%)]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+        <div className="max-w-xl sm:max-w-2xl">
+          <h1 className="font-display text-4xl font-extrabold uppercase leading-[0.95] [text-shadow:0_2px_18px_rgba(0,0,0,0.55)] sm:text-5xl lg:text-6xl">
+            <T k="hero.title" />
+            <span className="mt-3 block text-gold">
+              — <T k="hero.tagline" />
+            </span>
           </h1>
-          <p className="mt-5 text-base leading-7 text-white/90 sm:text-lg">{t("hero.body")}</p>
-          <div className="mt-7 flex flex-wrap justify-end gap-3">
-            <button
-              type="button"
-              className="inline-flex items-center justify-center rounded-sm bg-gold px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-ink hover:bg-orange"
-              onClick={openSafetyChat}
-            >
-              {t("hero.book")}
-            </button>
-            <Button href="/programs" variant="secondary">
-              {t("hero.programs")}
+          <p className="mt-5 text-base leading-7 text-white sm:text-lg">
+            <T k="hero.body" />
+          </p>
+          <p className="mt-4 text-base leading-7 text-white sm:text-lg">
+            <T k="hero.body2" />
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button href="/book" variant="gold">
+              <T k="hero.book" />
             </Button>
-            <Button href={whatsappHref} variant="primary">
-              {t("hero.whatsapp")}
+            <Button href="/resources" variant="secondary">
+              <T k="hero.guide" />
             </Button>
-          </div>
-        </div>
-
-        <div className="mt-12 border border-white/20 bg-black/55 p-4 shadow-2xl backdrop-blur-sm sm:p-6">
-          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-gold">
-                {t("hero.sitemap")}
-              </p>
-              <h2 className="mt-1 font-display text-2xl font-bold uppercase sm:text-3xl">
-                {t("hero.exploreTitle")}
-              </h2>
-            </div>
-            <a href={phoneHref} className="text-sm font-semibold text-gold hover:text-white">
-              {t("hero.call")} {site.phoneDisplay}
-            </a>
-          </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {sitemapGroups.map((group) => (
-              <div key={group.titleKey}>
-                <h3 className="border-b border-gold/70 pb-2 text-xs font-bold uppercase tracking-[0.18em] text-gold">
-                  {t(group.titleKey)}
-                </h3>
-                <ul className="mt-3 grid gap-2">
-                  {group.links.map((link) => (
-                    <li key={`${group.titleKey}-${link.href}-${link.labelKey}`}>
-                      <Link
-                        href={link.href}
-                        className="block border border-white/30 px-3 py-2 text-sm font-semibold text-white underline decoration-white/50 underline-offset-4 hover:border-gold hover:bg-white/10 hover:text-gold hover:decoration-gold"
-                      >
-                        {t(link.labelKey)}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
           </div>
         </div>
       </div>
-    </section>
+      <div className="relative stripe h-1.5" />
+    </header>
   );
 }

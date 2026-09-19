@@ -18,42 +18,45 @@ export default function ProgramsIndexPage() {
   return (
     <>
       <PageHero
-        eyebrow="Programs & workshops"
-        title="Choose the people you want to protect"
-        description="Age groups, campuses and workplaces sit together. If you are unsure, start the chat and we will route you."
-        primary={{ href: "/book?chat=1", label: "Need guidance?" }}
+        eyebrow={<T k="programsPage.eyebrow" />}
+        title={<T k="programsPage.title" />}
+        description={<T k="programsPage.description" />}
+        primary={{ href: "/book", label: <T k="hero.book" /> }}
         image="/assets/hero/family-safety.png"
       />
       <Section>
         <div className="grid gap-5 md:grid-cols-2">
-          {programs.map((program) => (
-            <Link
-              key={program.slug}
-              href={`/programs/${program.slug}`}
-              className="group overflow-hidden border border-line bg-white hover:border-red"
-            >
-              <div className="relative h-48">
-                <Image
-                  src={programImages[program.slug] ?? "/assets/programs/class-1.jpg"}
-                  alt={program.title}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red">
-                  {program.audience}
-                </p>
-                <h2 className="mt-2 font-display text-3xl font-bold uppercase">
-                  <T k={programListingKeys[program.slug].title} />
-                </h2>
-                <p className="mt-3 text-muted">
-                  <T k={programListingKeys[program.slug].summary} />
-                </p>
-              </div>
-            </Link>
-          ))}
+          {programs.map((program) => {
+            const keys = programListingKeys[program.slug];
+            return (
+              <Link
+                key={program.slug}
+                href={`/programs/${program.slug}`}
+                className="group overflow-hidden border border-line bg-white hover:border-red"
+              >
+                <div className="relative aspect-[4/3] bg-[#f3f3f3]">
+                  <Image
+                    src={programImages[program.slug] ?? "/assets/programs/class-1.jpg"}
+                    alt=""
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-red">
+                    <T k={keys.audience} />
+                  </p>
+                  <h2 className="mt-2 font-display text-3xl font-bold uppercase">
+                    <T k={keys.title} />
+                  </h2>
+                  <p className="mt-3 text-muted">
+                    <T k={keys.summary} />
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </Section>
       <Section
@@ -70,8 +73,12 @@ export default function ProgramsIndexPage() {
               href={item.href}
               className="border border-line bg-paper p-6 hover:border-orange"
             >
-              <h2 className="font-display text-2xl uppercase">{item.title}</h2>
-              <p className="mt-3 text-sm leading-6 text-muted">{item.body}</p>
+              <h2 className="font-display text-2xl uppercase">
+                <T k={item.titleKey} />
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-muted">
+                <T k={item.bodyKey} />
+              </p>
             </Link>
           ))}
         </div>
@@ -79,10 +86,16 @@ export default function ProgramsIndexPage() {
       <Section dark title={<T k="programsPage.calendar" />}>
         <ul className="grid gap-4 lg:grid-cols-2">
           {events.map((event) => (
-            <li key={event.title} className="border border-white/10 p-6">
-              <p className="text-xs uppercase tracking-[0.18em] text-gold">{event.date}</p>
-              <h3 className="mt-2 font-display text-2xl uppercase">{event.title}</h3>
-              <p className="mt-3 text-steel">{event.detail}</p>
+            <li key={event.titleKey} className="border border-white/10 p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-gold">
+                <T k={event.dateKey} />
+              </p>
+              <h3 className="mt-2 font-display text-2xl uppercase">
+                <T k={event.titleKey} />
+              </h3>
+              <p className="mt-3 text-steel">
+                <T k={event.detailKey} />
+              </p>
             </li>
           ))}
         </ul>
