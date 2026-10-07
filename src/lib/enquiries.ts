@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { sendEnquiryEmail } from "@/lib/mail";
 
 export type EnquiryKind = "personal" | "organisation" | "instructor" | "workshop" | "contact";
 
@@ -56,6 +57,15 @@ export async function submitEnquiry(
     }
   }
 
-  await persist(payload);
+  try {
+    await persist(payload);
+  } catch {
+    // Local JSON backup is optional; email is the delivery path.
+  }
+
+  const sent = await sendEnquiryEmail(payload);
+  if (!sent.ok) {
+    return { ok: false, error: "Could not send your enquiry. Please call or WhatsApp us." };
+  }
   return { ok: true };
 }
