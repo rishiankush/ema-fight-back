@@ -10,6 +10,7 @@ export type ProgramExtraSection = {
   id: string;
   title: string;
   intro?: string;
+  paragraphs?: string[];
   groups?: { title: string; items: string[] }[];
   items?: string[];
   close?: string;
@@ -838,6 +839,97 @@ export const programPages: ProgramPageContent[] = [
       note: "All techniques are safe, practical, and designed for women regardless of size, age, or fitness level.",
     },
     extraSections: [
+      {
+        id: "wfb-program",
+        title: "EMA Women Fight Back Self Defence Program",
+        paragraphs: [
+          "Under this program EMA is conducting Seminars and Workshops to empower the females with safety tips and training with very easy and daily use items in order to protect themselves from those who would do them any harm.",
+          "Self-Defence is for everybody. Today almost everyone from teenagers to grannies, from office executives to retired couples, has recognized the need for at least a basic knowledge of simple self-protection measures.",
+          "To learn a martial art can be very rewarding at a personal development level and can be an excellent form of self-defence, but for most people the training and discipline required to participate fully is just not within their scope. However, people who have little physical skill can easily absorb and use the basic form of self-defence.",
+        ],
+      },
+      {
+        id: "wfb-seminars",
+        title: "Seminars held at",
+        groups: [
+          {
+            title: "Private Sectors",
+            items: [
+              "Bal Bhawan, Phase 5, Mohali",
+              "Infosys, Rajiv Gandhi IT Park, Chandigarh",
+              "94.3 MyFM Studio, Sector 24, Chandigarh",
+              "Dainik Bhaskar Office, Sector 24, Chandigarh",
+              "Cheema Boilers Ltd, Sector 70, Mohali",
+              "Procter & Gamble Home Product Limited, Baddi",
+              "Dell International Services Pvt Ltd, Mohali.",
+              "WeP Solutions Ltd., Baddi",
+              "Bajaj Allianz Life Insurance Co. Ltd., Chandigarh",
+              "Godrej Consumer Products Limited, Baddi",
+              "AISIN Automotive Haryana Pvt. Ltd., Rohtak",
+              "Aircel Regional Office, Mohali",
+              "The Lalit Chandigarh, IT Park, Chandigarh",
+              "P&G Gillette India Ltd.",
+              "Netsmartz House, Plot No. 10, Rajiv Gandhi I.T. Park, Chandigarh",
+            ],
+          },
+          {
+            title: "Universities",
+            items: [
+              "Gandhi Bhawan, Panjab University, Chandigarh",
+              "Chitkara University at Rajpura, Punjab",
+              "Punjab Engineering College, Sector 12, Chandigarh",
+              "Lovely Professional University, Jalandhar, Punjab",
+              "Chandigarh Group of Colleges, Landran, Mohali",
+            ],
+          },
+          {
+            title: "Places",
+            items: [
+              "Plaza, Sector 17, Chandigarh",
+              "Book Fair, Parade Ground, Sector 17, Chandigarh (18/Nov/13)",
+              "Guru Gobind Singh Bhawan, Sector 15, Chandigarh",
+              "HQ 12 Signals (For Army Personal’s Wife)",
+            ],
+          },
+          {
+            title: "Govt. Institutions",
+            items: [
+              "Government Museum and Art Gallery, Sector 10, Chandigarh",
+              "National Institute of Nursing Education (NINE), PGI, Chandigarh",
+              "Rajiv Gandhi National Institute of Youth Development, Sector 12, Chandigarh",
+            ],
+          },
+          {
+            title: "Colleges",
+            items: [
+              "Government Polytechnic College, Khunimajra, Mohali",
+              "Shri Guru Gobind Singh College for Women, Sector 26, Chandigarh",
+              "Dev Samaj College for Women (Hostel Students), Sector 45, Chandigarh",
+              "Home Science College, Sector 10, Chandigarh",
+              "SD College, Sector 32, Chandigarh",
+              "Chandigarh Group of Colleges, Landran, Mohali",
+              "Govt. College, Ropar",
+            ],
+          },
+          {
+            title: "Schools",
+            items: [
+              "The British School, Sector 8, Panchkula",
+              "The British School, Sector 44, Chandigarh",
+              "The British School, Sector 70, Mohali",
+              "The Millennium School, Sector 67, Mohali",
+              "St. Peter’s Senior Secondary School, Sector 37, Chandigarh",
+              "Shamrock Senior Secondary School, Sector 69, Mohali",
+              "Govt.High School Manimajra",
+              "Saffron Public School, Phagwara",
+            ],
+          },
+          {
+            title: "Groups",
+            items: ["Humanity Group, Sector 44, Chandigarh"],
+          },
+        ],
+      },
       {
         id: "who",
         title: "Who Can Join?",

@@ -47,6 +47,7 @@ export const nav = {
       labelKey: "nav.resources",
       children: [
         { href: "/resources", labelKey: "nav.library" },
+        { href: "/blog", labelKey: "nav.blog" },
         { href: "/faqs", labelKey: "nav.faqs" },
         { href: "/store", labelKey: "nav.store" },
         { href: "/partners", labelKey: "nav.partners" },
@@ -204,6 +205,7 @@ export const sitemapGroups = [
     titleKey: "sitemap.resources",
     links: [
       { href: "/resources", labelKey: "sitemap.library", detailKey: "sitemap.libraryDetail" },
+      { href: "/blog", labelKey: "sitemap.blog", detailKey: "sitemap.blogDetail" },
       { href: "/store", labelKey: "sitemap.store", detailKey: "sitemap.storeDetail" },
       { href: "/partners", labelKey: "sitemap.partners", detailKey: "sitemap.partnersDetail" },
       { href: "/donate", labelKey: "nav.donate", detailKey: "sitemap.partnersDetail" },

@@ -46,3 +46,9 @@ next-env.d.ts
 
 # local document extract (do not commit)
 .doc-extract/
+
+# GitHub rejects files over 100 MB
+/public/assets/blog/Dbl-Nunchaku-VID_20260129_154613547.mp4
+
+# generated
+src/i18n/__pycache__/

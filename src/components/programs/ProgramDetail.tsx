@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { ProgramMedia } from "@/components/programs/ProgramMedia";
 import { BulletList } from "@/components/ui/BulletList";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { FaqList } from "@/components/ui/FaqList";
 import { Section } from "@/components/ui/Section";
+import { getProgramMediaPosts } from "@/content/programMedia";
 import { T } from "@/i18n/LanguageProvider";
 import { useCopy } from "@/i18n/copy";
 
@@ -12,11 +14,19 @@ export function ProgramDetail({ slug }: { slug: string }) {
   const page = useCopy().programs.find((item) => item.slug === slug);
   if (!page) return null;
 
+  const hasMedia = getProgramMediaPosts(slug).length > 0;
   const toc = [
     { href: "#overview", label: "Overview", labelKey: "program.overview" as const },
     { href: "#why", label: page.why.title },
     { href: "#learn", label: page.learn.title },
-    ...page.extraSections.map((section) => ({ href: `#${section.id}`, label: section.title })),
+    ...page.extraSections.flatMap((section) =>
+      section.id === "wfb-seminars" && hasMedia
+        ? [
+            { href: `#${section.id}`, label: section.title },
+            { href: "#photos-videos", label: "Photos & videos", labelKey: "program.photosAndVideos" as const },
+          ]
+        : [{ href: `#${section.id}`, label: section.title }],
+    ),
     { href: "#format", label: page.format.title },
     { href: "#outcomes", label: page.outcomes.title },
     { href: "#faqs", label: "FAQs", labelKey: "program.faqs" as const },
@@ -73,17 +83,25 @@ export function ProgramDetail({ slug }: { slug: string }) {
       </Section>
 
       {page.extraSections.map((section) => (
-        <Section key={section.id} id={section.id} title={section.title}>
-          {section.intro ? <p className="max-w-3xl text-lg text-muted">{section.intro}</p> : null}
-          {section.items ? <BulletList items={section.items} /> : null}
-          {section.groups?.map((group) => (
-            <div key={group.title} className="mt-8">
-              <h3 className="font-display text-xl font-bold uppercase">{group.title}</h3>
-              <BulletList items={group.items} />
-            </div>
-          ))}
-          {section.close ? <p className="mt-6 max-w-3xl text-muted">{section.close}</p> : null}
-        </Section>
+        <div key={section.id}>
+          <Section id={section.id} title={section.title}>
+            {section.intro ? <p className="max-w-3xl text-lg text-muted">{section.intro}</p> : null}
+            {section.paragraphs?.map((paragraph) => (
+              <p key={paragraph} className="mt-4 max-w-3xl text-base leading-7 text-muted sm:text-lg">
+                {paragraph}
+              </p>
+            ))}
+            {section.items ? <BulletList items={section.items} /> : null}
+            {section.groups?.map((group) => (
+              <div key={group.title} className="mt-8">
+                <h3 className="font-display text-xl font-bold uppercase">{group.title}</h3>
+                <BulletList items={group.items} />
+              </div>
+            ))}
+            {section.close ? <p className="mt-6 max-w-3xl text-muted">{section.close}</p> : null}
+          </Section>
+          {section.id === "wfb-seminars" ? <ProgramMedia slug={slug} /> : null}
+        </div>
       ))}
 
       <Section id="format" title={page.format.title} dark>
