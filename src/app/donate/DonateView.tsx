@@ -33,7 +33,7 @@ export function DonateView() {
       <Section dark title={donate.whyTitle} intro={donate.whyIntro}>
         <BulletList light items={donate.why} />
         {donate.whyClose.map((paragraph) => (
-          <p key={paragraph} className="mt-4 max-w-3xl text-steel">
+          <p key={paragraph} className="mt-4 max-w-3xl text-white/90">
             {paragraph}
           </p>
         ))}
@@ -49,7 +49,7 @@ export function DonateView() {
           {donate.ways.map((way) => (
             <article key={way.title} className="border border-white/10 p-6">
               <h3 className="font-display text-2xl uppercase text-gold">{way.title}</h3>
-              <p className="mt-3 text-steel">{way.body}</p>
+              <p className="mt-3 text-white/90">{way.body}</p>
               <p className="mt-4">
                 <Button href={way.href} variant="secondary">
                   {way.cta}
@@ -67,7 +67,7 @@ export function DonateView() {
 
       <Section dark title={donate.transparencyTitle} intro={donate.transparencyIntro}>
         <BulletList light items={donate.transparency} />
-        <p className="mt-6 text-steel">{donate.transparencyClose}</p>
+        <p className="mt-6 text-white/90">{donate.transparencyClose}</p>
       </Section>
 
       <Section title={donate.getInTouch} intro={donate.getInTouchIntro}>

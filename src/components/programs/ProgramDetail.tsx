@@ -66,7 +66,7 @@ export function ProgramDetail({ slug }: { slug: string }) {
       <Section id="why" title={page.why.title} dark>
         <p className="text-lg text-cream">{page.why.intro}</p>
         <BulletList items={page.why.items} light />
-        {page.why.close ? <p className="mt-6 max-w-3xl text-steel">{page.why.close}</p> : null}
+        {page.why.close ? <p className="mt-6 max-w-3xl text-white/90">{page.why.close}</p> : null}
       </Section>
 
       <Section id="learn" title={page.learn.title}>

@@ -156,7 +156,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             <T k="skip" />
           </a>
           <Header />
-          <main id="main" className="flex-1">
+          <main id="main" className="flex-1 pb-28">
             {children}
           </main>
           <Footer />

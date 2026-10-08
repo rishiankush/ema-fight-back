@@ -69,19 +69,19 @@ export function AboutView() {
 
       <Section dark title={founder.journeyTitle}>
         {founder.journey.map((paragraph) => (
-          <p key={paragraph} className="mt-4 max-w-3xl text-lg leading-8 text-steel first:mt-0">
+          <p key={paragraph} className="mt-4 max-w-3xl text-lg leading-8 text-white/90 first:mt-0">
             {paragraph}
           </p>
         ))}
         <h3 className="mt-10 font-display text-2xl font-bold uppercase text-gold">{founder.learningTitle}</h3>
         {founder.learning.map((paragraph) => (
-          <p key={paragraph} className="mt-4 max-w-3xl leading-7 text-steel">
+          <p key={paragraph} className="mt-4 max-w-3xl leading-7 text-white/90">
             {paragraph}
           </p>
         ))}
         <h3 className="mt-10 font-display text-2xl font-bold uppercase text-gold">{founder.missionTitle}</h3>
         {founder.mission.map((paragraph) => (
-          <p key={paragraph} className="mt-4 max-w-3xl leading-7 text-steel">
+          <p key={paragraph} className="mt-4 max-w-3xl leading-7 text-white/90">
             {paragraph}
           </p>
         ))}
@@ -141,7 +141,7 @@ export function AboutView() {
 
       <Section dark title={<T k="aboutPage.teachTitle" />} intro={<T k="aboutPage.teachLead" />}>
         <BulletList light items={about.teach} />
-        <p className="mt-6 max-w-3xl text-steel">{about.teachClose}</p>
+        <p className="mt-6 max-w-3xl text-white/90">{about.teachClose}</p>
       </Section>
 
       <Section title={<T k="aboutPage.commitmentTitle" />}>
@@ -154,7 +154,7 @@ export function AboutView() {
 
       <Section dark title={<T k="aboutPage.globalTitle" />} intro={about.globalIntro}>
         <BulletList light items={about.global} />
-        <p className="mt-6 max-w-3xl text-steel">{about.globalClose}</p>
+        <p className="mt-6 max-w-3xl text-white/90">{about.globalClose}</p>
       </Section>
 
       <Section title={<T k="aboutPage.partnerTitle" />} intro={about.partnerIntro}>

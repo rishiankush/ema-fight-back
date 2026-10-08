@@ -131,7 +131,7 @@ export default function HomePage() {
 
       <Section dark title={<T k="home.teachTitle" />} intro={<T k="home.teachIntro" />}>
         <BulletList light items={teachItems.map((key) => <T key={key} k={key} />)} />
-        <p className="mt-6 max-w-3xl leading-7 text-steel">
+        <p className="mt-6 max-w-3xl leading-7 text-white/90">
           <T k="home.teachClose" />
         </p>
       </Section>

@@ -36,7 +36,7 @@ export function Section({
               </h2>
             ) : null}
             {intro ? (
-              <p className={`mt-4 text-base leading-7 sm:text-lg ${dark ? "text-steel" : "text-muted"}`}>
+              <p className={`mt-4 text-base leading-7 sm:text-lg ${dark ? "text-white/90" : "text-muted"}`}>
                 {intro}
               </p>
             ) : null}

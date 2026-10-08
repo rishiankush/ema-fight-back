@@ -93,7 +93,7 @@ export default function ProgramsIndexPage() {
               <h3 className="mt-2 font-display text-2xl uppercase">
                 <T k={event.titleKey} />
               </h3>
-              <p className="mt-3 text-steel">
+              <p className="mt-3 text-white/90">
                 <T k={event.detailKey} />
               </p>
             </li>
