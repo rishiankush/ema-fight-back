@@ -79,7 +79,7 @@ export const enCopy = {
       "Choose the form that matches you. Detailed questions — concerns, timing, budget, previous experience — belong in the consultancy.",
     personalTitle: "Personal safety consultancy",
     personalIntro: "For individuals and families. Preferred consultancy: online EMA Safety Consultancy — ₹99.",
-    personalSubmit: "Book my ₹99 safety consultancy",
+    personalSubmit: "Book my safety consultancy",
     personalSuccessTitle: "Thank you for contacting EMA Fight Back",
     personalSuccessBody:
       "Your enquiry has been received. The next step is a personal 1-to-1 consultancy. We will contact you to schedule it and recommend the most suitable online, offline, workshop, family, or community program.",

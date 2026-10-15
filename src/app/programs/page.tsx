@@ -83,7 +83,7 @@ export default function ProgramsIndexPage() {
           ))}
         </div>
       </Section>
-      <Section dark title={<T k="programsPage.calendar" />}>
+      {/* <Section dark title={<T k="programsPage.calendar" />}>
         <ul className="grid gap-4 lg:grid-cols-2">
           {events.map((event) => (
             <li key={event.titleKey} className="border border-white/10 p-6">
@@ -99,7 +99,7 @@ export default function ProgramsIndexPage() {
             </li>
           ))}
         </ul>
-      </Section>
+      </Section> */}
     </>
   );
 }

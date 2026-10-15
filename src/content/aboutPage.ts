@@ -32,7 +32,7 @@ export const aboutPage = {
   ],
   unique: [
     "50+ years of experience",
-    "Globally aligned People Safety framework",
+    // "Globally aligned People Safety framework",
     "Training for all age groups",
     "Specialized programs for schools, families, corporates, and special needs",
     "Realistic role-plays and practice",
@@ -96,7 +96,7 @@ export const aboutPage = {
     ],
     journeyTitle: "The Journey of a Grandmaster: From Weakness to Strength",
     journey: [
-      "My name is B.S. Handa. Looking at me today, most people see a 4-time National Champion and a 6th Dan Black Belt. But my story started very differently.",
+      "My name is B.S. Handa. Looking at me today, most people see a 3-time National Champion and a 6th Dan Black Belt. But my story started very differently.",
       "As a young boy, I was not strong. In fact, I was very weak. I suffered from severe asthma and spent nearly 8 to 9 months of every year on a hospital bed, surviving on penicillin injections. I was the child others made fun of. I felt small, scared, and powerless.",
       "But I chose not to stay that way.",
     ],

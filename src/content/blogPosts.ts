@@ -703,22 +703,6 @@ export const blogPosts: BlogPost[] = [
     "image": "/assets/blog/pamphlet-3-scaled.jpg"
   },
   {
-    "slug": "10-days-of-health-marathon-9-seats-left",
-    "title": "10 Days of Health Marathon – 9 Seats Left !!!",
-    "date": "2024-08-04",
-    "excerpt": "**Join the Team for a Health Marathon! ????** 9 spots left. Enroll now for the 10 Days Health Marathon. Limited seats available. First come, first served! ????‍♂️???? #FitnessMarathon #HealthChallenge",
-    "blocks": [
-      {
-        "type": "p",
-        "text": "**Join the Team for a Health Marathon! ????** 9 spots left. Enroll now for the 10 Days Health Marathon. Limited seats available. First come, first served! ????‍♂️???? #FitnessMarathon #HealthChallenge"
-      },
-      {
-        "type": "video",
-        "src": "/assets/blog/10-Days-of-Marathon-2024-07-30-06-14-36copy-highlight.mp4"
-      }
-    ]
-  },
-  {
     "slug": "introduction-of-long-stick-basic-actions-to-our-martial-arts-students-at-strawberry-school-sec-26-chandigarh",
     "title": "Introduction of Long Stick Basic Actions to our Martial Arts students at Strawberry School, Sec 26, Chandigarh",
     "date": "2023-11-03",
@@ -902,11 +886,11 @@ export const blogPosts: BlogPost[] = [
     "slug": "fighting-sparring-week-11th-nov-to-22-nov-2019",
     "title": "Fighting (Sparring) Week At EMA Sec 15, CHD",
     "date": "2019-11-12",
-    "excerpt": "Join us for the feel of Kicks and learn the latest techniques used for sparring (fighting) in Taekwondo. Master B S Handa (International Asian Player) with 47 years of experience will train you along with his team and help you learn the basic to advance levels. Call now at 9216444949, 7888721512 7380009222 for joining.",
+    "excerpt": "Join us for the feel of Kicks and learn the latest techniques used for sparring (fighting) in Taekwondo. Master B S Handa (International Asian Player) with 47 years of experience will train you along with his team and help you learn the basic to advance levels. Call now at 9216444949, 7888721512 for joining.",
     "blocks": [
       {
         "type": "p",
-        "text": "Join us for the feel of Kicks and learn the latest techniques used for sparring (fighting) in Taekwondo. Master B S Handa (International Asian Player) with 47 years of experience will train you along with his team and help you learn the basic to advance levels. Call now at 9216444949, 7888721512 7380009222 for joining."
+        "text": "Join us for the feel of Kicks and learn the latest techniques used for sparring (fighting) in Taekwondo. Master B S Handa (International Asian Player) with 47 years of experience will train you along with his team and help you learn the basic to advance levels. Call now at 9216444949, 7888721512 for joining."
       }
     ]
   },
