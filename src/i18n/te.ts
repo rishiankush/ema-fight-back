@@ -181,7 +181,7 @@ export const te: typeof en = {
     cardSchoolsSummary: "విద్యార్థులు, సిబ్బంది, క్యాంపస్ మొత్తం బృందానికి నిర్మాణాత్మక పీపుల్ సేఫ్టీ.",
     differentTitle: "EMA Fight Back అంటే ఏమిటి?",
     differentSubtitle: "నిజ జీవిత నైపుణ్యాలు",
-    differentItem1: "53 సంవత్సరాల అనుభవం",
+    differentItem1: "50+ సంవత్సరాల అనుభవం",
     differentItem2: "1,00,000 — దేశవ్యాప్త శిక్షణ",
     differentItem3: "ప్రతి వయసుకు",
     differentItem4: "భయం లేని ఆత్మవిశ్వాసం",

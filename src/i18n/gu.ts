@@ -181,7 +181,7 @@ export const gu: typeof en = {
     cardSchoolsSummary: "વિદ્યાર્થીઓ, સ્ટાફ અને કેમ્પસની આખી ટીમ માટે સંરચિત પીપલ સેફ્ટી.",
     differentTitle: "EMA Fight Back શું છે?",
     differentSubtitle: "વાસ્તવિક કૌશલ્યો",
-    differentItem1: "53 વર્ષોનો અનુભવ",
+    differentItem1: "50+ વર્ષોનો અનુભવ",
     differentItem2: "1,00,000 — દેશભરમાં તાલીમ",
     differentItem3: "દરેક ઉંમર માટે",
     differentItem4: "ભય વગર આત્મવિશ્વાસ",

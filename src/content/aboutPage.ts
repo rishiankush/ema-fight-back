@@ -100,9 +100,9 @@ export const aboutPage = {
       "As a young boy, I was not strong. In fact, I was very weak. I suffered from severe asthma and spent nearly 8 to 9 months of every year on a hospital bed, surviving on penicillin injections. I was the child others made fun of. I felt small, scared, and powerless.",
       "But I chose not to stay that way.",
     ],
-    learningTitle: "53 Years of Learning",
+    learningTitle: "50+ Years of Learning",
     learning: [
-      "I started my journey into Martial Arts to save my own life. Over the last 53 years, I have mastered Taekwondo, Karate, Aikido, Judo, and more. I didn’t just learn how to hit; I learned how to heal my body and sharpen my mind.",
+      "I started my journey into Martial Arts to save my own life. Over the last 50+ years, I have mastered Taekwondo, Karate, Aikido, Judo, and more. I didn’t just learn how to hit; I learned how to heal my body and sharpen my mind.",
       "I realized that Self Defense is not about how hard you can punch. It is about the “Instinct” to stay safe and the “Confidence” to stand tall.",
     ],
     missionTitle: "The Mission: Project 1 Lakh",
@@ -113,7 +113,7 @@ export const aboutPage = {
     close: "I was a weak child who found my power. Now, I am here to help you find yours.",
     qualificationsTitle: "Summary of Qualifications",
     qualifications: [
-      "52 Years experience in Martial Arts (Learned Taekwondo, Karate, Aikido, Judo, Jujitsu, Jukado, and Martial Arts Weapons)",
+      "50+ Years experience in Martial Arts (Learned Taekwondo, Karate, Aikido, Judo, Jujitsu, Jukado, and Martial Arts Weapons)",
       "Trained more than 1 Lakh students in India since 1984 resulted in 156 medals (87 Gold, 39 Silver & 30 Bronze) in 62 Championships and generally standing at 1st three positions in team championships.",
       "3 students represented India in the Asian/World Championship (1990, 1997, 1998)",
       "Ongoing research & analysis on Taekwondo Course (Planning, system design, system evaluation, system analysis). Significantly increased efficiency by computerizing their different tests and analyzing them for choosing the right talents out.",

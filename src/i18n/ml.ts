@@ -181,7 +181,7 @@ export const ml: typeof en = {
     cardSchoolsSummary: "വിദ്യാർഥികൾ, സ്റ്റാഫ്, ക്യാമ്പസിലെ മുഴുവൻ ടീമിനും ഘടനാപരമായ പീപ്പിൾ സേഫ്റ്റി.",
     differentTitle: "EMA Fight Back എന്താണ്?",
     differentSubtitle: "യഥാർത്ഥ ജീവിത കഴിവുകൾ",
-    differentItem1: "53 വർഷങ്ങളുടെ പരിചയം",
+    differentItem1: "50+ വർഷങ്ങളുടെ പരിചയം",
     differentItem2: "1,00,000 — രാജ്യമെമ്പാടും പരിശീലനം",
     differentItem3: "ഓരോ പ്രായത്തിനും",
     differentItem4: "ഭയമില്ലാത്ത ആത്മവിശ്വാസം",

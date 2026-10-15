@@ -183,7 +183,7 @@ export const en = {
       "Workshops for students, teachers, staff, and teams — from self-defence to conflict resolution and emergency safety.",
     differentTitle: "What Makes Us Different",
     differentSubtitle: "Our Method Works",
-    differentItem1: "More than 53 years of experience",
+    differentItem1: "50+ years of experience",
     differentItem2: "Over 100,000 students trained",
     differentItem3: "Age-specific techniques",
     differentItem4: "Trauma-informed teaching",

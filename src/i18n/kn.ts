@@ -181,7 +181,7 @@ export const kn: typeof en = {
     cardSchoolsSummary: "ವಿದ್ಯಾರ್ಥಿಗಳು, ಸಿಬ್ಬಂದಿ ಮತ್ತು ಕ್ಯಾಂಪಸ್‌ನ ಸಂಪೂರ್ಣ ತಂಡಕ್ಕೆ ರಚನಾತ್ಮಕ ಪೀಪಲ್ ಸೇಫ್ಟಿ.",
     differentTitle: "EMA Fight Back ಎಂದರೇನು?",
     differentSubtitle: "ನಿಜ ಜೀವನ ಕೌಶಲ್ಯಗಳು",
-    differentItem1: "53 ವರ್ಷಗಳ ಅನುಭವ",
+    differentItem1: "50+ ವರ್ಷಗಳ ಅನುಭವ",
     differentItem2: "1,00,000 — ದೇಶಾದ್ಯಂತ ತರಬೇತಿ",
     differentItem3: "ಪ್ರತಿ ವಯಸ್ಸಿಗೆ",
     differentItem4: "ಭಯವಿಲ್ಲದ ಆತ್ಮವಿಶ್ವಾಸ",

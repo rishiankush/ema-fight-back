@@ -43,7 +43,7 @@ export const blogPosts: BlogPost[] = [
     "slug": "a-triple-victory-for-safety-project-1-lakh-expands-to-cgc-quest-group",
     "title": "A Triple Victory for Safety! Project 1 Lakh Expands to CGC & Quest Group",
     "date": "2026-03-11",
-    "excerpt": "By: The Editorial Team, EMA Fitness Date: March 10, 2026 The mission to empower India has just shifted into high gear. Under the visionary leadership of Grandmaster B.S. Handa (9th Dan Black Belt, 53 Years Experience), the Project 1 Lakh Mission has officially secured three massive partnerships in a single week. We are proud to",
+    "excerpt": "By: The Editorial Team, EMA Fitness Date: March 10, 2026 The mission to empower India has just shifted into high gear. Under the visionary leadership of Grandmaster B.S. Handa (9th Dan Black Belt, 50+ Years Experience), the Project 1 Lakh Mission has officially secured three massive partnerships in a single week. We are proud to",
     "blocks": [
       {
         "type": "img",
@@ -60,7 +60,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "p",
-        "text": "Under the visionary leadership of Grandmaster B.S. Handa (9th Dan Black Belt, 53 Years Experience), the Project 1 Lakh Mission has officially secured three massive partnerships in a single week. We are proud to announce that CGC Landran, CGC Mohali, and Quest Group of Institutions have all joined forces with us to make their campuses “Fearless.”"
+        "text": "Under the visionary leadership of Grandmaster B.S. Handa (9th Dan Black Belt, 50+ Years Experience), the Project 1 Lakh Mission has officially secured three massive partnerships in a single week. We are proud to announce that CGC Landran, CGC Mohali, and Quest Group of Institutions have all joined forces with us to make their campuses “Fearless.”"
       },
       {
         "type": "h2",
@@ -96,7 +96,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "p",
-        "text": "It’s not just about “learning to fight.” Grandmaster B.S. Handa’s curriculum is built on 53 years of mastery, focusing on:"
+        "text": "It’s not just about “learning to fight.” Grandmaster B.S. Handa’s curriculum is built on 50+ years of mastery, focusing on:"
       },
       {
         "type": "p",
@@ -165,7 +165,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "h2",
-        "text": "1. 53 Years of ‘Safety Intelligence’"
+        "text": "1. 50+ Years of ‘Safety Intelligence’"
       },
       {
         "type": "p",
@@ -265,7 +265,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "p",
-        "text": "Bridging the Gap Between Education and Security Following the visionary guidance of Brig. Brar Sir and the support of Prachy Mam, I brought 53 years of martial arts wisdom to the CU campus. The goal was simple yet profound: Safety is being ignored because of a ‘lack of time’—and that is exactly where the danger lies."
+        "text": "Bridging the Gap Between Education and Security Following the visionary guidance of Brig. Brar Sir and the support of Prachy Mam, I brought 50+ years of martial arts wisdom to the CU campus. The goal was simple yet profound: Safety is being ignored because of a ‘lack of time’—and that is exactly where the danger lies."
       },
       {
         "type": "p",
@@ -336,7 +336,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "p",
-        "text": "The Event: Project 1 Lakh Hits GGDSD The energy was electric as students gathered to move beyond textbooks and into the world of Safety Intelligence. I was honored to lead this seminar, sharing the culmination of my 53 years of martial arts experience with the next generation of leaders."
+        "text": "The Event: Project 1 Lakh Hits GGDSD The energy was electric as students gathered to move beyond textbooks and into the world of Safety Intelligence. I was honored to lead this seminar, sharing the culmination of my 50+ years of martial arts experience with the next generation of leaders."
       },
       {
         "type": "p",
@@ -373,7 +373,7 @@ export const blogPosts: BlogPost[] = [
     "slug": "why-most-self-defense-classes-fail-and-how-project-1-lakh-is-different",
     "title": "Why Most Self Defense Classes Fail (And How Project 1 Lakh is Different)",
     "date": "2026-01-22",
-    "excerpt": "Have you ever watched a self defense video, thought it was great, but then forgot the move just ten minutes later? You are not alone. In my 53 years of martial arts, I have seen thousands of people go “blank” when a real awkward situation arises. They forget the “steps” because fear takes over. The",
+    "excerpt": "Have you ever watched a self defense video, thought it was great, but then forgot the move just ten minutes later? You are not alone. In my 50+ years of martial arts, I have seen thousands of people go “blank” when a real awkward situation arises. They forget the “steps” because fear takes over. The",
     "blocks": [
       {
         "type": "img",
@@ -386,7 +386,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         "type": "p",
-        "text": "You are not alone. In my 53 years of martial arts, I have seen thousands of people go “blank” when a real awkward situation arises. They forget the “steps” because fear takes over."
+        "text": "You are not alone. In my 50+ years of martial arts, I have seen thousands of people go “blank” when a real awkward situation arises. They forget the “steps” because fear takes over."
       },
       {
         "type": "p",

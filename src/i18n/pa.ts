@@ -182,7 +182,7 @@ export const pa: typeof en = {
     cardSchoolsSummary: "ਵਿਦਿਆਰਥੀਆਂ, ਸਟਾਫ ਅਤੇ ਪਰਿਸਰ ਦੀ ਪੂਰੀ ਟੀਮ ਲਈ ਢਾਂਚਾਬੱਧ ਲੋਕ ਸੁਰੱਖਿਆ।",
     differentTitle: "EMA Fight Back ਕੀ ਹੈ?",
     differentSubtitle: "ਅਸਲ ਜੀਵਨ ਦੇ ਹੁਨਰ",
-    differentItem1: "53 ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ",
+    differentItem1: "50+ ਸਾਲਾਂ ਦਾ ਤਜਰਬਾ",
     differentItem2: "1,00,000 — ਪੂਰੇ ਦੇਸ਼ ਵਿੱਚ ਸਿਖਲਾਈ",
     differentItem3: "ਹਰ ਉਮਰ ਲਈ",
     differentItem4: "ਡਰ ਤੋਂ ਬਿਨਾਂ ਆਤਮ-ਵਿਸ਼ਵਾਸ",
