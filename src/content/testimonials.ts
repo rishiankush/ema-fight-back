@@ -46,7 +46,7 @@ export const testimonialGroups: { title: string; items: Testimonial[] }[] = [
         group: "schools",
         headline: "Bullying incidents reduced dramatically.",
         quote:
-          "After the Junior and Teenpower sessions, students became more aware and respectful. The difference is visible every day.",
+          "After the Junior and Teen Safety sessions, students became more aware and respectful. The difference is visible every day.",
         name: "School Counselor",
       },
       {
@@ -88,7 +88,7 @@ export const testimonialGroups: { title: string; items: Testimonial[] }[] = [
       {
         group: "teens",
         headline: "I feel stronger and more confident.",
-        quote: "The Teenpower workshop helped me handle peer pressure and speak up.",
+        quote: "The teen safety workshop helped me handle peer pressure and speak up.",
         name: "Teen girl, Chandigarh",
       },
     ],

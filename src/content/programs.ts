@@ -63,7 +63,7 @@ export const programs: Program[] = [
     audience: "Ages 13–18",
     summary: "Strong Minds. Strong Boundaries. Strong Safety.",
     format:
-      "1-Day Intensive Teenpower Workshop, 3-Day Series, 6–8 week course, school workshops, or online / in-person modules.",
+      "1-Day Intensive Teen Safety Workshop, 3-Day Teen Safety Series, 6–8 week course, school workshops, or online / in-person modules.",
     duration: "60–75 minutes · group size 15–40",
     who: "Young people aged 13–18 years, schools, coaching centres, and youth groups.",
     learn: [
@@ -91,7 +91,7 @@ export const programs: Program[] = [
     audience: "18+",
     summary: "Practical, Real-World Safety Skills for Everyday Life",
     format:
-      "1-Day Fullpower Intensive, 3-Day Safety Series, 6–8 week course, workplace workshops, or family sessions.",
+      "1-Day Self-Defense Intensive, 3-Day Safety Series, 6–8 week course, workplace workshops, or family sessions.",
     duration: "60–90 minutes per session · group size 10–40",
     who: "Men, women, parents, seniors, professionals, and young adults.",
     learn: [
@@ -99,7 +99,7 @@ export const programs: Program[] = [
       "Boundary setting and de-escalation",
       "Conflict resolution and calm communication",
       "Home, workplace, and travel safety planning",
-      "Emergency-only Fullpower self-defense",
+      "Emergency-only physical self-defense",
     ],
     outcomes: [
       "Feel more confident and prepared",
@@ -123,7 +123,7 @@ export const programs: Program[] = [
       "Situational awareness and spotting danger early",
       "Boundaries, assertiveness, and verbal self-defense",
       "Emotional strength and overcoming freeze response",
-      "Emergency-only Fullpower physical self-defense",
+      "Emergency-only physical self-defense",
       "Travel and daily-life safety habits",
     ],
     outcomes: [
@@ -210,7 +210,7 @@ export const programs: Program[] = [
       "Age-specific curriculum: kids through seniors and special groups",
       "Class flow, inclusion, and managing anxious or disruptive participants",
       "Ethics, professional boundaries, trauma-aware communication",
-      "Instructor-level Fullpower skills and scenario teaching",
+      "Instructor-level physical self-defense skills and scenario teaching",
     ],
     outcomes: [
       "You are screened before you train — the credential stays meaningful",

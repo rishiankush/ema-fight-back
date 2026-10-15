@@ -95,7 +95,7 @@ export const about = {
   vision:
     "A culture where safety is taught as a life skill — as ordinary, and as essential, as first aid.",
   mission:
-    "To deliver clear, age-appropriate People Safety, bullying prevention, emotional safety, and Fullpower self-defense training that people can actually use.",
+    "To deliver clear, age-appropriate People Safety, bullying prevention, emotional safety, and practical self-defense training that people can actually use.",
   values: [
     { title: "Clarity", body: "Simple language. Practical examples. No intimidation." },
     { title: "Respect", body: "Trauma-aware teaching. Professional boundaries. Inclusive groups." },
@@ -132,7 +132,7 @@ export const resources = [
   {
     title: "Women’s safety is not only physical",
     category: "Women",
-    body: "Workshops cover travel, workplace, digital boundaries, and home safety — then add simple Fullpower skills for when words are not enough.",
+    body: "Workshops cover travel, workplace, digital boundaries, and home safety — then add simple physical self-defense skills for when words are not enough.",
   },
   {
     title: "Campus programs need every role",

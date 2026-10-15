@@ -483,7 +483,7 @@ export const programPages: ProgramPageContent[] = [
         title: "Teaching Method",
         groups: [
           {
-            title: "Our Teenpower method is:",
+            title: "Our teaching approach is:",
             items: [
               "Realistic",
               "Respectful",
@@ -510,8 +510,8 @@ export const programPages: ProgramPageContent[] = [
       title: "Program Format",
       intro: "Choose from:",
       options: [
-        "1-Day Intensive Teenpower Workshop",
-        "3-Day Teenpower Series",
+        "1-Day Intensive Teen Safety Workshop",
+        "3-Day Teen Safety Series",
         "6–8 Week Course (Weekly Classes)",
         "School Safety Workshops",
         "Online or In-Person Modules",
@@ -556,7 +556,7 @@ export const programPages: ProgramPageContent[] = [
     ],
     book: {
       title: "Book the Teens Safety Program",
-      intro: "Bring Teenpower training to your:",
+      intro: "Bring teen safety training to your:",
       venues: ["School", "Coaching centre", "Community", "Society", "Youth group", "Family"],
     },
   },
@@ -565,7 +565,7 @@ export const programPages: ProgramPageContent[] = [
     title: "Adults Program",
     tagline: "Practical, Real-World Safety Skills for Everyday Life",
     overview: [
-      "The EMA Fight Back Adults Program empowers individuals with the practical People Safety and Fullpower Self-Defense skills needed to stay safe at home, at work, while travelling, and in public places.",
+      "The EMA Fight Back Adults Program empowers individuals with the practical People Safety and physical self-defense skills needed to stay safe at home, at work, while travelling, and in public places.",
       "This program is designed for men, women, parents, seniors, professionals, and young adults who want to feel more confident, aware, and prepared — without fear, panic, or aggression.",
       "The focus is on prevention first, followed by simple, effective self-defense skills only for real emergencies.",
     ],
@@ -626,7 +626,7 @@ export const programPages: ProgramPageContent[] = [
           ],
         },
         {
-          title: "5. Fullpower Self-Defense (Emergency Skills)",
+          title: "5. Physical Self-Defense (Emergency Skills)",
           intro: "Simple, effective techniques:",
           items: [
             "Releases from grabs or holds",
@@ -671,7 +671,7 @@ export const programPages: ProgramPageContent[] = [
         title: "Teaching Approach",
         groups: [
           {
-            title: "Our Fullpower method is:",
+            title: "Our practical method is:",
             items: [
               "Respectful",
               "Realistic",
@@ -699,7 +699,7 @@ export const programPages: ProgramPageContent[] = [
       title: "Program Format",
       intro: "We offer:",
       options: [
-        "1-Day Fullpower Intensive",
+        "1-Day Self-Defense Intensive",
         "3-Day Safety Series",
         "6–8 Week Course (Weekly Sessions)",
         "Workplace Safety Workshops",
@@ -746,7 +746,7 @@ export const programPages: ProgramPageContent[] = [
     ],
     book: {
       title: "Book the Adults Safety Program",
-      intro: "Bring Fullpower to your:",
+      intro: "Bring self-defense training to your:",
       venues: ["Workplace", "School staff", "Society", "Corporate team", "Group or club", "Family"],
     },
   },
@@ -814,7 +814,7 @@ export const programPages: ProgramPageContent[] = [
           ],
         },
         {
-          title: "5. Fullpower Physical Self-Defense (Emergency Only)",
+          title: "5. Physical Self-Defense (Emergency Only)",
           intro: "Simple, powerful techniques:",
           items: [
             "Wrist, arm, and clothing release",
@@ -1508,7 +1508,7 @@ export const programPages: ProgramPageContent[] = [
         title: "Programs for Students (Age-Wise Modules)",
         groups: [
           {
-            title: "1. Kidpower (3–8 Years)",
+            title: "1. Kid Force (3–8 Years)",
             items: [
               "Focus: Awareness, boundaries, body safety, speaking up.",
               "Teaching through stories, games, and parent involvement.",
@@ -1521,7 +1521,7 @@ export const programPages: ProgramPageContent[] = [
             ],
           },
           {
-            title: "3. Teenpower (13–18 Years)",
+            title: "3. Teen Safety (13–18 Years)",
             items: [
               "Focus: Harassment prevention, conflict resolution, travel safety, emotional regulation, social media safety, and defensive strategies.",
             ],
@@ -1722,7 +1722,7 @@ export const programPages: ProgramPageContent[] = [
           ],
         },
         {
-          title: "5. Emergency Physical Self-Defense (Fullpower)",
+          title: "5. Emergency Physical Self-Defense",
           intro: "Simple, effective responses:",
           items: [
             "Escape from wrist, arm & clothing grabs",
@@ -1880,7 +1880,7 @@ export const programPages: ProgramPageContent[] = [
     title: "Instructor Training Program",
     tagline: "Become a Certified EMA Fight Back People Safety & Self-Defense Instructor",
     overview: [
-      "The EMA Fight Back Instructor Training Program prepares motivated individuals to teach People Safety, Bullying Prevention, Emotional Safety, and Fullpower Self-Defense skills to children, teens, adults, seniors, and special groups.",
+      "The EMA Fight Back Instructor Training Program prepares motivated individuals to teach People Safety, Bullying Prevention, Emotional Safety, and physical self-defense skills to children, teens, adults, seniors, and special groups.",
       "You will learn how to teach clear, effective, age-appropriate skills using EMA’s proven safety system developed since 1984.",
     ],
     why: {
@@ -1889,7 +1889,7 @@ export const programPages: ProgramPageContent[] = [
       items: [
         "Bullying prevention programs",
         "Child safety education",
-        "Teenpower & emotional safety sessions",
+        "Teen safety and emotional well-being sessions",
         "Women’s safety workshops",
         "Senior citizen safety",
         "Corporate safety training",
@@ -1942,7 +1942,7 @@ export const programPages: ProgramPageContent[] = [
           ],
         },
         {
-          title: "5. Emergency Physical Skills (Fullpower)",
+          title: "5. Emergency Physical Skills",
           intro: "You will learn:",
           items: [
             "Safe defensive techniques",
@@ -2042,7 +2042,7 @@ export const programPages: ProgramPageContent[] = [
           },
           {
             title: "4. Padded Instructor (Advanced)",
-            items: ["Specialized in Fullpower padded suit work for realistic sessions."],
+            items: ["Specialized in protective padded-suit training for realistic sessions."],
           },
           {
             title: "5. Master Trainer",

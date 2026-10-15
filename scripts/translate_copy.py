@@ -37,8 +37,6 @@ PROTECTED = [
     "EMA Fight Back",
     "Extreme Martial Arts",
     "People Safety",
-    "Teenpower",
-    "Fullpower",
     "WhatsApp",
     "Chandigarh",
     "Master B. S. Handa",
