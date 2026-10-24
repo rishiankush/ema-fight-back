@@ -7,6 +7,7 @@ import { CtaBanner } from "@/components/ui/CtaBanner";
 import { FaqList } from "@/components/ui/FaqList";
 import { Section } from "@/components/ui/Section";
 import { getProgramMediaPosts } from "@/content/programMedia";
+import { relatedPrograms } from "@/content/seo";
 import { T } from "@/i18n/LanguageProvider";
 import { useCopy } from "@/i18n/copy";
 
@@ -149,6 +150,20 @@ export function ProgramDetail({ slug }: { slug: string }) {
           </Link>
         </p>
       </Section>
+
+      {relatedPrograms[slug] ? (
+        <Section title="Related pages">
+          <ul className="flex flex-wrap gap-3">
+            {relatedPrograms[slug].map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-sm font-semibold text-red underline underline-offset-4">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
 
       <CtaBanner
         titleKey="home.ctaTitle"

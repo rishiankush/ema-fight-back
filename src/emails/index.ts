@@ -1,4 +1,5 @@
 import type { EnquiryKind } from "@/lib/enquiries";
+import { centreEmail } from "./centre";
 import { contactEmail } from "./contact";
 import { instructorEmail } from "./instructor";
 import { organisationEmail } from "./organisation";
@@ -9,5 +10,6 @@ export function enquiryEmail(kind: EnquiryKind | string, payload: Record<string,
   if (kind === "personal") return personalEmail(payload);
   if (kind === "organisation") return organisationEmail(payload);
   if (kind === "instructor") return instructorEmail(payload);
+  if (kind === "centre") return centreEmail(payload);
   return personalEmail({ ...payload, lookingFor: payload.lookingFor || "Workshop" });
 }

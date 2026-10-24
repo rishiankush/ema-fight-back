@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/seo";
 import { BlogView } from "./BlogView";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "News, seminars and safety updates from EMA Fight Back.",
-};
+export const metadata: Metadata = pageMetadata("blog");
 
 export default function BlogPage() {
   return <BlogView />;

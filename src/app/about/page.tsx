@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { aboutPage } from "@/content/aboutPage";
+import { pageMetadata } from "@/content/seo";
 import { AboutView } from "./AboutView";
 
-export const metadata: Metadata = {
-  title: "About EMA Fight Back",
-  description: aboutPage.intro[0],
-};
+export const metadata: Metadata = pageMetadata("about");
 
 export default function AboutPage() {
   return <AboutView />;

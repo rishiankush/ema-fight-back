@@ -9,7 +9,7 @@ export function HomeHero() {
     <header className="relative overflow-hidden text-white">
       <Image
         src="/assets/hero/family-safety.png"
-        alt=""
+        alt="Family safety training with EMA Fight Back"
         fill
         priority
         className="object-cover object-[82%_center]"

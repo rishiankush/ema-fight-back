@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/seo";
 import { BookView } from "./BookView";
 
-export const metadata: Metadata = {
-  title: "Book a Workshop",
-  description:
-    "Short consultancy forms for individuals, institutions, and instructor training. Capture the lead, then have the conversation.",
-};
+export const metadata: Metadata = pageMetadata("book");
 
 export default function BookPage() {
   return <BookView />;

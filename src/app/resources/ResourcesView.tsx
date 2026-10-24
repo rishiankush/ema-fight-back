@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { BulletList } from "@/components/ui/BulletList";
 import { CtaBanner } from "@/components/ui/CtaBanner";
 import { PageHero } from "@/components/ui/PageHero";
@@ -43,6 +44,31 @@ export function ResourcesView() {
             </>
           ))}
         />
+      </Section>
+
+      <Section title="Related programs">
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold">
+          <li>
+            <Link className="text-red underline underline-offset-4" href="/programs/kids">
+              Child safety
+            </Link>
+          </li>
+          <li>
+            <Link className="text-red underline underline-offset-4" href="/programs/women">
+              Women’s safety
+            </Link>
+          </li>
+          <li>
+            <Link className="text-red underline underline-offset-4" href="/programs/schools">
+              School & college workshops
+            </Link>
+          </li>
+          <li>
+            <Link className="text-red underline underline-offset-4" href="/training-centres">
+              Training centres
+            </Link>
+          </li>
+        </ul>
       </Section>
 
       <Section title={resources.questionTitle} intro={resources.questionIntro}>

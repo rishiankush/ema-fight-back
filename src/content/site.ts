@@ -25,6 +25,8 @@ export const nav = {
   primary: [
     { href: "/", labelKey: "nav.home" },
     { href: "/about", labelKey: "nav.about" },
+    { href: "/master-bs-handa", labelKey: "nav.founder" },
+    { href: "/training-centres", labelKey: "nav.classes" },
     {
       href: "/programs",
       labelKey: "nav.programs",
@@ -178,6 +180,8 @@ export const sitemapGroups = [
     links: [
       { href: "/", labelKey: "sitemap.home", detailKey: "sitemap.homeDetail" },
       { href: "/about", labelKey: "sitemap.about", detailKey: "sitemap.aboutDetail" },
+      { href: "/master-bs-handa", labelKey: "sitemap.founder", detailKey: "sitemap.founderDetail" },
+      { href: "/training-centres", labelKey: "sitemap.classes", detailKey: "sitemap.classesDetail" },
       { href: "/testimonials", labelKey: "sitemap.testimonials", detailKey: "sitemap.testimonialsDetail" },
       { href: "/faqs", labelKey: "sitemap.faqs", detailKey: "sitemap.faqsDetail" },
       { href: "/contact", labelKey: "sitemap.contact", detailKey: "sitemap.contactDetail" },

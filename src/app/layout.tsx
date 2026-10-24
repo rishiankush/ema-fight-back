@@ -18,6 +18,10 @@ import { ChatWidget } from "@/components/chat/ChatWidget";
 import { LanguageProvider, T } from "@/i18n/LanguageProvider";
 import { defaultLocale, locales, type Locale } from "@/i18n/config";
 import { site } from "@/content/site";
+import { pageMetadata, seoPages } from "@/content/seo";
+import { organizationJsonLd } from "@/lib/jsonLd";
+import { getSiteUrl } from "@/lib/siteUrl";
+import { Analytics } from "@/components/analytics/Analytics";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -91,40 +95,21 @@ const malayalam = Noto_Sans_Malayalam({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://emafightback.example"),
+  metadataBase: new URL(getSiteUrl()),
+  ...pageMetadata("home"),
   title: {
-    default: `${site.name} | ${site.tagline}`,
+    default: seoPages.home.title,
     template: `%s | ${site.name}`,
   },
-  description: site.description,
-  keywords: [
-    "self defense training India",
-    "kids safety workshop Chandigarh",
-    "women’s self-defense",
-    "people safety",
-    "EMA Fight Back",
-  ],
+  applicationName: site.name,
+  authors: [{ name: site.founder.name }],
+  creator: site.name,
   openGraph: {
-    title: `${site.name} | ${site.tagline}`,
-    description: site.description,
+    ...pageMetadata("home").openGraph,
+    siteName: site.name,
     locale: "en_IN",
     type: "website",
   },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
-  name: site.name,
-  description: site.description,
-  telephone: `+91${site.phone}`,
-  email: site.email,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Chandigarh",
-    addressCountry: "IN",
-  },
-  foundingDate: String(site.founded),
 };
 
 function readLocale(value: string | undefined): Locale {
@@ -149,8 +134,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
         />
+        <Analytics />
         <LanguageProvider initialLocale={initialLocale}>
           <a className="skip-link" href="#main">
             <T k="skip" />

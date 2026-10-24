@@ -9,6 +9,7 @@ import { Section } from "@/components/ui/Section";
 import { programImages } from "@/content/media";
 import { getProgram, programListingKeys, programs } from "@/content/programs";
 import { getProgramPage } from "@/content/programPages";
+import { pageMetadata, programSeo, seoPages } from "@/content/seo";
 import { T } from "@/i18n/LanguageProvider";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -21,10 +22,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const program = getProgram(slug);
   if (!program) return {};
+  const seoKey = programSeo[slug];
+  if (seoKey) return pageMetadata(seoKey);
   const page = getProgramPage(slug);
   return {
     title: page?.title ?? program.title,
     description: page?.tagline ?? program.summary,
+    alternates: { canonical: `/programs/${slug}` },
   };
 }
 
@@ -34,6 +38,7 @@ export default async function ProgramPage({ params }: Props) {
   if (!program) notFound();
   const page = getProgramPage(slug);
   const keys = programListingKeys[slug];
+  const seoKey = programSeo[slug];
 
   return (
     <>
@@ -44,6 +49,7 @@ export default async function ProgramPage({ params }: Props) {
         primary={{ href: "/book", label: <T k="program.bookConsultancy" /> }}
         secondary={{ href: "/programs", label: <T k="program.allPrograms" /> }}
         image={programImages[slug] ?? "/assets/hero/combat-bg.jpg"}
+        imageAlt={seoKey ? seoPages[seoKey].imageAlt : undefined}
       />
       {page ? <ProgramDetail slug={slug} /> : <SimpleProgramBody program={program} slug={slug} />}
     </>

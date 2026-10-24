@@ -6,6 +6,7 @@ import { chatPaths, type ChatField, type ChatPathId } from "@/content/chat";
 import { useT } from "@/i18n/LanguageProvider";
 import { OPEN_CHAT_EVENT } from "@/lib/chat";
 import { phoneHref, site, whatsappHref } from "@/content/site";
+import { trackEvent, trackLink } from "@/lib/analytics";
 
 type ChatMessage = { id: number; from: "bot" | "user"; text: string };
 
@@ -124,6 +125,7 @@ export function SafetyChatbot({ initiallyOpen = false }: { initiallyOpen?: boole
       return;
     }
     setStatus("done");
+    trackEvent("generate_lead", { form_kind: path.kind, source: "chatbot" });
     push("bot", t("chat.success"));
   }
 
@@ -265,6 +267,7 @@ export function SafetyChatbot({ initiallyOpen = false }: { initiallyOpen?: boole
       <div className="flex flex-col items-end gap-2">
         <a
           href={phoneHref}
+          onClick={() => trackLink(phoneHref)}
           className="flex h-12 w-12 flex-col items-center justify-center rounded-full bg-red text-[9px] font-extrabold uppercase tracking-wide text-white shadow-lg"
         >
           {t("fab.call")}
@@ -277,6 +280,7 @@ export function SafetyChatbot({ initiallyOpen = false }: { initiallyOpen?: boole
           href={whatsappHref}
           target="_blank"
           rel="noreferrer"
+          onClick={() => trackLink(whatsappHref)}
           className="rounded-sm bg-[#25D366] px-3 py-2 text-xs font-semibold text-ink shadow-lg"
         >
           {t("fab.whatsapp")}

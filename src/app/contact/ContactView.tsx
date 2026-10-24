@@ -4,6 +4,7 @@ import { EnquiryForm, contactFields } from "@/components/forms/EnquiryForm";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { mailHref, phoneHref, site, whatsappHref } from "@/content/site";
+import { trackLink } from "@/lib/analytics";
 import { useCopy } from "@/i18n/copy";
 
 export function ContactView() {
@@ -20,11 +21,11 @@ export function ContactView() {
       <Section>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-4">
-            <a href={phoneHref} className="block border border-line bg-paper p-5 hover:border-orange">
+            <a href={phoneHref} onClick={() => trackLink(phoneHref)} className="block border border-line bg-paper p-5 hover:border-orange">
               <p className="text-xs uppercase tracking-[0.16em] text-orange">{contact.phone}</p>
               <p className="mt-1 font-display text-2xl uppercase">{site.phoneDisplay}</p>
             </a>
-            <a href={whatsappHref} className="block border border-line bg-paper p-5 hover:border-orange">
+            <a href={whatsappHref} onClick={() => trackLink(whatsappHref)} className="block border border-line bg-paper p-5 hover:border-orange">
               <p className="text-xs uppercase tracking-[0.16em] text-orange">{contact.whatsapp}</p>
               <p className="mt-1 font-display text-2xl uppercase">{contact.messageEma}</p>
             </a>

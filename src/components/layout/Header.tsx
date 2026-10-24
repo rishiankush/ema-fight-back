@@ -7,6 +7,7 @@ import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { nav, phoneHref, site } from "@/content/site";
+import { trackLink } from "@/lib/analytics";
 import { useT } from "@/i18n/LanguageProvider";
 
 type Item = (typeof nav.primary)[number];
@@ -37,6 +38,7 @@ export function Header() {
 
         <a
           href={phoneHref}
+          onClick={() => trackLink(phoneHref)}
           className="hidden items-center gap-2 whitespace-nowrap text-sm font-semibold text-ink hover:text-red lg:flex"
         >
           <span className="rounded-sm bg-red px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
@@ -45,7 +47,7 @@ export function Header() {
           <span className="font-extrabold">{site.phoneDisplay}</span>
         </a>
 
-        <nav className="ml-auto hidden items-center gap-0.5 xl:flex" aria-label="Main">
+        <nav className="ml-auto hidden items-center gap-0 xl:flex" aria-label="Main">
           {nav.primary.map((item) => (
             <DesktopItem key={item.href} item={item} pathname={pathname} t={t} />
           ))}
@@ -127,7 +129,7 @@ export function Header() {
             <Button href={nav.cta.href} variant="gold">
               {t(nav.cta.labelKey)}
             </Button>
-            <a href={phoneHref} className="px-3 py-2 text-sm font-semibold text-red">
+            <a href={phoneHref} onClick={() => trackLink(phoneHref)} className="px-3 py-2 text-sm font-semibold text-red">
               {t("nav.callBooking")} {site.phoneDisplay}
             </a>
           </div>
@@ -157,7 +159,7 @@ function DesktopItem({
     return (
       <Link
         href={item.href}
-        className={`px-3 py-2 text-[13px] font-semibold hover:text-red ${isActive(pathname, item.href) ? "text-red" : ""}`}
+        className={`whitespace-nowrap px-2.5 py-2 text-[13px] font-semibold leading-none hover:text-red ${isActive(pathname, item.href) ? "text-red" : ""}`}
       >
         {t(item.labelKey)}
       </Link>
@@ -172,7 +174,7 @@ function DesktopItem({
     >
       <Link
         href={item.href}
-        className={`inline-flex items-center gap-1 px-3 py-2 text-[13px] font-semibold hover:text-red ${isActive(pathname, item.href) ? "text-red" : ""}`}
+        className={`inline-flex items-center gap-1 whitespace-nowrap px-2.5 py-2 text-[13px] font-semibold leading-none hover:text-red ${isActive(pathname, item.href) ? "text-red" : ""}`}
       >
         {t(item.labelKey)}
         <span aria-hidden="true" className="text-[10px]">

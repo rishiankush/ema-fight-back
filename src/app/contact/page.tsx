@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { pageMetadata } from "@/content/seo";
 import { ContactView } from "./ContactView";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: `Call ${site.phoneDisplay}, WhatsApp, or send a short message. EMA Fight Back, Chandigarh.`,
-};
+export const metadata: Metadata = pageMetadata("contact");
 
 export default function ContactPage() {
   return <ContactView />;

@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { createEnquiry } from "@/app/actions/enquiry";
 import type { EnquiryKind } from "@/lib/enquiries";
+import { trackEvent } from "@/lib/analytics";
 import { useCopy } from "@/i18n/copy";
 import { useT } from "@/i18n/LanguageProvider";
 
@@ -14,6 +15,7 @@ type Field = {
   type?: "text" | "email" | "tel" | "textarea" | "select";
   required?: boolean;
   options?: FieldOption[];
+  defaultValue?: string;
 };
 
 type EnquiryFormProps = {
@@ -25,6 +27,8 @@ type EnquiryFormProps = {
   successTitle: string;
   successBody: string;
   fields: Field[];
+  defaults?: Record<string, string>;
+  hidden?: Record<string, string>;
 };
 
 const inputClass =
@@ -39,6 +43,8 @@ export function EnquiryForm({
   successTitle,
   successBody,
   fields,
+  defaults,
+  hidden,
 }: EnquiryFormProps) {
   const { t } = useT();
   const forms = useCopy().forms;
@@ -61,6 +67,7 @@ export function EnquiryForm({
       setError(result.error);
       return;
     }
+    trackEvent("generate_lead", { form_kind: kind });
     setStatus("success");
   }
 
@@ -78,34 +85,54 @@ export function EnquiryForm({
     <form id={id} onSubmit={onSubmit} className="border border-line bg-paper p-6 sm:p-8" noValidate>
       <h3 className="font-display text-2xl uppercase">{title}</h3>
       <p className="mt-2 text-sm leading-6 text-muted">{intro}</p>
+      {hidden
+        ? Object.entries(hidden).map(([name, value]) => (
+            <input key={name} type="hidden" name={name} value={value} />
+          ))
+        : null}
       <div className="mt-6 grid gap-4">
-        {fields.map((field) => (
-          <label key={field.name} className="block text-sm font-medium">
-            {t(field.labelKey)}
-            {field.required ? <span className="text-red"> *</span> : null}
-            {field.type === "textarea" ? (
-              <textarea name={field.name} required={field.required} rows={4} className={inputClass} />
-            ) : field.type === "select" ? (
-              <select name={field.name} required={field.required} defaultValue="" className={inputClass}>
-                <option value="" disabled>
-                  {forms.select}
-                </option>
-                {field.options?.map((option) => (
-                  <option key={option.value} value={option.value}>
-                    {t(option.labelKey)}
+        {fields.map((field) => {
+          const preset = defaults?.[field.name] ?? field.defaultValue;
+          return (
+            <label key={field.name} className="block text-sm font-medium">
+              {t(field.labelKey)}
+              {field.required ? <span className="text-red"> *</span> : null}
+              {field.type === "textarea" ? (
+                <textarea
+                  name={field.name}
+                  required={field.required}
+                  rows={4}
+                  defaultValue={preset}
+                  className={inputClass}
+                />
+              ) : field.type === "select" ? (
+                <select
+                  name={field.name}
+                  required={field.required}
+                  defaultValue={preset ?? ""}
+                  className={inputClass}
+                >
+                  <option value="" disabled>
+                    {forms.select}
                   </option>
-                ))}
-              </select>
-            ) : (
-              <input
-                name={field.name}
-                type={field.type ?? "text"}
-                required={field.required}
-                className={inputClass}
-              />
-            )}
-          </label>
-        ))}
+                  {field.options?.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {t(option.labelKey)}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  name={field.name}
+                  type={field.type ?? "text"}
+                  required={field.required}
+                  defaultValue={preset}
+                  className={inputClass}
+                />
+              )}
+            </label>
+          );
+        })}
       </div>
       {error ? <p className="mt-4 text-sm text-red">{error}</p> : null}
       <button
@@ -314,4 +341,36 @@ export const contactFields: Field[] = [
   { name: "phone", labelKey: "chat.fields.phoneShort", type: "tel", required: true },
   { name: "email", labelKey: "chat.fields.emailShort", type: "email" },
   { name: "message", labelKey: "chat.fields.message", type: "textarea", required: true },
+];
+
+export const centreFields: Field[] = [
+  { name: "name", labelKey: "centres.parentName", required: true },
+  { name: "phone", labelKey: "centres.phone", type: "tel", required: true },
+  { name: "childAge", labelKey: "centres.childAge", required: true },
+  {
+    name: "preferredCentre",
+    labelKey: "centres.preferredCentre",
+    type: "select",
+    required: true,
+    options: [
+      { value: "Strawberry Field High School, Sector 26, Chandigarh", labelKey: "centres.centreStrawberry" },
+      { value: "Legacy Martial Arts, Sector 86, Mohali", labelKey: "centres.centre86" },
+      {
+        value: "Legacy Tiny Warriors Playway & Activity Club, Sector 72, Mohali",
+        labelKey: "centres.centre72",
+      },
+    ],
+  },
+  {
+    name: "preferredBatch",
+    labelKey: "centres.preferredBatch",
+    type: "select",
+    required: true,
+    options: [
+      { value: "Monday, Wednesday, Friday — 4–5 PM", labelKey: "centres.batch45" },
+      { value: "Monday, Wednesday, Friday — 5–6 PM", labelKey: "centres.batch56" },
+      { value: "Please confirm the current batch", labelKey: "centres.batchConfirm" },
+      { value: "Not sure — please advise", labelKey: "centres.batchUnsure" },
+    ],
+  },
 ];

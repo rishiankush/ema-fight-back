@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/seo";
 import { StoreView } from "./StoreView";
 
-export const metadata: Metadata = {
-  title: "Store",
-  description: "EMA Fight Back store: ebooks, teaching kits, comics, and manuals.",
-};
+export const metadata: Metadata = pageMetadata("store");
 
 export default function StorePage() {
   return <StoreView />;

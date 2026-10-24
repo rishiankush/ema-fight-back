@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { mailHref, phoneHref, site, sitemapGroups, whatsappHref } from "@/content/site";
+import { trackLink } from "@/lib/analytics";
 import { useT } from "@/i18n/LanguageProvider";
 
 export function Footer() {
@@ -19,6 +20,7 @@ export function Footer() {
           <Logo compact />
           <p className="mt-4 text-sm leading-6 text-white/65">{t("common.description")}</p>
           <p className="mt-4 text-sm font-semibold text-gold">{t("common.philosophy")}</p>
+          <p className="mt-4 text-sm text-white/65">{site.location}</p>
         </div>
         {sitemapGroups.map((group) => (
           <div key={group.titleKey}>
@@ -44,10 +46,10 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name}. {t("common.copyright")} {site.founded}.
           </p>
           <p className="flex flex-wrap gap-4">
-            <a className="hover:text-gold" href={phoneHref}>
+            <a className="hover:text-gold" href={phoneHref} onClick={() => trackLink(phoneHref)}>
               {site.phoneDisplay}
             </a>
-            <a className="hover:text-gold" href={whatsappHref}>
+            <a className="hover:text-gold" href={whatsappHref} onClick={() => trackLink(whatsappHref)}>
               {t("fab.whatsapp")}
             </a>
             <a className="hover:text-gold" href={mailHref}>

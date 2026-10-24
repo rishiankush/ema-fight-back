@@ -9,6 +9,7 @@ type PageHeroProps = {
   primary?: { href: string; label: ReactNode };
   secondary?: { href: string; label: ReactNode };
   image?: string;
+  imageAlt?: string;
 };
 
 export function PageHero({
@@ -18,12 +19,13 @@ export function PageHero({
   primary,
   secondary,
   image = "/assets/hero/combat-bg.jpg",
+  imageAlt = "EMA Fight Back training photograph",
 }: PageHeroProps) {
   return (
     <header className="relative overflow-hidden text-white">
       <Image
         src={image}
-        alt=""
+        alt={imageAlt}
         fill
         priority
         className="object-cover object-[80%_center]"

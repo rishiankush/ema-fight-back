@@ -6,13 +6,10 @@ import { Section } from "@/components/ui/Section";
 import { programImages } from "@/content/media";
 import { programs, programListingKeys } from "@/content/programs";
 import { events, workshopTypes } from "@/content/site";
+import { pageMetadata } from "@/content/seo";
 import { T } from "@/i18n/LanguageProvider";
 
-export const metadata: Metadata = {
-  title: "Programs & Workshops",
-  description:
-    "People Safety programs for kids, juniors, teens, adults, women, seniors, special groups, schools, corporates, and instructor training.",
-};
+export const metadata: Metadata = pageMetadata("programs");
 
 export default function ProgramsIndexPage() {
   return (

@@ -2,7 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { sendEnquiryEmail } from "@/lib/mail";
 
-export type EnquiryKind = "personal" | "organisation" | "instructor" | "workshop" | "contact";
+export type EnquiryKind = "personal" | "organisation" | "instructor" | "workshop" | "contact" | "centre";
 
 export type EnquiryResult = { ok: true } | { ok: false; error: string };
 

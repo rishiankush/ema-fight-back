@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/content/seo";
 import { FaqsView } from "./FaqsView";
 
-export const metadata: Metadata = {
-  title: "FAQs / Safety Tips",
-  description: "Short answers for common questions, plus practical safety tips from EMA Fight Back.",
-};
+export const metadata: Metadata = pageMetadata("faqs");
 
 export default function FaqsPage() {
   return <FaqsView />;

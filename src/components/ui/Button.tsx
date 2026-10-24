@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { trackLink } from "@/lib/analytics";
 
 type ButtonProps = {
   href: string;
@@ -29,14 +30,14 @@ export function Button({
 
   if (external) {
     return (
-      <a href={href} className={classNames}>
+      <a href={href} className={classNames} onClick={() => trackLink(href)}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link href={href} className={classNames}>
+    <Link href={href} className={classNames} onClick={() => trackLink(href)}>
       {children}
     </Link>
   );
