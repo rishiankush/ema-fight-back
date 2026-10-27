@@ -1,15 +1,15 @@
 export const programImages: Record<string, string> = {
-  kids: "/assets/programs/kids.jpg",
-  juniors: "/assets/programs/juniors.jpg",
-  teens: "/assets/programs/teens.jpg",
-  adults: "/assets/programs/adults.jpg",
-  women: "/assets/programs/action.jpg",
-  seniors: "/assets/gallery/3Jan14-052.jpg",
-  "special-needs": "/assets/gallery/schools.jpeg",
-  schools: "/assets/hero/schools.jpg",
-  "instructor-training": "/assets/programs/class-1.jpg",
-  corporate: "/assets/hero/schools.jpg",
-  family: "/assets/hero/family-safety.png",
+  kids: "/assets/programs/ai/kids-v2.jpg",
+  juniors: "/assets/programs/ai/juniors-v2.jpg",
+  teens: "/assets/programs/ai/teens-v2.jpg",
+  adults: "/assets/programs/ai/adults.jpg",
+  women: "/assets/programs/ai/women.jpg",
+  seniors: "/assets/programs/ai/seniors.jpg",
+  "special-needs": "/assets/programs/ai/special-needs.jpg",
+  schools: "/assets/programs/ai/schools.jpg",
+  "instructor-training": "/assets/programs/ai/instructor-training.jpg",
+  corporate: "/assets/programs/ai/corporate.jpg",
+  family: "/assets/programs/ai/family.jpg",
 };
 
 export const gallery = [
