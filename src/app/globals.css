@@ -45,7 +45,6 @@ body {
     var(--font-tamil),
     var(--font-telugu),
     var(--font-gujarati),
-    var(--font-kannada),
     var(--font-malayalam),
     sans-serif;
 }
@@ -62,7 +61,6 @@ h3,
     var(--font-tamil),
     var(--font-telugu),
     var(--font-gujarati),
-    var(--font-kannada),
     var(--font-malayalam),
     sans-serif;
 }

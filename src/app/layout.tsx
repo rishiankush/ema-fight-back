@@ -9,7 +9,6 @@ import {
   Noto_Sans_Tamil,
   Noto_Sans_Telugu,
   Noto_Sans_Gujarati,
-  Noto_Sans_Kannada,
   Noto_Sans_Malayalam,
 } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
@@ -78,14 +77,6 @@ const gujarati = Noto_Sans_Gujarati({
   preload: false,
 });
 
-const kannada = Noto_Sans_Kannada({
-  variable: "--font-kannada",
-  subsets: ["kannada"],
-  weight: ["400", "600", "700"],
-  display: "swap",
-  preload: false,
-});
-
 const malayalam = Noto_Sans_Malayalam({
   variable: "--font-malayalam",
   subsets: ["malayalam"],
@@ -124,7 +115,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={initialLocale}
       suppressHydrationWarning
-      className={`${poppins.variable} ${devanagari.variable} ${gurmukhi.variable} ${bengali.variable} ${tamil.variable} ${telugu.variable} ${gujarati.variable} ${kannada.variable} ${malayalam.variable} ${poppins.className} h-full antialiased`}
+      className={`${poppins.variable} ${devanagari.variable} ${gurmukhi.variable} ${bengali.variable} ${tamil.variable} ${telugu.variable} ${gujarati.variable} ${malayalam.variable} ${poppins.className} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white font-sans text-ink">
         <script

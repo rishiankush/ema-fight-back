@@ -5,7 +5,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { programImages } from "@/content/media";
 import { programs, programListingKeys } from "@/content/programs";
-import { events, workshopTypes } from "@/content/site";
+import { workshopTypes } from "@/content/site";
 import { pageMetadata } from "@/content/seo";
 import { T } from "@/i18n/LanguageProvider";
 
