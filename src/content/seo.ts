@@ -39,8 +39,8 @@ export const seoPages = {
     title: "Training Centres & Classes",
     description:
       "EMA classes at confirmed venues in Chandigarh and Mohali. Enquire for the current batch at Strawberry Field, Legacy Martial Arts, or Tiny Warriors.",
-    image: "/assets/hero/whatsapp-training.jpeg",
-    imageAlt: "EMA class training photograph",
+    image: "/assets/centres/hero-class.jpg",
+    imageAlt: "Children in a martial arts class",
   },
   programs: {
     path: "/programs",

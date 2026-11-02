@@ -55,7 +55,8 @@ export function CentresView() {
         description={<T k="centres.description" />}
         primary={{ href: "#enquire", label: <T k="centres.enquireNow" /> }}
         secondary={{ href: whatsappHref, label: <T k="centres.whatsapp" /> }}
-        image="/assets/hero/whatsapp-training.jpeg"
+        image="/assets/centres/hero-class.jpg"
+        imageAlt="Children in a martial arts class"
       />
 
       <Section title={<T k="centres.locationsTitle" />} intro={<T k="centres.note" />}>
@@ -66,12 +67,16 @@ export function CentresView() {
               id={centre.id}
               className="overflow-hidden border border-line bg-white md:grid md:grid-cols-[minmax(0,280px)_1fr]"
             >
-              <div className="relative aspect-[4/3] bg-[#f3f3f3] md:aspect-auto md:min-h-[260px]">
+              <div className="relative aspect-[4/3] bg-[#f3f3f3] md:aspect-[3/4] md:min-h-[280px]">
                 <Image
                   src={centre.image}
                   alt={centre.imageAlt}
                   fill
-                  className="object-cover object-center"
+                  className={
+                    centre.id === "strawberry"
+                      ? "object-cover object-[center_20%]"
+                      : "object-cover object-center"
+                  }
                   sizes="(max-width: 768px) 100vw, 280px"
                 />
               </div>

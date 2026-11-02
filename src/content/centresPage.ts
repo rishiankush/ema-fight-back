@@ -25,8 +25,8 @@ export const centres: Centre[] = [
     name: "Strawberry Field High School",
     location: "Sector 26, Chandigarh",
     mapQuery: "Strawberry Field High School, Sector 26, Chandigarh",
-    image: "/assets/hero/schools.jpg",
-    imageAlt: "EMA class photograph at a school venue",
+    image: "/assets/centres/strawberry.jpg",
+    imageAlt: "EMA martial arts class on the lawn at Strawberry Field High School",
     schedule: ["Monday, Wednesday and Friday", "4–5 PM", "5–6 PM"],
     description: [
       "Kids/Children (5 to 12 years) Fitness, Self Defence & Martial Arts Classes.",
@@ -38,8 +38,8 @@ export const centres: Centre[] = [
     name: "Legacy Martial Arts",
     location: "Sector 86, Mohali",
     mapQuery: "Legacy Martial Arts, Sector 86, Mohali",
-    image: "/assets/programs/class-1.jpg",
-    imageAlt: "EMA martial arts class photograph",
+    image: "/assets/centres/sector-86-class.jpg",
+    imageAlt: "Kids martial arts class at Legacy Martial Arts",
     schedulePending: true,
     description: [
       "EMA martial arts and people-safety classes at Legacy Martial Arts, Sector 86, Mohali.",
@@ -51,8 +51,8 @@ export const centres: Centre[] = [
     name: "Legacy Tiny Warriors Playway & Activity Club",
     location: "Sector 72, Mohali",
     mapQuery: "Legacy Tiny Warriors Playway and Activity Club, Sector 72, Mohali",
-    image: "/assets/programs/kids.jpg",
-    imageAlt: "EMA kids class photograph",
+    image: "/assets/centres/sector-72.jpg",
+    imageAlt: "Indoor play and activity hall at Legacy Tiny Warriors, Sector 72, Mohali",
     schedulePending: true,
     detailsPending: true,
     description: [
