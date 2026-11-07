@@ -2,7 +2,7 @@ export const site = {
   name: "EMA Fight Back",
   tagline: "People Safety & Self-Defense",
   description:
-    "Practical safety skills for real life — for individuals, families, schools, colleges, healthcare institutions, workplaces and communities.",
+    "Self-defence, taekwondo, and martial arts classes in Chandigarh and Mohali. Practical People Safety training for individuals, families, schools, and workplaces — since 1984.",
   philosophy: "Safety is a Skill — Let's Build It Together.",
   founded: 1984,
   location: "Chandigarh, India",

@@ -16,7 +16,7 @@ export type Centre = {
 export const centresPage = {
   title: "Training Centres & Classes",
   description:
-    "Regular EMA classes at confirmed venues in Chandigarh and Mohali. Enquire for the current batch at your preferred centre.",
+    "Self-defence, taekwondo, and martial arts classes at confirmed venues in Chandigarh and Mohali. Enquire for the current batch at your preferred centre.",
 } as const;
 
 export const centres: Centre[] = [

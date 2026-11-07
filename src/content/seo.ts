@@ -7,46 +7,64 @@ export type SeoPage = {
   description: string;
   image: string;
   imageAlt: string;
+  keywords?: string[];
 };
+
+const localClassKeywords = [
+  "self defence classes Chandigarh",
+  "self defense classes Chandigarh",
+  "taekwondo classes Chandigarh",
+  "martial arts in Chandigarh",
+  "karate classes Chandigarh",
+  "martial arts classes Mohali",
+] as const;
 
 /** One primary topic per page. Titles stay unique and are not keyword-stuffed. */
 export const seoPages = {
   home: {
     path: "/",
-    title: `${site.name} | People Safety & Self-Defense in Chandigarh`,
+    title: `${site.name} | Self-Defense & Martial Arts Classes in Chandigarh`,
     description: site.description,
     image: "/assets/hero/family-safety.png",
     imageAlt: "Family safety training with EMA Fight Back",
+    keywords: [...localClassKeywords],
   },
   about: {
     path: "/about",
     title: "About EMA Fight Back",
     description:
-      "EMA Fight Back, established in 1984 in Chandigarh, teaches practical People Safety skills for children, families, schools, and workplaces.",
+      "EMA Fight Back, established in 1984 in Chandigarh, teaches People Safety, self-defense, taekwondo, and martial arts for children, families, schools, and workplaces.",
     image: "/assets/hero/family-safety.png",
     imageAlt: "EMA Fight Back People Safety program",
+    keywords: [...localClassKeywords],
   },
   founder: {
     path: "/master-bs-handa",
-    title: "Master B. S. Handa, Founder",
+    title: "Master B. S. Handa | Taekwondo 6th Dan, Chandigarh",
     description:
-      "Master B. S. Handa is the founder and chief instructor of EMA Fight Back. Black Belt 6th Dan, teaching People Safety since 1984.",
+      "Master B. S. Handa is the founder of EMA Fight Back. Black Belt 6th Dan (Kukkiwon), founder of the Chandigarh Taekwondo Association, teaching People Safety and martial arts since 1984.",
     image: "/assets/instructors/bs-handa.png",
     imageAlt: "Master B. S. Handa, founder of EMA Fight Back",
+    keywords: ["taekwondo Chandigarh", "Master B S Handa", "Chandigarh Taekwondo Association"],
   },
   centres: {
     path: "/training-centres",
-    title: "Training Centres & Classes",
+    title: "Self-Defense & Taekwondo Classes in Chandigarh",
     description:
-      "EMA classes at confirmed venues in Chandigarh and Mohali. Enquire for the current batch at Strawberry Field, Legacy Martial Arts, or Tiny Warriors.",
+      "Self-defence, taekwondo, and martial arts classes at Strawberry Field (Sector 26, Chandigarh), Legacy Martial Arts (Sector 86, Mohali), and Tiny Warriors (Sector 72, Mohali).",
     image: "/assets/centres/hero-class.jpg",
     imageAlt: "Children in a martial arts class",
+    keywords: [
+      ...localClassKeywords,
+      "self defence classes near me",
+      "taekwondo classes near me",
+    ],
   },
   programs: {
     path: "/programs",
     title: "People Safety Programs & Workshops",
     description:
-      "Age-appropriate People Safety and self-defense programs for kids, teens, women, seniors, schools, colleges, and workplaces.",
+      "Age-appropriate People Safety, self-defense, and martial arts programs in Chandigarh for kids, teens, women, seniors, schools, and workplaces.",
     image: "/assets/hero/family-safety.png",
     imageAlt: "EMA Fight Back program photograph",
   },
@@ -186,9 +204,10 @@ export const seoPages = {
   contact: {
     path: "/contact",
     title: "Contact EMA Fight Back",
-    description: `Call ${site.phoneDisplay}, WhatsApp, or send a short message. EMA Fight Back, Chandigarh.`,
+    description: `Enquire for self-defence and martial arts classes in Chandigarh. Call ${site.phoneDisplay} or WhatsApp EMA Fight Back.`,
     image: "/assets/ui/contact-bg.jpg",
     imageAlt: "Contact EMA Fight Back in Chandigarh",
+    keywords: ["self defence classes Chandigarh", "martial arts in Chandigarh"],
   },
   faqs: {
     path: "/faqs",
@@ -276,9 +295,11 @@ export const relatedPrograms: Record<string, { href: string; label: string }[]> 
 export function pageMetadata(key: keyof typeof seoPages): Metadata {
   const page = seoPages[key];
   const isHome = page.path === "/";
+  const keywords = "keywords" in page ? [...page.keywords] : undefined;
   return {
     title: isHome ? { absolute: page.title } : page.title,
     description: page.description,
+    keywords,
     alternates: { canonical: page.path },
     openGraph: {
       title: page.title,
