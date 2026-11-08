@@ -42,6 +42,8 @@ export function organizationJsonLd() {
           "@type": "Person",
           name: site.founder.name,
           jobTitle: site.founder.role,
+          description:
+            "Black Belt 9th Dan (Extreme Martial Arts); Black Belt 6th Dan (World Taekwondo Headquarters, Kukkiwon, South Korea)",
         },
         sameAs: ["https://www.instagram.com/legacymartialarts_world"],
         makesOffer: [

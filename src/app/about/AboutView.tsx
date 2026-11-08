@@ -12,7 +12,11 @@ import { useCopy } from "@/i18n/copy";
 
 export function AboutView() {
   const about = useCopy().about;
-  const founder = about.founder ?? aboutPage.founder;
+  const founder = {
+    ...aboutPage.founder,
+    ...about.founder,
+    ranks: about.founder?.ranks ?? aboutPage.founder.ranks,
+  };
 
   return (
     <>
@@ -41,7 +45,13 @@ export function AboutView() {
             />
           </div>
           <div>
-            <p className="max-w-3xl text-lg leading-8">{founder.rank}</p>
+            <div className="max-w-3xl space-y-1">
+              {(founder.ranks?.length ? founder.ranks : [founder.rank]).map((item) => (
+                <p key={item} className="text-lg leading-8 first:font-semibold">
+                  {item}
+                </p>
+              ))}
+            </div>
             <p className="mt-2 max-w-3xl text-muted">{founder.role}</p>
             <div className="mt-8">
               <Button href="/master-bs-handa" variant="primary">

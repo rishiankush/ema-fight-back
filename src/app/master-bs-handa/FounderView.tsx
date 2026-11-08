@@ -9,16 +9,25 @@ import { aboutPage } from "@/content/aboutPage";
 import { T } from "@/i18n/LanguageProvider";
 import { useCopy } from "@/i18n/copy";
 
+function founderRanks(founder: { rank: string; ranks?: string[] }) {
+  return founder.ranks?.length ? founder.ranks : [founder.rank];
+}
+
 export function FounderView() {
   const about = useCopy().about;
-  const founder = about.founder ?? aboutPage.founder;
+  const founder = {
+    ...aboutPage.founder,
+    ...about.founder,
+    ranks: about.founder?.ranks ?? aboutPage.founder.ranks,
+  };
+  const ranks = founderRanks(founder);
 
   return (
     <>
       <PageHero
         eyebrow={founder.eyebrow}
         title={founder.name}
-        description={founder.rank}
+        description={ranks[0]}
         primary={{ href: "/book", label: <T k="aboutPage.bookWorkshop" /> }}
         secondary={{ href: "/about", label: <T k="nav.about" /> }}
       />
@@ -35,7 +44,13 @@ export function FounderView() {
             />
           </div>
           <div>
-            <p className="max-w-3xl text-lg leading-8">{founder.rank}</p>
+            <div className="max-w-3xl space-y-1">
+              {ranks.map((item) => (
+                <p key={item} className="text-lg leading-8 first:font-semibold">
+                  {item}
+                </p>
+              ))}
+            </div>
             <p className="mt-2 max-w-3xl text-muted">{founder.role}</p>
             <ul className="mt-6 bullet-list">
               {founder.honors.map((item) => (
