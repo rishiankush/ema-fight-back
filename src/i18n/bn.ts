@@ -132,6 +132,7 @@ export const bn: typeof en = {
     viewProgram: "প্রোগ্রাম দেখুন →",
     seeAllPrograms: "সব প্রোগ্রাম দেখুন",
     exploreAllPrograms: "সব প্রোগ্রাম জানুন",
+    viewAllPosts: "সব পোস্ট দেখুন",
     instructors: "প্রশিক্ষক",
     instructorsTitle: "আমাদের প্রশিক্ষক",
     gallery: "গ্যালারি",

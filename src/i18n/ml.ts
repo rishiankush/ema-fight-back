@@ -132,6 +132,7 @@ export const ml: typeof en = {
     viewProgram: "പരിപാടി കാണുക →",
     seeAllPrograms: "എല്ലാ പരിപാടികളും കാണുക",
     exploreAllPrograms: "എല്ലാ പരിപാടികളും കാണുക",
+    viewAllPosts: "എല്ലാ പോസ്റ്റുകളും കാണുക",
     instructors: "പരിശീലകർ",
     instructorsTitle: "ഞങ്ങളുടെ പരിശീലകർ",
     gallery: "ഗാലറി",

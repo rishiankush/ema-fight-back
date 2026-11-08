@@ -132,6 +132,7 @@ export const te: typeof en = {
     viewProgram: "ప్రోగ్రామ్ చూడండి →",
     seeAllPrograms: "అన్ని ప్రోగ్రామ్‌లను చూడండి",
     exploreAllPrograms: "అన్ని ప్రోగ్రామ్‌లను చూడండి",
+    viewAllPosts: "అన్ని పోస్ట్‌లను చూడండి",
     instructors: "శిక్షకులు",
     instructorsTitle: "మా శిక్షకులు",
     gallery: "గ్యాలరీ",

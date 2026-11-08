@@ -132,6 +132,7 @@ export const gu: typeof en = {
     viewProgram: "પ્રોગ્રામ જુઓ →",
     seeAllPrograms: "બધા પ્રોગ્રામ જુઓ",
     exploreAllPrograms: "બધા પ્રોગ્રામ જુઓ",
+    viewAllPosts: "બધી પોસ્ટ જુઓ",
     instructors: "પ્રશિક્ષકો",
     instructorsTitle: "અમારા પ્રશિક્ષકો",
     gallery: "ગેલરી",

@@ -132,6 +132,7 @@ export const mr: typeof en = {
     viewProgram: "कार्यक्रम पहा →",
     seeAllPrograms: "सर्व कार्यक्रम पहा",
     exploreAllPrograms: "सर्व कार्यक्रम जाणून घ्या",
+    viewAllPosts: "सर्व पोस्ट पहा",
     instructors: "प्रशिक्षक",
     instructorsTitle: "आमचे प्रशिक्षक",
     gallery: "गॅलरी",

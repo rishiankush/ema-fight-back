@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: page?.title ?? program.title,
     description: page?.tagline ?? program.summary,
+    robots: { index: true, follow: true },
     alternates: { canonical: `/programs/${slug}` },
   };
 }

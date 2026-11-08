@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { HomeHero } from "@/components/home/HomeHero";
+import { HomeNews } from "@/components/home/HomeNews";
 import { homeProgramCards } from "@/content/homePage";
 import { programImages } from "@/content/media";
 import { BulletList } from "@/components/ui/BulletList";
@@ -83,6 +84,8 @@ export default function HomePage() {
           <T k="home.whyClose" />
         </p>
       </Section>
+
+      <HomeNews />
 
       <Section title={<T k="home.programsTitle" />} intro={<T k="home.programsIntro" />}>
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

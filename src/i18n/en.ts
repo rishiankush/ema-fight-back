@@ -143,6 +143,7 @@ export const en = {
     viewProgram: "View program →",
     seeAllPrograms: "See All Programs",
     exploreAllPrograms: "Explore All Programs",
+    viewAllPosts: "View all posts",
     instructors: "Instructors",
     instructorsTitle: "Our Instructors",
     gallery: "Gallery",

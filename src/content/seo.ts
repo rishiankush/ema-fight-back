@@ -40,9 +40,9 @@ export const seoPages = {
   },
   founder: {
     path: "/master-bs-handa",
-    title: "Master B. S. Handa | Taekwondo 6th Dan, Chandigarh",
+    title: "Master B. S. Handa | Taekwondo 9th Dan, Chandigarh",
     description:
-      "Master B. S. Handa is the founder of EMA Fight Back. Black Belt 6th Dan (Kukkiwon), founder of the Chandigarh Taekwondo Association, teaching People Safety and martial arts since 1984.",
+      "Master B. S. Handa is the founder of EMA Fight Back. Black Belt 9th Dan (Kukkiwon), founder of the Chandigarh Taekwondo Association, teaching People Safety and martial arts since 1984.",
     image: "/assets/instructors/bs-handa.png",
     imageAlt: "Master B. S. Handa, founder of EMA Fight Back",
     keywords: ["taekwondo Chandigarh", "Master B S Handa", "Chandigarh Taekwondo Association"],
@@ -300,6 +300,7 @@ export function pageMetadata(key: keyof typeof seoPages): Metadata {
     title: isHome ? { absolute: page.title } : page.title,
     description: page.description,
     keywords,
+    robots: { index: true, follow: true },
     alternates: { canonical: page.path },
     openGraph: {
       title: page.title,

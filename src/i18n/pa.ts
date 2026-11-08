@@ -132,6 +132,7 @@ export const pa: typeof en = {
     viewProgram: "ਪ੍ਰੋਗਰਾਮ ਵੇਖੋ →",
     seeAllPrograms: "ਸਾਰੇ ਪ੍ਰੋਗਰਾਮ ਵੇਖੋ",
     exploreAllPrograms: "ਸਾਰੇ ਪ੍ਰੋਗਰਾਮ ਜਾਣੋ",
+    viewAllPosts: "ਸਾਰੀਆਂ ਪੋਸਟਾਂ ਵੇਖੋ",
     instructors: "ਪ੍ਰਸ਼ਿਕਸ਼ਕ",
     instructorsTitle: "ਸਾਡੇ ਪ੍ਰਸ਼ਿਕਸ਼ਕ",
     gallery: "ਗੈਲਰੀ",

@@ -131,6 +131,7 @@ export const hi: typeof en = {
     viewProgram: "प्रोग्राम देखें →",
     seeAllPrograms: "सभी प्रोग्राम देखें",
     exploreAllPrograms: "सभी प्रोग्राम जानें",
+    viewAllPosts: "सभी पोस्ट देखें",
     instructors: "प्रशिक्षक",
     instructorsTitle: "हमारे प्रशिक्षक",
     gallery: "गैलरी",

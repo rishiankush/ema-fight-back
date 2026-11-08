@@ -132,6 +132,7 @@ export const kn: typeof en = {
     viewProgram: "ಕಾರ್ಯಕ್ರಮ ನೋಡಿ →",
     seeAllPrograms: "ಎಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಿ",
     exploreAllPrograms: "ಎಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಿ",
+    viewAllPosts: "ಎಲ್ಲಾ ಪೋಸ್ಟ್‌ಗಳನ್ನು ನೋಡಿ",
     instructors: "ತರಬೇತುದಾರರು",
     instructorsTitle: "ನಮ್ಮ ತರಬೇತುದಾರರು",
     gallery: "ಚಿತ್ರಶಾಲೆ",

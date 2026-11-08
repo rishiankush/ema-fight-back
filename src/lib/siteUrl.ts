@@ -3,9 +3,9 @@ export function getSiteUrl() {
   if (explicit) return explicit;
 
   const production = process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(/^https?:\/\//, "");
-  if (production) return `https://${production}`;
+  if (production && !production.includes("vercel.app")) return `https://${production}`;
 
-  return "https://emafightback.example";
+  return "https://www.emafitness.com";
 }
 
 export function absoluteUrl(path = "/") {

@@ -132,6 +132,7 @@ export const ta: typeof en = {
     viewProgram: "திட்டத்தைப் பார் →",
     seeAllPrograms: "அனைத்துத் திட்டங்களையும் பார்க்க",
     exploreAllPrograms: "அனைத்துத் திட்டங்களையும் அறிய",
+    viewAllPosts: "அனைத்து இடுகைகளையும் பார்க்க",
     instructors: "பயிற்றுநர்கள்",
     instructorsTitle: "எங்கள் பயிற்றுநர்கள்",
     gallery: "படத்தொகுப்பு",

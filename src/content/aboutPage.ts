@@ -82,7 +82,7 @@ export const aboutPage = {
     eyebrow: "Founder",
     name: "Master B. S. Handa",
     image: "/assets/instructors/bs-handa.png",
-    rank: "Black Belt 6th Dan (World Taekwondo Headquarters, Kukkiwon, South Korea)",
+    rank: "Black Belt 9th Dan (World Taekwondo Headquarters, Kukkiwon, South Korea)",
     role: "National Instructor & Referee (Taekwondo Headquarters of India)",
     phones: ["9216-444-949", "7888-721-512"],
     email: "bs.handa@gmail.com",
@@ -124,7 +124,7 @@ export const aboutPage = {
     quoteBy: "Alexandre K Krassilchtchikov, Training Methods Expert, Sports Authority of India",
     experienceTitle: "Professional Experience",
     experience: [
-      "Black Belt 6th Dan (World Taekwondo Headquarters, South Korea), (2017)",
+      "Black Belt 9th Dan (World Taekwondo Headquarters, South Korea), (2017)",
       "Olympic Solidarity Course in Fencing through International Olympic Committee (1996)",
       "National Referee (Under Taekwondo Federation of India – 14 Year’s Experience)",
       "Three times National Champion (1996, Jan-1998, Dec-1998) and represented India in the 8th Asian Taekwondo Championship (1988).",
