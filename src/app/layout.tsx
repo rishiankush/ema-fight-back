@@ -14,6 +14,7 @@ import {
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { ChatWidget } from "@/components/chat/ChatWidget";
+import { WelcomePopup } from "@/components/home/WelcomePopup";
 import { LanguageProvider, T } from "@/i18n/LanguageProvider";
 import { defaultLocale, locales, type Locale } from "@/i18n/config";
 import { site } from "@/content/site";
@@ -137,6 +138,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
             {children}
           </main>
           <Footer />
+          <WelcomePopup />
           <Suspense fallback={null}>
             <ChatWidget />
           </Suspense>
