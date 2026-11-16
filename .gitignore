@@ -36,6 +36,7 @@ yarn-error.log*
 
 # local form submissions
 /data/enquiries.json
+/data/welcome-leads.json
 
 # vercel
 .vercel

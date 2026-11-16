@@ -59,6 +59,19 @@ const nextConfig: NextConfig = {
       permanent: true,
     }));
   },
+  async headers() {
+    return [
+      {
+        source: "/guides/:path*",
+        headers: [
+          {
+            key: "Content-Disposition",
+            value: 'inline; filename="EMA-Free-Safety-Guide.pdf"',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
