@@ -51,8 +51,32 @@ export function visitorGuideEmail(name: string, lookingFor: LookingFor) {
   const book = activityBookLine(lookingFor);
   const bookHtml = book ? `<p style="margin:18px 0 0;color:#333;font-size:15px;line-height:1.7">${escapeHtml(book)}</p>` : "";
 
+  const text = [
+    `Hello ${name},`,
+    "",
+    "Thank you for visiting EMA Fight Back. Your free Safety Guide is ready:",
+    download,
+    "",
+    "Inside, you’ll find easy steps that anyone can learn, with no special training needed.",
+    "",
+    "I have been teaching safety skills since 1984, and more than 1,00,000 students have learned from us. My goal is simple: every person should know how to stay safe.",
+    "",
+    "If you’d like to learn more, you can:",
+    "- Visit https://www.emafitness.com to see our programs",
+    "- Reply to this email with any question",
+    "- WhatsApp us on 9216-444-949",
+    book ? `\n${book}` : "",
+    "",
+    "Stay safe,",
+    "Grandmaster B.S. Handa",
+    "EMA Fight Back, Chandigarh",
+  ]
+    .filter((line) => line !== undefined)
+    .join("\n");
+
   return {
     subject: "Your FREE Safety Guide is here",
+    text,
     html: `<!doctype html>
 <html>
   <body style="margin:0;padding:24px;background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;color:#111">

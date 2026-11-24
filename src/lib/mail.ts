@@ -22,6 +22,7 @@ export async function sendHtmlEmail(options: {
   to: string | string[];
   subject: string;
   html: string;
+  text?: string;
   replyTo?: string;
 }): Promise<{ ok: true } | { ok: false; error: string }> {
   const apiKey = process.env.RESEND_API_KEY;
@@ -36,15 +37,19 @@ export async function sendHtmlEmail(options: {
     .filter(Boolean);
   const delivered = new Set<string>();
   let lastError = "";
+  const payload = {
+    from: fromAddress(),
+    replyTo: options.replyTo,
+    subject: options.subject,
+    html: options.html,
+    ...(options.text ? { text: options.text } : {}),
+  };
 
   for (const recipient of to) {
     if (delivered.has(recipient)) continue;
     const result = await resend.emails.send({
-      from: fromAddress(),
+      ...payload,
       to: [recipient],
-      replyTo: options.replyTo,
-      subject: options.subject,
-      html: options.html,
     });
     if (!result.error) {
       delivered.add(recipient);
@@ -55,11 +60,8 @@ export async function sendHtmlEmail(options: {
     const allowed = testingRecipient(result.error.message);
     if (allowed && !delivered.has(allowed)) {
       const retry = await resend.emails.send({
-        from: fromAddress(),
+        ...payload,
         to: [allowed],
-        replyTo: options.replyTo,
-        subject: options.subject,
-        html: options.html,
       });
       if (!retry.error) {
         delivered.add(allowed);

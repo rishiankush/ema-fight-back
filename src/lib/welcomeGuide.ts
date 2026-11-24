@@ -174,6 +174,7 @@ export async function submitWelcomeGuide(input: WelcomeGuideInput): Promise<Welc
       to: email,
       subject: visitor.subject,
       html: visitor.html,
+      text: visitor.text,
       replyTo: teamRecipients()[0],
     });
     visitorEmailStatus = sent.ok ? "sent" : `failed (${sent.error})`;

@@ -16,6 +16,32 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    "slug": "grandmaster-b-s-handa-video-message-21-november-2026",
+    "title": "Grandmaster B.S. Handa — Video Message",
+    "date": "2026-11-21",
+    "excerpt": "Watch Grandmaster B.S. Handa’s video message from EMA Fight Back.",
+    "image": "/assets/blog/WhatsApp-Video-2026-11-21-at-1.59.53-PM.jpg",
+    "blocks": [
+      {
+        "type": "video",
+        "src": "/assets/blog/WhatsApp-Video-2026-11-21-at-1.59.53-PM.mp4"
+      }
+    ]
+  },
+  {
+    "slug": "ema-fight-back-video-message-21-november-2026",
+    "title": "EMA Fight Back — Video Message",
+    "date": "2026-11-21",
+    "excerpt": "Watch this video message shared with EMA Fight Back.",
+    "image": "/assets/blog/WhatsApp-Video-2026-11-21-at-2.00.39-PM.jpg",
+    "blocks": [
+      {
+        "type": "video",
+        "src": "/assets/blog/WhatsApp-Video-2026-11-21-at-2.00.39-PM.mp4"
+      }
+    ]
+  },
+  {
     "slug": "global-media-strategist-dr-amrinder-pal-singh-joins-project-1-lakh-as-ambassador",
     "title": "Global Media Strategist Dr. Amrinder Pal Singh Joins Project 1 Lakh as Ambassador",
     "date": "2026-03-26",
