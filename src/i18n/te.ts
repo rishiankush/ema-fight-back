@@ -304,14 +304,17 @@ export const te: typeof en = {
     eyebrow: "Classes",
     title: "Training Centres & Classes",
     description:
-      "Self-defence, taekwondo, and martial arts classes at confirmed venues in Chandigarh and Mohali. Enquire for the current batch at your preferred centre.",
+      "Taekwondo classes, karate classes, and martial arts classes in Chandigarh and Mohali at confirmed venues. Enquire for the current batch at your preferred centre.",
     locationsTitle: "Our centres",
+    intro:
+      "Children, teens, and families train here for taekwondo classes near me, karate classes in Chandigarh, and martial arts school training in Chandigarh and Mohali. Ages start from 5 — call or WhatsApp to confirm the right centre and batch.",
     locationLabel: "Location",
     scheduleLabel: "Batch times",
     confirmSchedule: "Current timings will be shared after confirmation.",
     confirmDetails: "Current activity details and timings will be shared after confirmation.",
     enquireNow: "Enquire Now",
     whatsapp: "WhatsApp",
+    callUs: "Call 9216-444-949",
     viewMap: "Open map",
     formTitle: "Class enquiry",
     formIntro:
@@ -325,7 +328,7 @@ export const te: typeof en = {
     successTitle: "Enquiry received",
     successBody:
       "Thank you. An EMA representative will contact you to confirm the centre, batch and next step.",
-    note: "We only publish confirmed batch times. Fees and unconfirmed schedules are shared after we speak with you.",
+        note: "We only publish confirmed batch times. Fees and unconfirmed schedules are shared after we speak with you.",
     centreStrawberry: "Strawberry Field High School, Sector 26, Chandigarh",
     centre86: "Legacy Martial Arts, Sector 86, Mohali",
     centre72: "Legacy Tiny Warriors Playway & Activity Club, Sector 72, Mohali",

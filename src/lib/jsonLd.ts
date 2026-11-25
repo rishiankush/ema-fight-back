@@ -33,11 +33,11 @@ export function organizationJsonLd() {
           "Self-defense",
           "People Safety",
           "Taekwondo",
-          "Martial arts",
           "Karate",
+          "Martial arts",
           "Bullying prevention",
         ],
-        sport: ["Taekwondo", "Martial Arts"],
+        sport: ["Taekwondo", "Karate", "Martial Arts"],
         founder: {
           "@type": "Person",
           name: site.founder.name,
@@ -64,7 +64,18 @@ export function organizationJsonLd() {
               "@type": "Course",
               name: "Taekwondo classes",
               description:
-                "Taekwondo and martial arts classes at EMA training centres in Chandigarh and Mohali.",
+                "Taekwondo classes in Chandigarh and Mohali at EMA training centres, including Sector 26, Sector 86, and Sector 72.",
+              provider: { "@id": orgId },
+            },
+            areaServed: ["Chandigarh", "Mohali"],
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Course",
+              name: "Karate classes",
+              description:
+                "Karate classes and martial arts training for children and families in Chandigarh and Mohali.",
               provider: { "@id": orgId },
             },
             areaServed: ["Chandigarh", "Mohali"],
@@ -75,7 +86,7 @@ export function organizationJsonLd() {
               "@type": "Course",
               name: "Martial arts classes",
               description:
-                "Martial arts and fitness, self-defence classes for children and families in Chandigarh and Mohali.",
+                "Martial arts school classes for fitness, self-defence, taekwondo, and karate in Chandigarh and Mohali.",
               provider: { "@id": orgId },
             },
             areaServed: ["Chandigarh", "Mohali"],
@@ -113,10 +124,34 @@ export function organizationJsonLd() {
           },
           {
             "@type": "Question",
-            name: "Where can I join taekwondo and martial arts classes near Chandigarh?",
+            name: "Where can I join taekwondo classes in Chandigarh or near me?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "EMA martial arts and taekwondo classes run at Legacy Martial Arts in Sector 86, Mohali, Legacy Tiny Warriors in Sector 72, Mohali, and Strawberry Field High School in Sector 26, Chandigarh. Enquire for the current batch.",
+              text: "Taekwondo classes run at Strawberry Field High School in Sector 26, Chandigarh, Legacy Martial Arts in Sector 86, Mohali, and Legacy Tiny Warriors in Sector 72, Mohali. Enquire for the current batch.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer karate classes in Chandigarh?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Karate classes and martial arts training are available through EMA Fight Back at our Chandigarh and Mohali centres. Call or WhatsApp to confirm the current batch.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is EMA Fight Back a martial arts school in Chandigarh?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes. Extreme Martial Arts (EMA Fight Back) has taught martial arts, taekwondo, karate, and People Safety in Chandigarh since 1984, with classes also in Mohali.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Do you offer MMA in Chandigarh?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "EMA Fight Back is not a cage-MMA gym. We teach People Safety, self-defence, taekwondo, karate, and martial arts classes in Chandigarh and Mohali. If you searched for MMA in Chandigarh, enquire and we will guide you to the right class.",
             },
           },
           {

@@ -9,7 +9,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { EnquiryForm, centreFields } from "@/components/forms/EnquiryForm";
 import { centres, centreNameById, isCentreId } from "@/content/centresPage";
-import { whatsappHref } from "@/content/site";
+import { phoneHref, whatsappHref } from "@/content/site";
 import { T, useT } from "@/i18n/LanguageProvider";
 
 function centreWhatsapp(name: string, location: string) {
@@ -59,7 +59,18 @@ export function CentresView() {
         imageAlt="Children in a martial arts class"
       />
 
-      <Section title={<T k="centres.locationsTitle" />} intro={<T k="centres.note" />}>
+      <Section title={<T k="centres.locationsTitle" />} intro={<T k="centres.intro" />}>
+        <div className="mb-8 flex flex-wrap gap-3">
+          <Button href={phoneHref} variant="primary">
+            <T k="centres.callUs" />
+          </Button>
+          <Button href={whatsappHref} variant="ghost">
+            <T k="centres.whatsapp" />
+          </Button>
+          <Button href="#enquire" variant="ghost">
+            <T k="centres.enquireNow" />
+          </Button>
+        </div>
         <div className="grid gap-8">
           {centres.map((centre) => (
             <article

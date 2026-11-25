@@ -14,8 +14,11 @@ const localClassKeywords = [
   "self defence classes Chandigarh",
   "self defense classes Chandigarh",
   "taekwondo classes Chandigarh",
-  "martial arts in Chandigarh",
+  "taekwondo classes near me",
   "karate classes Chandigarh",
+  "karate classes in Chandigarh",
+  "martial arts school in Chandigarh",
+  "martial arts in Chandigarh",
   "martial arts classes Mohali",
 ] as const;
 
@@ -23,7 +26,7 @@ const localClassKeywords = [
 export const seoPages = {
   home: {
     path: "/",
-    title: `${site.name} | Self-Defense & Martial Arts Classes in Chandigarh`,
+    title: `${site.name} | Taekwondo, Karate & Martial Arts Classes in Chandigarh`,
     description: site.description,
     image: "/assets/hero/family-safety.png",
     imageAlt: "Family safety training with EMA Fight Back",
@@ -31,9 +34,9 @@ export const seoPages = {
   },
   about: {
     path: "/about",
-    title: "About EMA Fight Back",
+    title: "About EMA Fight Back | Martial Arts School in Chandigarh",
     description:
-      "EMA Fight Back, established in 1984 in Chandigarh, teaches People Safety, self-defense, taekwondo, and martial arts for children, families, schools, and workplaces.",
+      "EMA Fight Back, established in 1984 in Chandigarh, teaches People Safety, self-defense, taekwondo, karate, and martial arts for children, families, schools, and workplaces.",
     image: "/assets/hero/family-safety.png",
     imageAlt: "EMA Fight Back People Safety program",
     keywords: [...localClassKeywords],
@@ -45,20 +48,21 @@ export const seoPages = {
       "Master B. S. Handa is the founder of EMA Fight Back. Black Belt 9th Dan (Extreme Martial Arts), 6th Dan (Kukkiwon), founder of the Chandigarh Taekwondo Association, teaching People Safety and martial arts since 1984.",
     image: "/assets/instructors/bs-handa.png",
     imageAlt: "Master B. S. Handa, founder of EMA Fight Back",
-    keywords: ["taekwondo Chandigarh", "Master B S Handa", "Chandigarh Taekwondo Association"],
+    keywords: [
+      "taekwondo Chandigarh",
+      "taekwondo classes Chandigarh",
+      "Master B S Handa",
+      "Chandigarh Taekwondo Association",
+    ],
   },
   centres: {
     path: "/training-centres",
-    title: "Self-Defense & Taekwondo Classes in Chandigarh",
+    title: "Taekwondo, Karate & Martial Arts Classes in Chandigarh",
     description:
-      "Self-defence, taekwondo, and martial arts classes at Strawberry Field (Sector 26, Chandigarh), Legacy Martial Arts (Sector 86, Mohali), and Tiny Warriors (Sector 72, Mohali).",
+      "Taekwondo classes, karate classes, and martial arts classes in Chandigarh and Mohali at Strawberry Field (Sector 26), Legacy Martial Arts (Sector 86), and Tiny Warriors (Sector 72). Enquire for the current batch.",
     image: "/assets/centres/hero-class.jpg",
     imageAlt: "Children in a martial arts class",
-    keywords: [
-      ...localClassKeywords,
-      "self defence classes near me",
-      "taekwondo classes near me",
-    ],
+    keywords: [...localClassKeywords, "self defence classes near me"],
   },
   programs: {
     path: "/programs",
@@ -204,10 +208,10 @@ export const seoPages = {
   contact: {
     path: "/contact",
     title: "Contact EMA Fight Back",
-    description: `Enquire for self-defence and martial arts classes in Chandigarh. Call ${site.phoneDisplay} or WhatsApp EMA Fight Back.`,
+    description: `Enquire for taekwondo, karate, self-defence, and martial arts classes in Chandigarh. Call ${site.phoneDisplay} or WhatsApp EMA Fight Back.`,
     image: "/assets/ui/contact-bg.jpg",
     imageAlt: "Contact EMA Fight Back in Chandigarh",
-    keywords: ["self defence classes Chandigarh", "martial arts in Chandigarh"],
+    keywords: [...localClassKeywords],
   },
   faqs: {
     path: "/faqs",

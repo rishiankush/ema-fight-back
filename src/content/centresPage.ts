@@ -16,7 +16,7 @@ export type Centre = {
 export const centresPage = {
   title: "Training Centres & Classes",
   description:
-    "Self-defence, taekwondo, and martial arts classes at confirmed venues in Chandigarh and Mohali. Enquire for the current batch at your preferred centre.",
+    "Taekwondo classes, karate classes, and martial arts classes in Chandigarh and Mohali at confirmed venues. Enquire for the current batch at your preferred centre.",
 } as const;
 
 export const centres: Centre[] = [
@@ -29,7 +29,7 @@ export const centres: Centre[] = [
     imageAlt: "EMA martial arts class on the lawn at Strawberry Field High School",
     schedule: ["Monday, Wednesday and Friday", "4–5 PM", "5–6 PM"],
     description: [
-      "Kids/Children (5 to 12 years) Fitness, Self Defence & Martial Arts Classes.",
+      "Kids/Children (5 to 12 years) fitness, self-defence, taekwondo, and martial arts classes in Chandigarh.",
       "The program teaches children how to stay safe, speak up, set boundaries, and make safer choices in daily life.",
     ],
   },
@@ -42,7 +42,7 @@ export const centres: Centre[] = [
     imageAlt: "Kids martial arts class at Legacy Martial Arts",
     schedulePending: true,
     description: [
-      "EMA martial arts and people-safety classes at Legacy Martial Arts, Sector 86, Mohali.",
+      "Taekwondo, karate, and martial arts classes at Legacy Martial Arts, Sector 86, Mohali — a martial arts school serving Chandigarh and Mohali families.",
       "Current class timings will be shared after confirmation.",
     ],
   },
@@ -56,7 +56,7 @@ export const centres: Centre[] = [
     schedulePending: true,
     detailsPending: true,
     description: [
-      "EMA classes at Legacy Tiny Warriors Playway & Activity Club, Sector 72, Mohali.",
+      "EMA taekwondo and martial arts classes near Chandigarh at Legacy Tiny Warriors Playway & Activity Club, Sector 72, Mohali.",
       "Current activity details and timings will be shared after confirmation.",
     ],
   },
